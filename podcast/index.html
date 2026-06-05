@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Post AI Sessions Ep.1 — Midjourney: Outlier or Blueprint?</title>
+<meta name="description" content="Marco (the skeptic) and Lena (the strategist) debate whether Midjourney's 11-person, $200M story is an unrepeatable outlier or the blueprint for every post-AI company.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://postaicompany.com/podcast/ep1">
+<meta property="og:title" content="Post AI Sessions Ep.1 — Midjourney: Outlier or Blueprint?">
+<meta property="og:description" content="Two AI hosts disagree about the future of companies. Marco says outlier. Lena says blueprint.">
+<meta property="og:type" content="article">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fff;--text:#0d0d0d;--text-secondary:#555;--text-tertiary:#999;--accent:#0066ff;--accent-soft:#e8f1ff;--border:rgba(0,0,0,.07);--surface:#f8f8f8;--radius:10px;--shadow-card:0px 0px 0px 1px rgba(0,0,0,.06),0px 2px 6px rgba(0,0,0,.04)}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+body{font-family:'Geist',system-ui,-apple-system,sans-serif;color:var(--text);background:var(--bg);-webkit-font-smoothing:antialiased}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,.85);backdrop-filter:blur(16px);box-shadow:0 0 0 1px var(--border)}
+nav .inner{max-width:1200px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between}
+.logo-group{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--text)}
+.logo-dot{width:10px;height:10px;border-radius:50%;background:var(--accent);box-shadow:0 0 16px var(--accent);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{box-shadow:0 0 12px var(--accent)}50%{box-shadow:0 0 24px var(--accent)}}
+.logo-text{font-size:18px;font-weight:600;letter-spacing:-.6px}
+.nav-links{display:flex;gap:24px}.nav-links a{font-size:14px;font-weight:500;color:var(--text-secondary);text-decoration:none}.nav-links a:hover{color:var(--text)}
+
+article{max-width:780px;margin:0 auto;padding:120px 24px 80px}
+.back-link{font-family:'Geist Mono',monospace;font-size:13px;color:var(--text-tertiary);text-decoration:none;display:inline-block;margin-bottom:40px}.back-link:hover{color:var(--text)}
+.episode-badge{font-family:'Geist Mono',monospace;font-size:12px;font-weight:500;text-transform:uppercase;color:var(--accent);letter-spacing:.5px;margin-bottom:16px}
+article h1{font-size:clamp(30px,5vw,44px);font-weight:700;letter-spacing:-1.5px;line-height:1.08;margin-bottom:12px}
+.subtitle{font-size:19px;color:var(--text-secondary);line-height:1.55;margin-bottom:32px}
+.meta{font-family:'Geist Mono',monospace;font-size:13px;color:var(--text-tertiary);margin-bottom:40px}
+
+.hosts{display:flex;gap:32px;margin-bottom:48px;flex-wrap:wrap}
+.host-card{flex:1;min-width:280px;background:var(--surface);border-radius:var(--radius);padding:28px}
+.host-card.marco{border-left:3px solid var(--accent)}
+.host-card.lena{border-left:3px solid var(--text)}
+.host-card .host-role{font-family:'Geist Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.5px;color:var(--accent);margin-bottom:6px}
+.host-card h3{font-size:20px;font-weight:600;margin-bottom:6px}
+.host-card .tagline{font-size:14px;color:var(--text-secondary);font-style:italic}
+
+article h2{font-size:22px;font-weight:600;letter-spacing:-.44px;margin-top:40px;margin-bottom:12px;padding-top:24px;border-top:1px solid var(--border)}
+article p{font-size:17px;color:var(--text-secondary);line-height:1.7;margin-bottom:20px}
+article ul{margin:16px 0 16px 20px;font-size:16px;color:var(--text-secondary);line-height:1.8}article li{margin-bottom:6px}
+
+.script-box{background:var(--surface);border-radius:var(--radius);padding:28px;margin:32px 0}
+.script-box .line{margin-bottom:12px;font-size:15px;line-height:1.6}
+.script-box .speaker{font-weight:600;font-size:13px;text-transform:uppercase;letter-spacing:.5px;margin-right:8px}
+.script-box .marco-line .speaker{color:var(--accent)}
+.script-box .lena-line .speaker{color:var(--text)}
+
+.transcript-link{display:inline-block;padding:14px 28px;border:1px solid var(--border);border-radius:8px;font-size:14px;font-weight:500;text-decoration:none;color:var(--text);margin-top:16px;transition:all .2s}.transcript-link:hover{background:var(--surface)}
+
+.cta-box{background:var(--text);color:#fff;border-radius:var(--radius);padding:40px;text-align:center;margin:48px 0}
+.cta-box h3{color:#fff;font-size:22px;margin-bottom:8px}.cta-box p{color:rgba(255,255,255,.7);margin-bottom:20px;font-size:15px}
+.btn{display:inline-block;padding:12px 28px;background:var(--accent);color:#fff;border-radius:8px;font-size:15px;font-weight:600;text-decoration:none}.btn:hover{opacity:.9}
+.btn-outline{display:inline-block;padding:12px 28px;border:1px solid rgba(255,255,255,.3);color:#fff;border-radius:8px;font-size:15px;font-weight:500;text-decoration:none;margin-left:10px}.btn-outline:hover{background:rgba(255,255,255,.1)}
+
+footer{max-width:1100px;margin:0 auto;padding:48px 24px;display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--border)}
+footer .copy{font-size:13px;color:var(--text-tertiary)}footer .links{display:flex;gap:20px}footer .links a{font-size:13px;color:var(--text-tertiary);text-decoration:none}
+@media(max-width:600px){article{padding:100px 20px 60px}article h1{font-size:26px}.hosts{flex-direction:column}}
+</style>
+</head>
+<body>
+<nav><div class="inner"><a href="/" class="logo-group"><div class="logo-dot"></div><span class="logo-text">Post AI Company</span></a><div class="nav-links"><a href="/#ecosystem">Ecosystem</a><a href="/#data">Data</a></div></div></nav>
+
+<article>
+<a href="/" class="back-link">← Back to Post AI Company</a>
+<div class="episode-badge">Post AI Sessions — Episode 1</div>
+<h1>Midjourney: 11 People, $200M<br>Outlier or Blueprint?</h1>
+<p class="subtitle">Marco thinks Midjourney is an unrepeatable fluke. Lena says it's the blueprint for every post-AI company. They debate for 24 minutes. They do not agree.</p>
+<div class="meta"><span>June 11, 2026</span><span>24 min</span><span>AI-generated podcast</span></div>
+
+<div class="hosts">
+<div class="host-card marco">
+<div class="host-role">Host</div>
+<h3>Marco</h3>
+<div class="tagline">"I don't buy that."</div>
+<p style="font-size:14px;color:var(--text-secondary);margin-top:8px">Ex-founder. Cético por experiência, não por personalidade. Já quebrou uma startup. Faz as perguntas que o ouvinte está pensando.</p>
+</div>
+<div class="host-card lena">
+<div class="host-role">Host</div>
+<h3>Lena</h3>
+<div class="tagline">"Here's what the data actually says."</div>
+<p style="font-size:14px;color:var(--text-secondary);margin-top:8px">Estrategista de produto. Já escalou empresa de 10 a 500 pessoas. Traz o Post AI Index. Responde com números.</p>
+</div>
+</div>
+
+<h2>The Debate — 3 Rounds</h2>
+
+<h3>Round 1: Outlier or Pattern?</h3>
+<p>Marco argues Midjourney was in the right place at the right time — Discord + generative images. Not replicable. Lena counters with Cursor (20 people, $100M ARR) and Lovable (146 people, $400M ARR, no sales team). The numbers suggest a pattern, not an anomaly.</p>
+
+<h3>Round 2: The Post AI Index</h3>
+<p>Lena brings the data: AI-native startups average $3.48M per employee vs $610K for traditional SaaS. Marco asks: "How many companies beyond these six examples?" Lena pushes back: "The top 10 AI-native startups average 24 employees and $3.48M. The top 10 traditional SaaS average 21,000 employees."</p>
+
+<h3>Round 3: Does This Scale?</h3>
+<p>Marco: "Midjourney went from 11 to 107 people. The model breaks as you grow." Lena: "107 people at $500M is $4.7M per employee — still 15x the SaaS average. Is that 'breaking' or 'scaling efficiently'?" They disagree on whether the ratios hold at enterprise scale. They end the round still disagreeing.</p>
+
+<h2>Excerpt</h2>
+<div class="script-box">
+<div class="line marco-line"><span class="speaker">Marco:</span> I don't buy that Midjourney is a blueprint. It's an outlier. It was the right product, at the right moment, on the right platform. That's not strategy. That's being in the right place at the right time.</div>
+<div class="line lena-line"><span class="speaker">Lena:</span> Here's what the data actually says. Cursor: 20 people, $100M ARR. Lovable: 146 people, $400M ARR. ElevenLabs: $500M ARR. Perplexity: 5x revenue growth on 1.34x headcount. This isn't one outlier. It's a distribution.</div>
+<div class="line marco-line"><span class="speaker">Marco:</span> Okay, but those are all software companies. Show me a manufacturing company doing $4M per employee. Show me a logistics company.</div>
+<div class="line lena-line"><span class="speaker">Lena:</span> That's exactly the point. The question isn't whether every industry hits Midjourney's ratio. It's whether every industry moves in that direction. And the data says yes.</div>
+</div>
+
+<a href="#" class="transcript-link">📄 Full transcript →</a>
+
+<div class="cta-box">
+<h3>New episodes every other Thursday</h3>
+<p>Marco and Lena debate one question about the post-AI company. They don't always agree. That's the point.</p>
+<a href="/#subscribe" class="btn">Get the newsletter →</a>
+<a href="/editions/001-midjourney" class="btn-outline">Read Edition #001 →</a>
+</div>
+</article>
+
+<footer><div class="copy">Post AI Company © 2026 · São Paulo</div><div class="links"><a href="/">Home</a><a href="/editions/001-midjourney">Edition #001</a><a href="/#subscribe">Subscribe</a></div></footer>
+</body>
+</html>
