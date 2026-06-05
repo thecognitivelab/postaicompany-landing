@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Post AI Weekly #003 — Cursor: 20 People, $100M. Product and Operations, Same Loop.</title>
+<meta name="description" content="Cursor generates 40% of its own internal PRs using its own cloud agents. The product (AI code editor) and the operations (AI writes code internally) are the same recursive loop.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://postaicompany.com/editions/003-cursor">
+<meta property="og:title" content="Post AI Weekly #003 — Cursor: 20 People, $100M"><meta property="og:description" content="When your product builds your product, you're not dogfooding. You're recursing."><meta property="og:type" content="article">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fff;--text:#0d0d0d;--text-secondary:#555;--text-tertiary:#999;--accent:#0066ff;--accent-soft:#e8f1ff;--border:rgba(0,0,0,.07);--surface:#f8f8f8;--radius:10px}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+body{font-family:'Geist',system-ui,-apple-system,sans-serif;color:var(--text);background:var(--bg);-webkit-font-smoothing:antialiased}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,.85);backdrop-filter:blur(16px);box-shadow:0 0 0 1px var(--border)}
+nav .inner{max-width:1200px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between}
+.logo-group{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--text)}
+.logo-dot{width:10px;height:10px;border-radius:50%;background:var(--accent);box-shadow:0 0 16px var(--accent);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{box-shadow:0 0 12px var(--accent)}50%{box-shadow:0 0 24px var(--accent)}}
+.logo-text{font-size:18px;font-weight:600;letter-spacing:-.6px}.nav-links{display:flex;gap:24px}.nav-links a{font-size:14px;font-weight:500;color:var(--text-secondary);text-decoration:none}.nav-links a:hover{color:var(--text)}
+article{max-width:780px;margin:0 auto;padding:160px 24px 80px}
+.back-link{font-family:'Geist Mono',monospace;font-size:13px;color:var(--text-tertiary);text-decoration:none;display:inline-block;margin-bottom:40px}.back-link:hover{color:var(--text)}
+.article-label{font-family:'Geist Mono',monospace;font-size:12px;font-weight:500;text-transform:uppercase;color:var(--accent);letter-spacing:.5px;margin-bottom:20px}
+article h1{font-size:clamp(28px,4.5vw,40px);font-weight:700;letter-spacing:-1.2px;line-height:1.08;margin-bottom:12px}
+.subtitle{font-size:18px;color:var(--text-secondary);line-height:1.55;margin-bottom:40px}
+.meta{font-family:'Geist Mono',monospace;font-size:13px;color:var(--text-tertiary);margin-bottom:48px}.meta span{margin-right:24px}
+article h2{font-size:22px;font-weight:600;letter-spacing:-.44px;margin-top:56px;margin-bottom:12px;padding-top:24px;border-top:1px solid var(--border)}
+article h3{font-size:18px;font-weight:600;letter-spacing:-.36px;margin-top:32px;margin-bottom:8px}
+article p{font-size:17px;color:var(--text-secondary);line-height:1.75;margin-bottom:20px}
+article ul{margin:16px 0 16px 20px;font-size:16px;color:var(--text-secondary);line-height:1.8}article li{margin-bottom:8px}
+article blockquote{border-left:3px solid var(--accent);padding:12px 20px;margin:24px 0;background:var(--surface);border-radius:0 var(--radius) var(--radius) 0}article blockquote p{font-size:16px;font-style:italic;color:var(--text);margin-bottom:0}
+.cta-box{background:var(--text);color:#fff;border-radius:var(--radius);padding:40px;text-align:center;margin:48px 0}.cta-box h3{color:#fff;font-size:22px;margin-bottom:8px}.cta-box p{color:rgba(255,255,255,.7);margin-bottom:20px;font-size:15px}
+.btn{display:inline-block;padding:12px 28px;background:var(--accent);color:#fff;border-radius:8px;font-size:15px;font-weight:600;text-decoration:none}.btn:hover{opacity:.9}
+footer{max-width:1100px;margin:0 auto;padding:48px 24px;display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--border)}
+footer .copy{font-size:13px;color:var(--text-tertiary)}footer .links{display:flex;gap:20px}footer .links a{font-size:13px;color:var(--text-tertiary);text-decoration:none}
+@media(max-width:600px){article{padding:120px 20px 60px}article h1{font-size:26px}}
+</style>
+</head>
+<body>
+<nav><div class="inner"><a href="/" class="logo-group"><div class="logo-dot"></div><span class="logo-text">Post AI Company</span></a><div class="nav-links"><a href="/#ecosystem">Ecosystem</a><a href="/#data">Data</a></div></div></nav>
+<article>
+<a href="/" class="back-link">← Back to Post AI Company</a>
+<div class="article-label">Post AI Weekly — Edition 003</div>
+<h1>Cursor: When Your Product Builds Your Product, You're Not Dogfooding. You're Recursing.</h1>
+<p class="subtitle">20 people. $100M ARR. $5M per employee. 40% of internal PRs written by their own cloud agents. The product and the operations are the same loop.</p>
+<div class="meta"><span>June 25, 2026</span><span>5 min read</span><span>Edition 003</span></div>
+
+<h2>THE SIGNAL</h2>
+<p>Cursor hit $100M in annual recurring revenue with roughly 20 employees. That's $5 million per person — 17x the average SaaS company, and 44% above even the top-10 AI-native average of $3.48M. But the revenue number isn't the most interesting part. The most interesting part is this: 40% of Cursor's internal pull requests are now generated by Cursor's own cloud agents. The product — an AI code editor — is building the product.</p>
+<p>This isn't dogfooding. Dogfooding is when you use your own product to find bugs. This is recursion: the output of the system becomes input for the next iteration of the system. Cursor's engineering team doesn't just use Cursor to write code. They use Cursor agents that use Cursor to write code that improves Cursor. The boundary between "what we sell" and "how we operate" has collapsed.</p>
+
+<h2>THE NUMBERS</h2>
+<ul>
+<li><strong>$5M — Revenue per employee at Cursor.</strong> $100M ARR with approximately 20 people. The top-10 AI-native startup average is $3.48M. Traditional SaaS average: $300K. Cursor isn't just AI-native — it's the extreme right tail of the AI-native distribution. (Forbes, Redpoint Ventures, Mar 2026)</li>
+<li><strong>40%+ — Internal PRs generated by Cursor's cloud agents.</strong> Up from 35% in February 2025. The agents handle 50 million actions per day on Temporal infrastructure. At this trajectory, Cursor agents will write the majority of Cursor's code by Q4 2026. (Ben's Bites, Cursor Blog, Jun 2026)</li>
+<li><strong>360,000 — Developers using Cursor at $20-40/month.</strong> Average contract value of $276/year. Zero traditional sales team. The product itself is the distribution: developers try it because other developers' agents wrote code with it. Each user is simultaneously a customer and a testimonial. (Cursor, Latka)</li>
+<li><strong>$100M → $2B — Valuation increase in 14 months.</strong> Cursor hit a $2 billion valuation in 2025, up from $100M in 2024. The market is pricing the recursive loop: a company that uses AI to build AI tools that help build the company. This is what compounding looks like when the product and the operations are the same thing. (Forbes, PitchBook)</li>
+</ul>
+
+<h2>THE SHIFT</h2>
+
+<h3>1. AI-Augmented vs. AI-Native Operations</h3>
+<p>Most companies using AI are augmenting existing workflows: AI helps write emails, generate reports, summarize meetings. Cursor isn't augmenting — it's operating. The AI agents don't assist engineers. They are engineers. The distinction matters because augmentation has diminishing returns (you can only assist so much before the human becomes the bottleneck). Native operation has accelerating returns (each agent deployment generates data that makes future deployments better).</p>
+
+<h3>2. The Implosion of Product and Operations</h3>
+<p>Every traditional company has two very different activities: building the product and running the company. Cursor has one activity — both are AI-mediated code generation. When a Cursor agent writes a PR for the Cursor codebase, is that a product improvement or an operational task? The question doesn't make sense anymore. The categories have merged. For founders building today, this is the target: not "using AI to be more efficient" but "designing a company where the product and the operations are the same recursive system."</p>
+
+<h3>3. The Anthropic Connection</h3>
+<p>Inside Anthropic, "many engineers no longer write code directly" — they instantiate Claude in tools and manage its output (Dario Amodei via Bloomberg, May 2026). This is the same pattern Cursor is living: humans becoming a verification layer atop a "vast virtual organization of AI agents." The Founder's Playbook captures this at a high level but misses the operational convergence that Cursor demonstrates. The playbook's next edition should add a chapter on recursion.</p>
+
+<h3>4. Practical Implications for Founders</h3>
+<p>Build AI-mediated operations from day zero. Not "we'll add AI later." Not "we use Copilot." Your internal tools should be AI agents that use your own product. The compound effect: every product improvement makes your operations better, which accelerates product development, which improves the product. This is the loop that generates $5M per employee.</p>
+
+<blockquote><p>If your product could build itself, what would your team spend its time on? For Cursor, the answer is: everything else.</p></blockquote>
+
+<h2>RADAR</h2>
+<ul>
+<li><strong>[Cursor Blog] Cloud Agent Lessons</strong> — Lessons from running 50M agent actions/day for internal development. <a href="https://cursor.com/blog/cloud-agents" target="_blank">Read →</a></li>
+<li><strong>[Forbes] AI-Native Firms Lead in Revenue Per Employee</strong> — Paul Baier's RPE analysis with Cursor featured as extreme right tail. <a href="https://www.forbes.com/sites/paulbaier/2026/03/31/ai-native-firms-lead-in-revenue-per-employee/" target="_blank">Read →</a></li>
+<li><strong>[Anthropic] The Founder's Playbook</strong> — The 2026 playbook for AI-native startups. Read our analysis. <a href="/playbook" target="_blank">Read our analysis →</a></li>
+<li><strong>[Ben's Bites] Build Tools, to Build More</strong> — Coverage of the 40% PR figure and the AI tooling ecosystem. <a href="https://www.bensbites.com/p/build-tools-to-build-more" target="_blank">Read →</a></li>
+<li><strong>[Bloomberg] Amodei on AI-Native Engineering</strong> — "Engineers no longer write code directly." The pattern spreading beyond Anthropic. <a href="https://www.bloomberg.com/news/articles/2026-05" target="_blank">Read →</a></li>
+</ul>
+
+<h2>ONE QUESTION</h2>
+<p>If your product could build itself, what would your team spend its time on?</p>
+
+<div class="cta-box"><h3>Get Post AI Weekly</h3><p>Every Wednesday. For founders building AI-native and executives transforming existing companies.</p><a href="/#subscribe" class="btn">Subscribe free →</a></div>
+</article>
+<footer><div class="copy">Post AI Company © 2026 · São Paulo</div><div class="links"><a href="/">Home</a><a href="/editions/002-block-layoffs">← Edition #002</a><a href="/#subscribe">Subscribe</a></div></footer>
+</body>
+</html>

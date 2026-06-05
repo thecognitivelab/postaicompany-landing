@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Post AI Weekly #002 — Block, Meta, Intuit: The AI-First Layoff</title>
+<meta name="description" content="Block cut 40%. Meta cut 10%. Intuit cut 17%. All cited AI. All were rewarded by the market. These aren't layoffs — they're architecture corrections.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://postaicompany.com/editions/002-block-layoffs">
+<meta property="og:title" content="Post AI Weekly #002 — The AI-First Layoff"><meta property="og:description" content="Block cut 4,000. Meta cut 8,000. Intuit cut 3,000. Why the market rewarded every single one."><meta property="og:type" content="article">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fff;--text:#0d0d0d;--text-secondary:#555;--text-tertiary:#999;--accent:#0066ff;--accent-soft:#e8f1ff;--border:rgba(0,0,0,.07);--surface:#f8f8f8;--radius:10px}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+body{font-family:'Geist',system-ui,-apple-system,sans-serif;color:var(--text);background:var(--bg);-webkit-font-smoothing:antialiased}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,.85);backdrop-filter:blur(16px);box-shadow:0 0 0 1px var(--border)}
+nav .inner{max-width:1200px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between}
+.logo-group{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--text)}
+.logo-dot{width:10px;height:10px;border-radius:50%;background:var(--accent);box-shadow:0 0 16px var(--accent);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{box-shadow:0 0 12px var(--accent)}50%{box-shadow:0 0 24px var(--accent)}}
+.logo-text{font-size:18px;font-weight:600;letter-spacing:-.6px}.nav-links{display:flex;gap:24px}.nav-links a{font-size:14px;font-weight:500;color:var(--text-secondary);text-decoration:none}.nav-links a:hover{color:var(--text)}
+article{max-width:780px;margin:0 auto;padding:160px 24px 80px}
+.back-link{font-family:'Geist Mono',monospace;font-size:13px;color:var(--text-tertiary);text-decoration:none;display:inline-block;margin-bottom:40px}.back-link:hover{color:var(--text)}
+.article-label{font-family:'Geist Mono',monospace;font-size:12px;font-weight:500;text-transform:uppercase;color:var(--accent);letter-spacing:.5px;margin-bottom:20px}
+article h1{font-size:clamp(28px,4.5vw,42px);font-weight:700;letter-spacing:-1.2px;line-height:1.08;margin-bottom:12px}
+.subtitle{font-size:18px;color:var(--text-secondary);line-height:1.55;margin-bottom:40px}
+.meta{font-family:'Geist Mono',monospace;font-size:13px;color:var(--text-tertiary);margin-bottom:48px}.meta span{margin-right:24px}
+article h2{font-size:22px;font-weight:600;letter-spacing:-.44px;margin-top:56px;margin-bottom:12px;padding-top:24px;border-top:1px solid var(--border)}
+article p{font-size:17px;color:var(--text-secondary);line-height:1.75;margin-bottom:20px}
+article ul{margin:16px 0 16px 20px;font-size:16px;color:var(--text-secondary);line-height:1.8}article li{margin-bottom:8px}
+article blockquote{border-left:3px solid var(--accent);padding:12px 20px;margin:24px 0;background:var(--surface);border-radius:0 var(--radius) var(--radius) 0}article blockquote p{font-size:16px;font-style:italic;color:var(--text);margin-bottom:0}
+.cta-box{background:var(--text);color:#fff;border-radius:var(--radius);padding:40px;text-align:center;margin:48px 0}.cta-box h3{color:#fff;font-size:22px;margin-bottom:8px}.cta-box p{color:rgba(255,255,255,.7);margin-bottom:20px;font-size:15px}
+.btn{display:inline-block;padding:12px 28px;background:var(--accent);color:#fff;border-radius:8px;font-size:15px;font-weight:600;text-decoration:none}.btn:hover{opacity:.9}
+footer{max-width:1100px;margin:0 auto;padding:48px 24px;display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--border)}
+footer .copy{font-size:13px;color:var(--text-tertiary)}footer .links{display:flex;gap:20px}footer .links a{font-size:13px;color:var(--text-tertiary);text-decoration:none}
+@media(max-width:600px){article{padding:120px 20px 60px}article h1{font-size:26px}}
+</style>
+</head>
+<body>
+<nav><div class="inner"><a href="/" class="logo-group"><div class="logo-dot"></div><span class="logo-text">Post AI Company</span></a><div class="nav-links"><a href="/#ecosystem">Ecosystem</a><a href="/#data">Data</a></div></div></nav>
+<article>
+<a href="/" class="back-link">← Back to Post AI Company</a>
+<div class="article-label">Post AI Weekly — Edition 002</div>
+<h1>Block, Meta, and Intuit Didn't Get Lean. They Discovered They Were Overbuilt.</h1>
+<p class="subtitle">These aren't layoffs. They're architecture corrections. And the market knows the difference.</p>
+<div class="meta"><span>June 18, 2026</span><span>5 min read</span><span>Edition 002</span></div>
+
+<h2>THE SIGNAL</h2>
+<p>In February 2026, Jack Dorsey eliminated 40% of Block's workforce — 4,000 people — in a single stroke. The internal memo cited "intelligence tools" as the driver. Stock surged 24%. By May, Meta joined the pattern: 8,000 layoffs, 10% of the company, explicitly tied to AI-driven productivity gains by Zuckerberg. Intuit cut 3,000 employees (17%) and simultaneously raised guidance. Not one of these companies was in trouble. All were profitable. All were growing. All were rewarded.</p>
+<p>The common explanation — "AI is automating jobs" — is wrong. Or at least incomplete. What's actually happening is more specific and more consequential: these companies are discovering they were architected for a world where revenue and headcount grew in lockstep. AI broke that equation. Now they're correcting — not because they have to, but because the alternative is falling behind competitors who were never overbuilt to begin with.</p>
+
+<h2>THE NUMBERS</h2>
+<ul>
+<li><strong>4,000 jobs (40%) — Block, February 2026.</strong> Dorsey's internal memo framed it around "intelligence tools" and "a leaner, more agile Block." Revenue was growing. Profitability was solid. The stock market awarded the move with a 24% single-day gain — the market was pricing in the overbuild, not the team. (WSJ, CNBC)</li>
+<li><strong>8,000 jobs (10%) — Meta, May 2026.</strong> Zuckerberg explicitly linked the cuts to AI productivity gains. Meta simultaneously announced $145 billion in AI infrastructure capex. The message was clear: capital is shifting from human payroll to AI compute. (CNBC, Bloomberg)</li>
+<li><strong>3,000 jobs (17%) — Intuit, May 2026.</strong> CEO Sasan Goodarzi: "We are not doing a layoff to cut costs." The company raised guidance in the same announcement. The cuts were explicitly about reallocation — replacing headcount that exists because "that's how companies work" with AI-augmented workflows. (Reuters, Intuit press release)</li>
+<li><strong>~128,000 tech workers impacted by AI-cited layoffs in 2026 YTD.</strong> Unlike prior tech layoff waves (2022-2023), these aren't corrections from pandemic overhiring. They're happening at profitable, growing companies explicitly naming AI as the driver. The trend line is structural, not cyclical. (Layoffs.fyi, TrueUp)</li>
+</ul>
+
+<h2>THE SHIFT</h2>
+
+<h3>1. This is not a crisis. It's an architecture correction.</h3>
+<p>Every prior wave of mass tech layoffs was reactive: pandemic overhiring, interest rate repricing, post-acquisition consolidation. This wave is different. These companies are profitable. They're growing. They're not cutting to survive — they're cutting because they've discovered their org chart was designed for an equation that no longer holds. AI doesn't automate individual jobs. It breaks the assumption that more output requires more people. When that assumption breaks, the entire org chart becomes a liability — and the market rewards you for fixing it before your competitors do.</p>
+
+<h3>2. The market is sorting companies by structural efficiency.</h3>
+<p>Block's stock surged 24% on the layoff announcement. Meta's stock is still down ~7% YTD despite aggressive AI messaging. The market is learning to distinguish between genuine structural redesign and cost-shifting dressed as AI strategy. Companies that demonstrate real improvement in revenue-per-employee are being rewarded. Companies that announce "AI initiatives" without measurable efficiency impact are not.</p>
+
+<h3>3. AI-native companies never built the fat.</h3>
+<p>Midjourney hit $200M with ~11 people. Cursor hit $100M ARR with 20 people. These companies didn't "cut their way to efficiency" — they were never overbuilt. The AI-native org chart doesn't have a sales department, a marketing department, or management layers designed for coordination. It has people doing work AI can't do, and AI doing everything else. The legacy companies now cutting headcount are doing in 2026 what Midjourney did in 2022: choosing not to build what doesn't need to exist.</p>
+
+<h3>4. The question isn't "how many people to cut."</h3>
+<p>It's "which roles would exist if you were starting today?" Block, Meta, and Intuit are answering that question retroactively. It's more expensive and more painful than answering it proactively. But for the executives reading this, the lesson isn't about layoffs — it's about org design. Every role that exists because of historical momentum rather than current necessity is a role AI will eventually absorb. The only question is whether you redesign before the market forces you to.</p>
+
+<blockquote><p>The tragedy isn't that Block cut 4,000 jobs. The tragedy is that they hired 4,000 people for roles that AI was about to make unnecessary. The market is now pricing that mistake — and rewarding the correction.</p></blockquote>
+
+<h2>RADAR</h2>
+<ul>
+<li><strong>[WSJ] Block Layoffs Signal AI Shift</strong> — Analysis of how Dorsey's move represents a turning point in corporate AI adoption. <a href="https://www.wsj.com/business/jack-dorseys-block-to-lay-off-4-000-employees-in-ai-remake-28f0d869" target="_blank">Read →</a></li>
+<li><strong>[Layoffs.fyi] Tech Layoff Tracker</strong> — Comprehensive tracking of tech industry layoffs with AI-cited cuts filtered. <a href="https://layoffs.fyi" target="_blank">View data →</a></li>
+<li><strong>[CNBC] Duolingo Cuts Contractors, Pivots to AI</strong> — Duolingo reduced contractor workforce by 10% in 2024, shifting content creation to AI. <a href="https://www.cnbc.com/2024/01/08/duolingo-cuts-10percent-of-contractors.html" target="_blank">Read →</a></li>
+<li><strong>[Reuters] Intuit Layoffs Signal Strategic Pivot</strong> — 3,000 jobs eliminated while raising guidance. "We are not doing a layoff to cut costs." <a href="https://www.reuters.com/technology/intuit-lay-off-3000-employees-ai-driven-reorganization-2026-05-23/" target="_blank">Read →</a></li>
+<li><strong>[Klarna] The AI Customer Service Reversal</strong> — After replacing 700 agents with AI, Klarna is rebuilding human teams. Amputation vs. architecture. <a href="https://www.cnbc.com/2026/05/15/klarna-ai-customer-service-reversal.html" target="_blank">Read →</a></li>
+</ul>
+
+<h2>ONE QUESTION</h2>
+<p>If you redesigned your org chart tomorrow with one constraint — no role that exists purely because "that's how companies work" — which 20% of your roles would survive?</p>
+
+<div class="cta-box"><h3>Get Post AI Weekly</h3><p>Every Wednesday. Data, analysis, and provocations.</p><a href="/#subscribe" class="btn">Subscribe free →</a></div>
+</article>
+<footer><div class="copy">Post AI Company © 2026 · São Paulo</div><div class="links"><a href="/">Home</a><a href="/editions/001-midjourney">← Edition #001</a><a href="/editions/003-cursor">Edition #003 →</a></div></footer>
+</body>
+</html>
