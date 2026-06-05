@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Case Study: Midjourney — The Architecture Decision — Post AI Company</title>
+<meta name="description" content="How Midjourney reached $500M with 107 people. No sales. No marketing. No VC. This is the architecture decision that made it possible.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://postaicompany.com/case-studies/midjourney">
+<meta property="og:title" content="Case Study: Midjourney — The Architecture Decision"><meta property="og:description" content="How 11 people reached $200M by refusing to build what every SaaS company treats as mandatory.">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fff;--text:#0d0d0d;--text-secondary:#555;--text-tertiary:#999;--accent:#0066ff;--accent-soft:#e8f1ff;--border:rgba(0,0,0,.07);--surface:#f8f8f8;--radius:10px}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+body{font-family:'Geist',system-ui,-apple-system,sans-serif;color:var(--text);background:var(--bg);-webkit-font-smoothing:antialiased}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,.85);backdrop-filter:blur(16px);box-shadow:0 0 0 1px var(--border)}
+nav .inner{max-width:1200px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between}
+.logo-group{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--text)}
+.logo-dot{width:10px;height:10px;border-radius:50%;background:var(--accent);box-shadow:0 0 16px var(--accent);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{box-shadow:0 0 12px var(--accent)}50%{box-shadow:0 0 24px var(--accent)}}
+.logo-text{font-size:18px;font-weight:600;letter-spacing:-.6px}.nav-links{display:flex;gap:24px}.nav-links a{font-size:14px;font-weight:500;color:var(--text-secondary);text-decoration:none}
+article{max-width:780px;margin:0 auto;padding:160px 24px 80px}
+.back-link{font-family:'Geist Mono',monospace;font-size:13px;color:var(--text-tertiary);text-decoration:none;display:inline-block;margin-bottom:40px}
+.badge{font-family:'Geist Mono',monospace;font-size:11px;color:var(--accent);text-transform:uppercase;letter-spacing:.5px;margin-bottom:16px}
+h1{font-size:clamp(28px,4.5vw,40px);font-weight:700;letter-spacing:-1px;line-height:1.1;margin-bottom:12px}
+.subtitle{font-size:18px;color:var(--text-secondary);line-height:1.55;margin-bottom:40px}
+.meta{font-family:'Geist Mono',monospace;font-size:13px;color:var(--text-tertiary);margin-bottom:48px}.meta span{margin-right:24px}
+
+.snapshot{background:var(--surface);border-radius:var(--radius);padding:28px 32px;margin-bottom:40px}
+.snapshot h3{font-size:14px;font-family:'Geist Mono',monospace;text-transform:uppercase;letter-spacing:.5px;color:var(--accent);margin-bottom:20px}
+.snapshot table{width:100%;border-collapse:collapse}
+.snapshot td{padding:8px 0;font-size:15px;border-bottom:1px solid var(--border)}
+.snapshot td:first-child{color:var(--text-tertiary);width:180px;font-size:14px}
+.snapshot td:last-child{font-weight:500}
+
+article h2{font-size:22px;font-weight:600;letter-spacing:-.3px;margin-top:48px;margin-bottom:14px}
+article p{font-size:17px;color:var(--text-secondary);line-height:1.75;margin-bottom:20px}
+article ul,article ol{margin:16px 0 16px 20px;font-size:16px;color:var(--text-secondary);line-height:1.8}article li{margin-bottom:8px}
+article blockquote{border-left:3px solid var(--accent);padding:12px 20px;margin:24px 0;background:var(--surface);border-radius:0 var(--radius) var(--radius) 0)}article blockquote p{font-size:16px;font-style:italic;color:var(--text);margin-bottom:0}
+
+.cta-box{background:var(--text);color:#fff;border-radius:var(--radius);padding:40px;text-align:center;margin:48px 0 0}.cta-box h3{color:#fff;font-size:22px;margin-bottom:8px}.cta-box p{color:rgba(255,255,255,.7);margin-bottom:20px;font-size:15px}
+.btn{display:inline-block;padding:12px 28px;background:var(--accent);color:#fff;border-radius:8px;font-size:15px;font-weight:600;text-decoration:none}
+
+.references{margin-top:48px;padding-top:32px;border-top:1px solid var(--border)}
+.references h3{font-size:14px;font-family:'Geist Mono',monospace;color:var(--text-tertiary);text-transform:uppercase;letter-spacing:.5px;margin-bottom:16px}
+.references p{font-size:14px;color:var(--text-tertiary);line-height:1.7;margin-bottom:6px}
+
+footer{max-width:1100px;margin:0 auto;padding:48px 24px;display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--border)}
+footer .copy{font-size:13px;color:var(--text-tertiary)}footer .links{display:flex;gap:20px}footer .links a{font-size:13px;color:var(--text-tertiary);text-decoration:none}
+@media(max-width:600px){article{padding:120px 20px 60px}}
+</style>
+</head>
+<body>
+<nav><div class="inner"><a href="/" class="logo-group"><div class="logo-dot"></div><span class="logo-text">Post AI Company</span></a><div class="nav-links"><a href="/#ecosystem">Ecosystem</a><a href="/#data">Data</a></div></div></nav>
+<article>
+<a href="/" class="back-link">← Back to Post AI Company</a>
+<div class="badge">Case Study 001 · June 2026</div>
+<h1>Midjourney: the architecture decision</h1>
+<p class="subtitle">How a company with no sales department, no marketing team, and no venture capital reached $500 million in revenue. The lesson is not about AI. It is about what David Holz chose not to build.</p>
+<div class="meta"><span>12 min read</span><span>Post AI Company</span></div>
+
+<div class="snapshot">
+<h3>Company snapshot</h3>
+<table>
+<tr><td>Founded</td><td>2021</td></tr>
+<tr><td>Founder</td><td>David Holz</td></tr>
+<tr><td>Headcount</td><td>~11 → 107 (2023 → 2025)</td></tr>
+<tr><td>Revenue</td><td>$200M (2023) → $500M (2025)</td></tr>
+<tr><td>Revenue/Employee</td><td>$18M at peak → $4.7M (2025)</td></tr>
+<tr><td>Venture Capital</td><td>$0</td></tr>
+<tr><td>Profitability</td><td>6 months after launch</td></tr>
+<tr><td>Distribution</td><td>Discord (175M users at launch)</td></tr>
+</table>
+</div>
+
+<h2>What a traditional company would look like</h2>
+<p>A traditional SaaS company generating $200 million in annual revenue would typically employ between 600 and 800 people. It would have a marketing department of 30 to 50, a sales organization of 80 to 120, customer success teams, HR, finance, and layers of management to coordinate them all. It would have raised somewhere between $50 and $150 million in venture capital to fund the growth required to reach that scale.</p>
+<p>Midjourney reached $200 million with somewhere between 11 and 40 employees. No marketing department. No sales team. No customer success. No HR beyond legal and finance. No venture capital. It was profitable six months after launching to the public.</p>
+<p>The gap between these two realities is not explained by AI technology. Every company now has access to AI. The gap is explained by architecture. Midjourney was designed from day one around a different assumption about what a company needs to contain.</p>
+
+<h2>The four decisions that changed the math</h2>
+
+<h3>1. Distribution as org design</h3>
+<p>Most software companies follow a predictable sequence. Build the product. Build a marketing website. Run ads. Hire sales development representatives. Build a sales team. Midjourney skipped steps two through five.</p>
+<p>Instead of building a standalone application, Holz embedded Midjourney inside Discord, a platform that already had 175 million active users when Midjourney launched. The interface was a single command. Type words, get images. No landing page to visit. No account to create. No new software to learn.</p>
+<p>The structural consequence is easy to miss. By choosing Discord as the distribution surface, Midjourney eliminated the need for an acquisition funnel, a conversion optimization team, a paid marketing budget, and all the coordination overhead that comes with those functions. Every function you do not need to hire for is a function whose coordination costs you never pay.</p>
+
+<h3>2. Paying from day one</h3>
+<p>Midjourney offered a 25-image free trial and removed free access entirely in March 2023. Every user pays. Pricing runs from $10 to $120 per month. This is heresy in SaaS orthodoxy, where free tiers and freemium funnels are treated as laws of nature.</p>
+<p>The organizational implication is the real story. A company that charges from day one does not need a monetization team, a pricing optimization function, or a convert-free-to-paid workflow. These things sound small individually. Together, they represent entire departments that Midjourney never built.</p>
+<p>Compare this with Stability AI, which raised over $100 million in venture capital, open-sourced its models, offered free access, and burned through cash while struggling to convert users. Free access creates users. Paying customers validate that you have built something worth paying for. These are not the same thing.</p>
+
+<h3>3. No managers</h3>
+<p>Midjourney's founding team was Holz plus eight engineers, one legal person, and one finance person. As revenue scaled from $200 million to $500 million, the organization did not add management layers. The same flat structure persisted.</p>
+<p>This pattern appears across AI-native companies. When AI agents handle task assignment, progress tracking, and status reporting, the coordination tax drops. The people who remain spend their time on judgment, not synchronization. The bottleneck shifts from "can we build this" to "do we trust each other's judgment."</p>
+
+<h3>4. Zero venture capital</h3>
+<p>Venture capital is organizational debt in financial form. It creates expectations: growth targets, hiring plans, board meetings, reporting cadences. Every dollar raised adds coordination overhead that must be managed. Midjourney avoided this entirely because it was profitable from month six, and it was profitable from month six because it never built the cost structure that makes startups unprofitable.</p>
+
+<h2>What broke</h2>
+<p>The model is not without tension. Headcount has grown from 11 to 107 as revenue scaled to $500 million. The question of whether flat organizations survive at 200, 500, or 1,000 people remains open. Discord as a single platform introduces concentration risk. Content moderation at the scale of 21 million users is a genuine operational challenge that no amount of AI mediation fully solves.</p>
+<p>But these are the right problems to have. They are problems created by growth, not problems created by organizational bloat. A company that has to figure out moderation at 21 million users is in a fundamentally different position from a company that has to figure out how to pay for its 600-person headcount.</p>
+
+<h2>Five lessons for founders</h2>
+<ol>
+<li><strong>Distribution is an organizational decision.</strong> Where you choose to distribute your product determines which departments you never need to build. Discord was not just a channel choice. It was a structural decision.</li>
+<li><strong>Charging from day one eliminates entire departments.</strong> Free tiers and freemium funnels create organizational complexity. When every user pays, you do not need the machinery to convert non-paying users.</li>
+<li><strong>Managers are a coordination tax.</strong> They exist because information does not flow naturally across an organization. When AI handles information flow, the tax drops.</li>
+<li><strong>Venture capital is organizational debt disguised as capital.</strong> Every dollar you raise creates coordination overhead. The most efficient companies are the ones that never take it.</li>
+<li><strong>What you choose not to build defines your efficiency.</strong> Midjourney's advantage is not its AI models. It is the departments, processes, and management layers that never existed in the first place.</li>
+</ol>
+
+<blockquote><p>The difference between a company doing $300K per employee and one doing $4.7M is not AI. It is architecture.</p></blockquote>
+
+<div class="references">
+<h3>References</h3>
+<p>Sacra. "Midjourney Revenue, Valuation & Funding." 2026.</p>
+<p>Baier, Paul. "AI-Native Firms Lead In Revenue Per Employee." Forbes, March 2026.</p>
+<p>Redpoint Ventures. "The AI-Native Startup Efficiency Gap." 2026.</p>
+<p>Contrary Research. "Midjourney: Company Profile." 2026.</p>
+<p>GetLatka. "Midjourney Revenue 2026." Self-reported data.</p>
+</div>
+
+<div class="cta-box"><h3>More case studies</h3><p>We profile AI-native companies every two weeks. Next: Cursor.</p><a href="/#subscribe" class="btn">Get the newsletter →</a></div>
+</article>
+<footer><div class="copy">Post AI Company © 2026 · São Paulo</div><div class="links"><a href="/">Home</a><a href="/#ecosystem">Ecosystem</a></div></footer>
+</body>
+</html>

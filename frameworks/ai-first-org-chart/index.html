@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI-First Org Chart: A Decision Graph for the Post-AI Era — Post AI Frameworks</title>
+<meta name="description" content="Replace the org chart with a decision graph. Three patterns for AI-native org design — Team of One, AI-Augmented Team, and Fully Autonomous Units — plus a 10-question audit for founders and executives.">
+<meta name="keywords" content="AI-first org chart, decision graph, AI-native org design, team of one, AI-augmented team, autonomous units, post-AI company, AI transformation, founder framework, executive playbook">
+<meta name="author" content="Post AI Company">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://postaicompany.com/frameworks/ai-first-org-chart">
+<meta property="og:title" content="AI-First Org Chart: A Decision Graph for the Post-AI Era">
+<meta property="og:description" content="Replace the org chart with a decision graph. Three patterns for AI-native org design, plus a 10-question audit.">
+<meta property="og:url" content="https://postaicompany.com/frameworks/ai-first-org-chart">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Post AI Company">
+<meta property="og:image" content="https://postaicompany.com/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AI-First Org Chart: A Decision Graph for the Post-AI Era">
+<meta name="twitter:description" content="Replace the org chart with a decision graph. Three patterns for AI-native org design.">
+<meta name="twitter:image" content="https://postaicompany.com/og-image.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"AI-First Org Chart: A Decision Graph for the Post-AI Era","description":"A proprietary framework from Post AI Company. Replace the traditional org chart with a decision graph. Three AI-native org patterns, real-world examples, and a 10-question diagnostic for founders and executives.","author":{"@type":"Organization","name":"Post AI Company"},"publisher":{"@type":"Organization","name":"Post AI Company"},"datePublished":"2026-06-05","mainEntityOfPage":"https://postaicompany.com/frameworks/ai-first-org-chart"}</script>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #fff; --text: #0d0d0d; --text-secondary: #555; --text-tertiary: #999;
+  --accent: #0066ff; --accent-soft: #e8f1ff; --accent-glow: rgba(0,102,255,.1);
+  --border: rgba(0,0,0,.07); --border-strong: rgba(0,0,0,.12);
+  --surface: #f8f8f8; --surface-hover: #f2f2f2;
+  --shadow-card: 0px 0px 0px 1px rgba(0,0,0,.06), 0px 2px 6px rgba(0,0,0,.04);
+  --shadow-card-hover: 0px 0px 0px 1px rgba(0,0,0,.08), 0px 8px 24px rgba(0,0,0,.06);
+  --radius: 10px;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Geist', system-ui, -apple-system, sans-serif; color: var(--text); background: var(--bg); -webkit-font-smoothing: antialiased; }
+
+/* Nav */
+nav { position:fixed; top:0; left:0; right:0; z-index:100; background:rgba(255,255,255,.85); backdrop-filter:blur(16px); -webkit-backdrop-filter:blur(16px); box-shadow:0 0 0 1px var(--border); }
+nav .inner { max-width:1200px; margin:0 auto; padding:14px 24px; display:flex; align-items:center; justify-content:space-between; }
+.logo-group { display:flex; align-items:center; gap:10px; text-decoration:none; color:var(--text); }
+.logo-dot { width:10px; height:10px; border-radius:50%; background:var(--accent); box-shadow:0 0 16px var(--accent),0 0 4px var(--accent); animation:pulse 2s ease-in-out infinite; }
+@keyframes pulse { 0%,100% { box-shadow:0 0 12px var(--accent),0 0 4px var(--accent); } 50% { box-shadow:0 0 24px var(--accent),0 0 8px var(--accent); } }
+.logo-text { font-size:18px; font-weight:600; letter-spacing:-.6px; }
+.nav-links { display:flex; gap:24px; }
+.nav-links a { font-size:14px; font-weight:500; color:var(--text-secondary); text-decoration:none; transition:color .15s; }
+.nav-links a:hover { color:var(--text); }
+
+/* Article */
+article { max-width:900px; margin:0 auto; padding:160px 24px 80px; }
+.back-link { font-family:'Geist Mono',monospace; font-size:13px; color:var(--text-tertiary); text-decoration:none; display:inline-block; margin-bottom:40px; }
+.back-link:hover { color:var(--text); }
+.fw-badge { display:inline-flex; align-items:center; gap:8px; background:var(--accent-soft); color:var(--accent); padding:5px 14px; border-radius:100px; font-family:'Geist Mono',monospace; font-size:12px; font-weight:500; letter-spacing:.5px; margin-bottom:24px; }
+.fw-badge .dot { width:5px; height:5px; border-radius:50%; background:var(--accent); }
+article h1 { font-size:clamp(32px,5.5vw,48px); font-weight:700; letter-spacing:-1.8px; line-height:1.06; margin-bottom:12px; }
+article .subtitle { font-size:19px; color:var(--text-secondary); line-height:1.55; margin-bottom:8px; }
+article .byline { font-family:'Geist Mono',monospace; font-size:13px; color:var(--text-tertiary); margin-bottom:48px; }
+
+/* Section headings */
+article h2 { font-size:26px; font-weight:600; letter-spacing:-.52px; margin-top:72px; margin-bottom:16px; padding-top:28px; border-top:1px solid var(--border); }
+article h3 { font-size:20px; font-weight:600; letter-spacing:-.4px; margin-top:40px; margin-bottom:10px; }
+article p { font-size:17px; color:var(--text-secondary); line-height:1.7; margin-bottom:20px; }
+article p strong { color:var(--text); }
+
+/* Diagram */
+.diagram-wrap { background:var(--surface); border-radius:var(--radius); padding:48px 32px; margin:32px 0; overflow-x:auto; }
+.diagram-wrap .diagram-label { font-family:'Geist Mono',monospace; font-size:11px; color:var(--text-tertiary); text-transform:uppercase; letter-spacing:.5px; margin-bottom:24px; text-align:center; }
+.diagram-wrap svg { display:block; margin:0 auto; max-width:100%; }
+.diagram-caption { text-align:center; font-size:14px; color:var(--text-tertiary); margin-top:20px; line-height:1.5; }
+
+/* Pattern cards */
+.patterns-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(270px,1fr)); gap:24px; margin:32px 0; }
+.pattern-card { background:var(--bg); border-radius:var(--radius); padding:40px 32px; box-shadow:var(--shadow-card); transition:all .2s; position:relative; }
+.pattern-card:hover { box-shadow:var(--shadow-card-hover); transform:translateY(-2px); }
+.pattern-card.p1 { border-top:3px solid var(--accent); }
+.pattern-card.p2 { border-top:3px solid var(--text); }
+.pattern-card.p3 { border-top:3px solid var(--text-secondary); }
+.pattern-num { font-family:'Geist Mono',monospace; font-size:12px; color:var(--accent); font-weight:500; letter-spacing:.5px; margin-bottom:14px; }
+.pattern-card h3 { font-size:20px; font-weight:600; letter-spacing:-.4px; margin-bottom:6px; margin-top:0; }
+.pattern-card .size-tag { font-family:'Geist Mono',monospace; font-size:12px; color:var(--text-tertiary); margin-bottom:16px; }
+.pattern-card .flow { font-size:14px; color:var(--text-secondary); line-height:1.6; margin-bottom:20px; }
+.pattern-card .flow strong { color:var(--text); }
+.pattern-card .best-for { font-family:'Geist Mono',monospace; font-size:11px; color:var(--accent); text-transform:uppercase; letter-spacing:.5px; background:var(--accent-soft); padding:6px 14px; border-radius:100px; display:inline-block; }
+
+/* Checklist */
+.checklist { margin:32px 0; counter-reset:q; }
+.checklist-item { display:flex; gap:16px; align-items:flex-start; padding:20px 0; border-bottom:1px solid var(--border); }
+.checklist-item:last-child { border-bottom:none; }
+.checklist-num { width:36px; height:36px; border-radius:50%; background:var(--surface); display:flex; align-items:center; justify-content:center; font-family:'Geist Mono',monospace; font-size:14px; font-weight:500; color:var(--accent); flex-shrink:0; margin-top:2px; }
+.checklist-item.checked .checklist-num { background:var(--accent); color:#fff; }
+.checklist-q { font-size:16px; color:var(--text); line-height:1.5; font-weight:500; }
+.checklist-hint { font-size:13px; color:var(--text-tertiary); margin-top:4px; line-height:1.4; }
+
+/* Score */
+.score-box { background:var(--accent-soft); border-radius:var(--radius); padding:36px; margin:40px 0; text-align:center; }
+.score-box h4 { font-family:'Geist Mono',monospace; font-size:12px; color:var(--accent); text-transform:uppercase; letter-spacing:.5px; margin-bottom:14px; }
+.score-box p { font-size:16px; color:var(--text); margin-bottom:0; }
+.score-box p strong { color:var(--accent); }
+
+/* Example cards */
+.examples-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:20px; margin:32px 0; }
+.example-card { background:var(--bg); border-radius:var(--radius); padding:28px; box-shadow:var(--shadow-card); border-left:3px solid var(--accent); }
+.example-card .company-name { font-size:16px; font-weight:600; letter-spacing:-.32px; margin-bottom:4px; }
+.example-card .pattern-ref { font-family:'Geist Mono',monospace; font-size:11px; color:var(--accent); text-transform:uppercase; letter-spacing:.5px; margin-bottom:12px; }
+.example-card p { font-size:14px; color:var(--text-secondary); line-height:1.6; margin-bottom:0; }
+.example-card .stat { display:inline-block; font-family:'Geist Mono',monospace; font-size:13px; color:var(--text); background:var(--surface); padding:4px 10px; border-radius:6px; margin-top:12px; }
+
+/* Blockquote */
+article blockquote { border-left:3px solid var(--accent); padding:16px 24px; margin:32px 0; background:var(--surface); border-radius:0 var(--radius) var(--radius) 0; }
+article blockquote p { font-size:18px; font-style:italic; color:var(--text); margin-bottom:0; }
+
+/* Print helper */
+.print-cta { background:var(--text); color:#fff; border-radius:var(--radius); padding:40px 48px; margin:48px 0; display:flex; align-items:center; gap:40px; }
+.print-cta .print-text { flex:1; }
+.print-cta h3 { font-size:22px; font-weight:600; color:#fff; margin-top:0; margin-bottom:6px; }
+.print-cta p { font-size:15px; color:rgba(255,255,255,.7); line-height:1.5; margin-bottom:0; }
+.print-cta .print-icons { display:flex; gap:16px; }
+.print-icon { width:48px; height:48px; border-radius:12px; background:rgba(255,255,255,.1); display:flex; align-items:center; justify-content:center; font-size:22px; }
+
+/* Footer */
+footer { max-width:1100px; margin:0 auto; padding:48px 24px; display:flex; justify-content:space-between; align-items:center; border-top:1px solid var(--border); }
+footer .copy { font-size:13px; color:var(--text-tertiary); }
+footer .links { display:flex; gap:20px; }
+footer .links a { font-size:13px; color:var(--text-tertiary); text-decoration:none; }
+footer .links a:hover { color:var(--text); }
+
+/* Responsive */
+@media(max-width:700px) {
+  article { padding:130px 20px 60px; }
+  article h1 { font-size:30px; letter-spacing:-.9px; }
+  .patterns-grid, .examples-grid { grid-template-columns:1fr; }
+  .diagram-wrap { padding:24px 16px; }
+  .print-cta { flex-direction:column; text-align:center; padding:32px 24px; }
+}
+
+/* Print styles */
+@media print {
+  nav, footer, .back-link, .print-cta { display:none !important; }
+  article { padding:40px 0; max-width:100%; }
+  body { font-size:13px; }
+  .pattern-card, .example-card { break-inside:avoid; box-shadow:none; border:1px solid #ddd; }
+  .diagram-wrap { background:#f9f9f9; break-inside:avoid; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="inner">
+    <a href="/" class="logo-group"><div class="logo-dot"></div><span class="logo-text">Post AI Company</span></a>
+    <div class="nav-links">
+      <a href="/#ecosystem">Ecosystem</a>
+      <a href="/#data">Data</a>
+      <a href="/#cases">Cases</a>
+    </div>
+  </div>
+</nav>
+
+<article>
+  <a href="/" class="back-link">← Back to Post AI Company</a>
+  <div class="fw-badge"><span class="dot"></span>Post AI Framework 001</div>
+
+  <h1>The AI-First Org Chart</h1>
+  <p class="subtitle">A decision graph for the post-AI era. Replace your org chart with a map of who decides what — and where AI fits in.</p>
+  <div class="byline">Post AI Company · June 2026 · Proprietary framework</div>
+
+  <!-- ═══════ THE DECISION GRAPH ═══════ -->
+  <h2>1. The Decision Graph</h2>
+  <p>The traditional org chart shows <strong>who reports to whom</strong>. It tells you about hierarchy — not about how work actually gets decided and done. In a post-AI organization, what matters is <strong>who decides what, with what AI input, and with what level of autonomy</strong>.</p>
+  <p>A decision graph maps the flow: <strong>data and context feed AI agents, which surface options and recommendations. Those flow to decision nodes — some handled by humans, some delegated to agents, some fully autonomous. Decisions then flow to execution, with feedback loops that improve the system.</strong></p>
+
+  <div class="diagram-wrap">
+    <div class="diagram-label">Decision Graph — Post AI Company Framework</div>
+    <svg viewBox="0 0 800 520" xmlns="http://www.w3.org/2000/svg" style="font-family:'Geist',sans-serif;">
+      <defs>
+        <marker id="arrowBlue" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#0066ff"/></marker>
+        <marker id="arrowGray" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#999"/></marker>
+        <marker id="arrowDark" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#0d0d0d"/></marker>
+        <linearGradient id="gradInput" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#e8f1ff"/><stop offset="100%" stop-color="#f0f6ff"/></linearGradient>
+        <linearGradient id="gradAgent" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0066ff"/><stop offset="100%" stop-color="#0052cc"/></linearGradient>
+        <linearGradient id="gradDecision" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0d0d0d"/><stop offset="100%" stop-color="#222"/></linearGradient>
+        <linearGradient id="gradExec" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#f8f8f8"/><stop offset="100%" stop-color="#eee"/></linearGradient>
+        <filter id="shadow1"><feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.08"/></filter>
+      </defs>
+
+      <!-- Zone labels -->
+      <text x="130" y="28" font-size="13" font-weight="600" fill="#999" font-family="'Geist Mono',monospace" letter-spacing="1" text-anchor="middle">CONTEXT &amp; DATA</text>
+      <text x="400" y="28" font-size="13" font-weight="600" fill="#999" font-family="'Geist Mono',monospace" letter-spacing="1" text-anchor="middle">AI PROCESSING</text>
+      <text x="640" y="28" font-size="13" font-weight="600" fill="#999" font-family="'Geist Mono',monospace" letter-spacing="1" text-anchor="middle">DECISION NODES</text>
+
+      <!-- Zone dividers -->
+      <line x1="250" y1="40" x2="250" y2="490" stroke="rgba(0,0,0,0.05)" stroke-dasharray="4 6"/>
+      <line x1="530" y1="40" x2="530" y2="490" stroke="rgba(0,0,0,0.05)" stroke-dasharray="4 6"/>
+
+      <!-- INPUTS -->
+      <rect x="30" y="60" width="170" height="48" rx="8" fill="url(#gradInput)" stroke="rgba(0,0,0,.06)" filter="url(#shadow1)"/>
+      <text x="115" y="80" font-size="12" fill="#999" font-family="'Geist Mono',monospace" text-anchor="middle">Market Data</text>
+      <text x="115" y="96" font-size="13" font-weight="500" fill="var(--text)" text-anchor="middle">Signals, trends, competitors</text>
+
+      <rect x="30" y="128" width="170" height="48" rx="8" fill="url(#gradInput)" stroke="rgba(0,0,0,.06)" filter="url(#shadow1)"/>
+      <text x="115" y="148" font-size="12" fill="#999" font-family="'Geist Mono',monospace" text-anchor="middle">Internal Data</text>
+      <text x="115" y="164" font-size="13" font-weight="500" fill="var(--text)" text-anchor="middle">Metrics, logs, user feedback</text>
+
+      <rect x="30" y="196" width="170" height="48" rx="8" fill="url(#gradInput)" stroke="rgba(0,0,0,.06)" filter="url(#shadow1)"/>
+      <text x="115" y="216" font-size="12" fill="#999" font-family="'Geist Mono',monospace" text-anchor="middle">Stakeholder Input</text>
+      <text x="115" y="232" font-size="13" font-weight="500" fill="var(--text)" text-anchor="middle">Goals, constraints, intent</text>
+
+      <!-- Arrows Input → AI -->
+      <line x1="200" y1="84" x2="275" y2="110" stroke="#999" stroke-width="1.5" marker-end="url(#arrowGray)"/>
+      <line x1="200" y1="152" x2="275" y2="152" stroke="#999" stroke-width="1.5" marker-end="url(#arrowGray)"/>
+      <line x1="200" y1="220" x2="275" y2="194" stroke="#999" stroke-width="1.5" marker-end="url(#arrowGray)"/>
+
+      <!-- AI AGENTS BOX -->
+      <rect x="280" y="82" width="220" height="170" rx="12" fill="url(#gradAgent)" filter="url(#shadow1)" opacity="0.95"/>
+      <text x="390" y="118" font-size="14" font-weight="600" fill="#fff" text-anchor="middle" font-family="'Geist Mono',monospace" letter-spacing="1">AI AGENTS</text>
+      <line x1="310" y1="128" x2="470" y2="128" stroke="rgba(255,255,255,0.2)"/>
+      <text x="390" y="154" font-size="12" fill="rgba(255,255,255,0.75)" text-anchor="middle">Analyze · Synthesize</text>
+      <text x="390" y="174" font-size="12" fill="rgba(255,255,255,0.75)" text-anchor="middle">Generate options</text>
+      <text x="390" y="194" font-size="12" fill="rgba(255,255,255,0.75)" text-anchor="middle">Score &amp; rank</text>
+      <text x="390" y="214" font-size="12" fill="rgba(255,255,255,0.75)" text-anchor="middle">Surface risks</text>
+      <text x="390" y="234" font-size="12" fill="rgba(255,255,255,0.75)" text-anchor="middle">Recommend</text>
+
+      <!-- Arrows AI → Decisions -->
+      <line x1="500" y1="115" x2="555" y2="115" stroke="#0066ff" stroke-width="2" marker-end="url(#arrowBlue)"/>
+      <line x1="500" y1="152" x2="555" y2="152" stroke="#0066ff" stroke-width="2" marker-end="url(#arrowBlue)"/>
+      <line x1="500" y1="190" x2="555" y2="190" stroke="#0066ff" stroke-width="2" marker-end="url(#arrowBlue)"/>
+      <line x1="500" y1="225" x2="555" y2="225" stroke="#0066ff" stroke-width="2" marker-end="url(#arrowBlue)"/>
+
+      <!-- DECISION NODES -->
+      <!-- Strategic (Human) -->
+      <rect x="560" y="72" width="200" height="62" rx="10" fill="url(#gradDecision)" filter="url(#shadow1)"/>
+      <text x="660" y="95" font-size="10" fill="rgba(255,255,255,0.5)" font-family="'Geist Mono',monospace" text-anchor="middle" letter-spacing="1">STRATEGIC</text>
+      <text x="660" y="115" font-size="14" font-weight="600" fill="#fff" text-anchor="middle">Human Decision</text>
+      <text x="660" y="128" font-size="10" fill="rgba(255,255,255,0.5)" text-anchor="middle">AI-prepared options</text>
+
+      <!-- Tactical (Augmented) -->
+      <rect x="560" y="152" width="200" height="62" rx="10" fill="#fff" stroke="rgba(0,0,0,.12)" filter="url(#shadow1)"/>
+      <text x="660" y="175" font-size="10" fill="#999" font-family="'Geist Mono',monospace" text-anchor="middle" letter-spacing="1">TACTICAL</text>
+      <text x="660" y="195" font-size="14" font-weight="600" fill="var(--text)" text-anchor="middle">Agent + Human Review</text>
+      <text x="660" y="208" font-size="10" fill="#999" text-anchor="middle">Agent decides, human confirms</text>
+
+      <!-- Operational (Autonomous) -->
+      <rect x="560" y="232" width="200" height="62" rx="10" fill="#fff" stroke="rgba(0,0,0,.12)" filter="url(#shadow1)"/>
+      <text x="660" y="255" font-size="10" fill="#999" font-family="'Geist Mono',monospace" text-anchor="middle" letter-spacing="1">OPERATIONAL</text>
+      <text x="660" y="275" font-size="14" font-weight="600" fill="var(--text)" text-anchor="middle">Autonomous Agent</text>
+      <text x="660" y="288" font-size="10" fill="#999" text-anchor="middle">Agent executes within guardrails</text>
+
+      <!-- Decision → Execution arrows -->
+      <line x1="760" y1="103" x2="800" y2="103" stroke="#0d0d0d" stroke-width="1.5" marker-end="url(#arrowDark)"/>
+      <line x1="760" y1="183" x2="800" y2="183" stroke="#555" stroke-width="1.5" marker-end="url(#arrowGray)"/>
+      <line x1="760" y1="263" x2="800" y2="263" stroke="#555" stroke-width="1.5" marker-end="url(#arrowGray)"/>
+
+      <!-- FEEDBACK LOOP (bottom) -->
+      <rect x="100" y="370" width="600" height="50" rx="10" fill="url(#gradExec)" stroke="rgba(0,0,0,.08)" filter="url(#shadow1)"/>
+      <text x="400" y="392" font-size="12" fill="#999" font-family="'Geist Mono',monospace" text-anchor="middle" letter-spacing="1">EXECUTION &amp; FEEDBACK LOOP</text>
+      <text x="400" y="410" font-size="13" font-weight="500" fill="var(--text)" text-anchor="middle">Outcomes flow back into data → AI agents learn → decisions improve</text>
+
+      <!-- Feedback arrows (curved) -->
+      <path d="M700,420 Q700,470 400,470 Q100,470 100,420" stroke="#0066ff" stroke-width="1.5" fill="none" stroke-dasharray="5 4" marker-end="url(#arrowBlue)" opacity="0.5"/>
+      <path d="M100,420 Q100,470 400,470 Q700,470 700,420" stroke="#999" stroke-width="1.5" fill="none" stroke-dasharray="5 4" marker-end="url(#arrowGray)" opacity="0.3"/>
+
+      <!-- Execution → Decision feedback (upward) -->
+      <path d="M700,370 L700,310 Q700,300 710,300 L760,300" stroke="#999" stroke-width="1" fill="none" stroke-dasharray="3 4" marker-end="url(#arrowGray)" opacity="0.4"/>
+    </svg>
+    <div class="diagram-caption">The decision graph replaces hierarchy with flow. Decisions are categorized by scope (strategic, tactical, operational) and routed to the appropriate decision layer — human, augmented, or autonomous. Every outcome feeds back into the AI layer, making the system compound over time.</div>
+  </div>
+
+  <!-- ═══════ THREE PATTERNS ═══════ -->
+  <h2>2. Three Patterns for the AI-First Organization</h2>
+  <p>Not every company needs the same structure. The right pattern depends on your stage, team size, and ambition. These three patterns are not maturity stages — they are <strong>design choices</strong>. A $100M company can operate as a Team of One if the product and AI enable it. A five-person startup can operate as Fully Autonomous Units if the architecture supports it.</p>
+
+  <div class="patterns-grid">
+
+    <!-- Pattern 1 -->
+    <div class="pattern-card p1">
+      <div class="pattern-num">Pattern 1</div>
+      <h3>Team of One</h3>
+      <div class="size-tag">1 founder + AI agents</div>
+      <div class="flow">
+        All decisions pass through the <strong>founder</strong>. AI agents prepare every option — research, analysis, drafts, code, designs — but the founder makes every call. This is the <strong>highest-leverage pattern</strong> for pre-product and early-stage companies.
+      </div>
+      <div class="flow">
+        The founder's time shifts from <strong>doing</strong> to <strong>deciding</strong>. AI handles synthesis; the founder handles judgment. Speed comes from eliminating coordination overhead, not from parallelizing work.
+      </div>
+      <span class="best-for">Best for: pre-PMF, solo founders, R&amp;D phases</span>
+    </div>
+
+    <!-- Pattern 2 -->
+    <div class="pattern-card p2">
+      <div class="pattern-num">Pattern 2</div>
+      <h3>AI-Augmented Team</h3>
+      <div class="size-tag">3–10 people + AI agents</div>
+      <div class="flow">
+        <strong>Tactical decisions</strong> — sprint planning, code reviews, content drafts, customer responses — are delegated to AI agents with human review. <strong>Strategic decisions</strong> — product direction, pricing, hiring, partnerships — remain with the humans.
+      </div>
+      <div class="flow">
+        Each team member operates with a <strong>personal AI swarm</strong>: agents that handle research, drafting, testing, and monitoring. The team's role shifts from execution to <strong>direction-setting and quality control</strong>.
+      </div>
+      <span class="best-for">Best for: seed to Series A, teams shipping product</span>
+    </div>
+
+    <!-- Pattern 3 -->
+    <div class="pattern-card p3">
+      <div class="pattern-num">Pattern 3</div>
+      <h3>Fully Autonomous Units</h3>
+      <div class="size-tag">5–20 people per unit + autonomous AI agents</div>
+      <div class="flow">
+        AI agents <strong>execute autonomously</strong> within defined guardrails — deploying code, running campaigns, optimizing spend, handling support. Humans make <strong>judgment calls</strong> — edge cases, ethical decisions, strategic pivots, creative direction.
+      </div>
+      <div class="flow">
+        The org becomes a collection of <strong>autonomous pods</strong>, each with its own agent swarm. Coordination between pods is also agent-mediated. Human work concentrates on the <strong>top 5% of decisions that require context, taste, or ethical judgment</strong>.
+      </div>
+      <span class="best-for">Best for: scale-ups, AI-native companies at $10M+</span>
+    </div>
+  </div>
+
+  <!-- Transition guidance -->
+  <blockquote>
+    <p>Patterns are not stages. A company can stay in Team of One at $50M ARR if AI leverage keeps compounding. The question is not "when do we move to the next pattern?" but "which pattern unlocks the most decision quality per unit of human attention?"</p>
+  </blockquote>
+
+  <!-- ═══════ CHECKLIST ═══════ -->
+  <h2>3. The AI-First Audit</h2>
+  <p>Ten questions to assess whether your organization's decision architecture is AI-first or pre-AI. Answer honestly. No company gets 10 out of 10 — the score is less important than the <strong>gaps it reveals</strong>.</p>
+
+  <div class="checklist">
+    <div class="checklist-item">
+      <div class="checklist-num">1</div>
+      <div>
+        <div class="checklist-q">Does your org chart show who decides what — or only who reports to whom?</div>
+        <div class="checklist-hint">If a new hire can't identify the decision owner for a given category within 30 seconds, your org chart is pre-AI.</div>
+      </div>
+    </div>
+
+    <div class="checklist-item">
+      <div class="checklist-num">2</div>
+      <div>
+        <div class="checklist-q">Are AI agents preparing options before any significant decision reaches a human?</div>
+        <div class="checklist-hint">If humans are doing first-pass research, drafting, or analysis that an AI could do, multiply that by every decision per week. That's your waste.</div>
+      </div>
+    </div>
+
+    <div class="checklist-item">
+      <div class="checklist-num">3</div>
+      <div>
+        <div class="checklist-q">Can you name three tactical decisions that are fully delegated to agents today?</div>
+        <div class="checklist-hint">Code review, campaign optimization, support triage, scheduling, documentation — if the answer is zero, you are pre-AI.</div>
+      </div>
+    </div>
+
+    <div class="checklist-item">
+      <div class="checklist-num">4</div>
+      <div>
+        <div class="checklist-q">Do your agents have a feedback loop? Are outcomes measured and fed back into the AI layer?</div>
+        <div class="checklist-hint">An agent that doesn't learn from outcomes is just automation. AI-first means the system improves with every decision cycle.</div>
+      </div>
+    </div>
+
+    <div class="checklist-item">
+      <div class="checklist-num">5</div>
+      <div>
+        <div class="checklist-q">Is every team member equipped with their own AI agent swarm — or is AI a centralized tool used by a few?</div>
+        <div class="checklist-hint">Centralized AI (one "AI team") is pre-AI. Distributed AI (every person has agents) is AI-first.</div>
+      </div>
+    </div>
+
+    <div class="checklist-item">
+      <div class="checklist-num">6</div>
+      <div>
+        <div class="checklist-q">What percentage of your internal communication is human-to-human vs. human-to-agent-to-human?</div>
+        <div class="checklist-hint">Status updates, progress reports, meeting notes — if these are still typed by humans and read by humans, they should be agent-mediated.</div>
+      </div>
+    </div>
+
+    <div class="checklist-item">
+      <div class="checklist-num">7</div>
+      <div>
+        <div class="checklist-q">Do you have defined guardrails for autonomous agent action? Are they documented and tested?</div>
+        <div class="checklist-hint">Autonomy without guardrails is negligence. Guardrails without autonomy is pre-AI. You need both.</div>
+      </div>
+    </div>
+
+    <div class="checklist-item">
+      <div class="checklist-num">8</div>
+      <div>
+        <div class="checklist-q">Is your product and your operations the same loop — or are they separate systems?</div>
+        <div class="checklist-hint">In an AI-first company, the AI that builds the product is the same AI that runs the company. If they're separate, you're missing the compound effect.</div>
+      </div>
+    </div>
+
+    <div class="checklist-item">
+      <div class="checklist-num">9</div>
+      <div>
+        <div class="checklist-q">What is your revenue per employee — and is AI leverage increasing it quarter over quarter?</div>
+        <div class="checklist-hint">AI-native companies average $3.48M per employee. The extreme right tail (Cursor) hits $5M. If you're not tracking this, you're not measuring AI leverage.</div>
+      </div>
+    </div>
+
+    <div class="checklist-item">
+      <div class="checklist-num">10</div>
+      <div>
+        <div class="checklist-q">If you doubled your headcount tomorrow, would your decision quality improve — or would coordination overhead eat the gain?</div>
+        <div class="checklist-hint">In a pre-AI org, more people means more meetings, more approvals, slower decisions. In an AI-first org, more people means more agent swarms, more parallel execution, faster decisions.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="score-box">
+    <h4>How to score</h4>
+    <p>Count your "yes" answers. <strong>0–3:</strong> Pre-AI. Your decision architecture is built for a world where humans do the thinking. <strong>4–6:</strong> Transitioning. AI is present, but not yet structural. <strong>7–10:</strong> AI-first. Your org is designed around AI as infrastructure, not as a tool. The gap between your score and 10 is your roadmap.</p>
+  </div>
+
+  <!-- ═══════ REAL EXAMPLES ═══════ -->
+  <h2>4. Real Examples</h2>
+  <p>These are not hypotheticals. Each maps to one of the three patterns — and demonstrates what becomes possible when the org chart is replaced by a decision graph.</p>
+
+  <div class="examples-grid">
+    <div class="example-card">
+      <div class="company-name">Midjourney</div>
+      <div class="pattern-ref">Pattern 1 — Team of One</div>
+      <p>David Holz plus eight engineers. No sales team. No marketing department. No product managers. No VC. AI agents handle image generation at scale — millions of users, zero conventional growth infrastructure. Every strategic decision passes through Holz. AI handles everything below the strategy layer.</p>
+      <span class="stat">~$300M ARR · ~$33M per employee</span>
+    </div>
+
+    <div class="example-card">
+      <div class="company-name">Cursor</div>
+      <div class="pattern-ref">Pattern 2 — AI-Augmented Team</div>
+      <p>Roughly 20 people at $100M ARR. 40% of internal pull requests generated by their own cloud AI agents. Tactical engineering decisions are agent-driven with human review. Strategic product direction remains human. The product and the operations are the same recursive loop.</p>
+      <span class="stat">$100M ARR · $5M per employee · 40% AI PRs</span>
+    </div>
+
+    <div class="example-card">
+      <div class="company-name">Lovable</div>
+      <div class="pattern-ref">Pattern 3 — Fully Autonomous (Emerging)</div>
+      <p>The AI app builder that lets non-developers generate full applications. Internally, Lovable uses autonomous AI agents for deployment pipelines, QA testing, and community support. Human engineers focus on architecture decisions and creative direction. The autonomous pattern is emerging as their agent infrastructure matures.</p>
+      <span class="stat">Rapid growth · Autonomous ops emerging</span>
+    </div>
+  </div>
+
+  <!-- ═══════ CLOSING ═══════ -->
+  <h2>5. The Org Chart Is Dead</h2>
+  <p>The traditional org chart was designed for a world where <strong>information moved slowly and decisions required human coordination at every step</strong>. That world is gone. In a post-AI organization, what matters is not who reports to whom but <strong>who decides what, with what AI input, at what speed, and with what feedback</strong>.</p>
+  <p>Draw your decision graph. Answer the ten questions. Pick your pattern — not for where you are, but for where you want to be. The companies that win in the post-AI era won't be the ones with the best hierarchy. They'll be the ones with the <strong>best decision architecture</strong>.</p>
+
+  <blockquote>
+    <p>A great org chart tells you who has power. A great decision graph tells you who decides — and why the system gets smarter every time they do.</p>
+  </blockquote>
+
+  <!-- Print / Share CTA -->
+  <div class="print-cta">
+    <div class="print-text">
+      <h3>Print this framework</h3>
+      <p>Designed for your next offsite, board meeting, or strategy session. Print it, share it, debate it. This is IP you're meant to use.</p>
+    </div>
+    <div class="print-icons">
+      <div class="print-icon" title="Print">🖨️</div>
+      <div class="print-icon" title="Share">📤</div>
+      <div class="print-icon" title="Save">📥</div>
+    </div>
+  </div>
+
+  <p style="text-align:center;font-size:14px;color:var(--text-tertiary);margin-top:-20px;">
+    Post AI Framework 001 · Published June 2026 · <a href="/" style="color:var(--accent);text-decoration:none;">postaicompany.com</a>
+  </p>
+</article>
+
+<footer>
+  <div class="copy">Post AI Company &copy; 2026 · São Paulo</div>
+  <div class="links">
+    <a href="/">Home</a>
+    <a href="/radar">Radar</a>
+    <a href="/playbook">Playbook</a>
+    <a href="/#subscribe">Subscribe</a>
+  </div>
+</footer>
+
+</body>
+</html>
