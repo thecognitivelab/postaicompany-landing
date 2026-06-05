@@ -1,15 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>#001: 11 People, $200M. What Midjourney Knows That You Don't — Post AI Weekly</title>
-<meta name="description" content="Midjourney hit $200M with ~11 people. No sales team. No marketing. No VC. What David Holz decided not to build is the blueprint for the post-AI company.">
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>What Midjourney Knows About Organizational Design That You Don't — Post AI Weekly</title>
+<meta name="description" content="A deep analysis of Midjourney's organizational architecture: how 11 people reached $200M by treating company structure as a design surface, not a given.">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://postaicompany.com/editions/001-midjourney">
-<meta property="og:title" content="Post AI Weekly #001 — Midjourney: 11 People, $200M">
-<meta property="og:description" content="What Midjourney knows about post-AI org design that you don't.">
-<meta property="og:type" content="article">
+<meta property="og:title" content="What Midjourney Knows About Organizational Design That You Don't"><meta property="og:description" content="Midjourney reached $200M with 11 people. The lesson isn't about AI — it's about what they chose not to build."><meta property="og:type" content="article">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
@@ -19,94 +16,133 @@ body{font-family:'Geist',system-ui,-apple-system,sans-serif;color:var(--text);ba
 nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,.85);backdrop-filter:blur(16px);box-shadow:0 0 0 1px var(--border)}
 nav .inner{max-width:1200px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between}
 .logo-group{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--text)}
-.logo-dot{width:10px;height:10px;border-radius:50%;background:var(--accent);box-shadow:0 0 16px var(--accent);animation:pulse 2s ease-in-out infinite}
+.logo-dot{width:10px;height:10px;border-radius:50%;background:var(--accent);box-shadow:0 0 16px var(--accent);animation:pulse 2s infinite}
 @keyframes pulse{0%,100%{box-shadow:0 0 12px var(--accent)}50%{box-shadow:0 0 24px var(--accent)}}
-.logo-text{font-size:18px;font-weight:600;letter-spacing:-.6px}
-.nav-links{display:flex;gap:24px}.nav-links a{font-size:14px;font-weight:500;color:var(--text-secondary);text-decoration:none}.nav-links a:hover{color:var(--text)}
-
-article{max-width:780px;margin:0 auto;padding:160px 24px 80px}
-.back-link{font-family:'Geist Mono',monospace;font-size:13px;color:var(--text-tertiary);text-decoration:none;display:inline-block;margin-bottom:40px}.back-link:hover{color:var(--text)}
-.article-label{font-family:'Geist Mono',monospace;font-size:12px;font-weight:500;text-transform:uppercase;color:var(--accent);letter-spacing:.5px;margin-bottom:20px}
-article h1{font-size:clamp(32px,5vw,48px);font-weight:700;letter-spacing:-1.5px;line-height:1.08;margin-bottom:12px}
-.subtitle{font-size:19px;color:var(--text-secondary);line-height:1.55;margin-bottom:40px}
-.meta{font-family:'Geist Mono',monospace;font-size:13px;color:var(--text-tertiary);margin-bottom:48px}.meta span{margin-right:24px}
-article h2{font-size:22px;font-weight:600;letter-spacing:-.44px;margin-top:56px;margin-bottom:12px;padding-top:24px;border-top:1px solid var(--border)}
-article p{font-size:17px;color:var(--text-secondary);line-height:1.75;margin-bottom:20px}
-article blockquote{border-left:3px solid var(--accent);padding:12px 20px;margin:24px 0;background:var(--surface);border-radius:0 var(--radius) var(--radius) 0)}
-article blockquote p{font-size:16px;font-style:italic;color:var(--text);margin-bottom:0}
-article ul{margin:16px 0 16px 20px;font-size:16px;color:var(--text-secondary);line-height:1.8}
-article li{margin-bottom:8px}
-.signature{margin-top:48px;padding-top:24px;border-top:1px solid var(--border);font-size:14px;color:var(--text-tertiary);line-height:1.6}
-.cta-box{background:var(--text);color:#fff;border-radius:var(--radius);padding:40px;text-align:center;margin:48px 0}.cta-box h3{color:#fff;font-size:22px;margin-bottom:8px}.cta-box p{color:rgba(255,255,255,.7);margin-bottom:20px;font-size:15px}
+.logo-text{font-size:18px;font-weight:600;letter-spacing:-.6px}.nav-links{display:flex;gap:24px}.nav-links a{font-size:14px;font-weight:500;color:var(--text-secondary);text-decoration:none}.nav-links a:hover{color:var(--text)}
+article{max-width:720px;margin:0 auto;padding:160px 24px 100px}
+.back-link{font-family:'Geist Mono',monospace;font-size:13px;color:var(--text-tertiary);text-decoration:none;display:inline-block;margin-bottom:48px}.back-link:hover{color:var(--text)}
+.edition-tag{font-family:'Geist Mono',monospace;font-size:11px;color:var(--accent);text-transform:uppercase;letter-spacing:.5px;margin-bottom:24px}
+article h1{font-size:clamp(32px,5vw,44px);font-weight:700;letter-spacing:-1.2px;line-height:1.1;margin-bottom:16px}
+.subtitle{font-size:18px;color:var(--text-secondary);line-height:1.55;margin-bottom:40px}
+.meta{font-family:'Geist Mono',monospace;font-size:13px;color:var(--text-tertiary);margin-bottom:56px}.meta span{margin-right:24px}
+article h2{font-size:22px;font-weight:600;letter-spacing:-.3px;margin-top:48px;margin-bottom:14px}
+article p{font-size:17px;color:var(--text-secondary);line-height:1.75;margin-bottom:22px}
+article .highlight{background:var(--accent-soft);padding:20px 24px;border-radius:8px;margin:28px 0;font-size:16px;color:var(--text);line-height:1.65}
+article .highlight strong{color:var(--accent)}
+article em{font-style:italic;color:var(--text)}
+article a{color:var(--accent);text-decoration:underline;text-underline-offset:3px}article a:hover{text-decoration:none}
+.section-divider{text-align:center;margin:40px 0;color:var(--text-tertiary);font-size:20px;letter-spacing:4px}
+.references{margin-top:48px;padding-top:32px;border-top:1px solid var(--border)}
+.references h3{font-size:14px;font-family:'Geist Mono',monospace;color:var(--text-tertiary);text-transform:uppercase;letter-spacing:.5px;margin-bottom:16px}
+.references p{font-size:14px;color:var(--text-tertiary);line-height:1.7;margin-bottom:8px}
+.cta-box{background:var(--text);color:#fff;border-radius:var(--radius);padding:40px;text-align:center;margin:56px 0 0}.cta-box h3{color:#fff;font-size:22px;margin-bottom:8px}.cta-box p{color:rgba(255,255,255,.7);margin-bottom:20px;font-size:15px}
 .btn{display:inline-block;padding:12px 28px;background:var(--accent);color:#fff;border-radius:8px;font-size:15px;font-weight:600;text-decoration:none}.btn:hover{opacity:.9}
-
 footer{max-width:1100px;margin:0 auto;padding:48px 24px;display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--border)}
 footer .copy{font-size:13px;color:var(--text-tertiary)}footer .links{display:flex;gap:20px}footer .links a{font-size:13px;color:var(--text-tertiary);text-decoration:none}
-@media(max-width:600px){article{padding:120px 20px 60px}article h1{font-size:28px}}
+@media(max-width:600px){article{padding:120px 20px 80px}article h1{font-size:26px}}
 </style>
 </head>
 <body>
 <nav><div class="inner"><a href="/" class="logo-group"><div class="logo-dot"></div><span class="logo-text">Post AI Company</span></a><div class="nav-links"><a href="/#ecosystem">Ecosystem</a><a href="/#data">Data</a></div></div></nav>
-
 <article>
 <a href="/" class="back-link">← Back to Post AI Company</a>
-<div class="article-label">Post AI Weekly — Edition 001</div>
-<h1>11 People, $200M. Then 107 People, $500M. What Midjourney Knows That You Don't</h1>
-<p class="subtitle">Midjourney operates in an entirely different gravitational field from traditional SaaS companies. The difference isn't AI. It's architecture.</p>
-<div class="meta"><span>June 11, 2026</span><span>5 min read</span><span>Edition 001</span></div>
+<div class="edition-tag">Edition 001 · June 11, 2026</div>
+<h1>What Midjourney Knows About Organizational Design That You Don't</h1>
+<p class="subtitle">The company reached $200 million in revenue with somewhere between 11 and 40 people. No sales department. No marketing team. No venture capital. The lesson isn't about AI. It's about what they chose not to build.</p>
+<div class="meta"><span>12 min read</span><span>Fernanda Faria, Editor</span></div>
 
-<h2>THE SIGNAL</h2>
-<p>In 2023, Midjourney hit $200 million in annual recurring revenue. The company had no sales team. No marketing department. No free tier. No venture capital. And depending on which month you count, somewhere between 11 and 40 employees. By 2025, revenue reached $500 million with approximately 107 people — roughly $4.7 million per employee. The average publicly traded SaaS company generates about $300,000 per employee. Google does $1.8 million. Meta, $2.2 million. Midjourney doesn't just beat these numbers — it operates in an entirely different gravitational field.</p>
-<p>The question isn't "how did an AI company get efficient." The question is: what did David Holz decide <em>not</em> to build? No sales org. No marketing team. No free tier to "capture market share." No HR department scaling in lockstep with revenue. Every function that a traditional company treats as non-negotiable infrastructure, Midjourney treated as optional — and then proved it was.</p>
-<p>This edition is about those decisions. Because the difference between a company doing $300K per employee and one doing $4.7M isn't AI. It's architecture.</p>
+<p>In 2023, Midjourney generated an estimated $200 million in annual recurring revenue. The company had no sales organization. No marketing department. No free tier. No venture capital. And depending on which month you count, somewhere between 11 and 40 employees.</p>
 
-<h2>THE NUMBERS</h2>
-<ul>
-<li><strong>$18M — Revenue per employee at Midjourney's peak efficiency (2023).</strong> With an estimated 11 employees and $200M ARR, the ratio was unprecedented. By 2025, with 107 employees and $500M ARR, it settled to roughly $4.7M per employee — still 15x the SaaS average. (Sacra, Forbes Mar 2026, GetLatka)</li>
-<li><strong>$0 — Total venture capital raised since founding.</strong> Holz rejected outside investment from day one. When Meta partnered with Midjourney in August 2025 to license its "aesthetic technology," the $50M involved was non-dilutive — IP revenue, not equity. Compare: Stability AI raised over $100M in VC, burned through it with open-source models and aggressive hiring, reported quarterly revenue under $5M, and saw its CEO depart amid layoffs. (Sacra, Contrary Research, ProductGrowth)</li>
-<li><strong>$0 — Marketing spend. Ever.</strong> Midjourney launched as a Discord bot in a public channel. Every image generation was visible to every other user. The <code>/imagine</code> command produced 4 variations in ~30 seconds. Each result was simultaneously a product demo, an inspiration feed, and an ad — with zero media budget. The Discord server hit 1 million users in 3 months and now exceeds 21 million members. (Contrary Research, ProductGrowth)</li>
-<li><strong>40% — Block's workforce reduction in February 2026.</strong> Jack Dorsey cut 4,000 jobs from Block (Square, Cash App, Afterpay), citing "intelligence tools" as the driver. Stock surged 24% on the announcement. The same month, Meta began laying off 8,000 employees — 10% of its workforce — with Zuckerberg explicitly linking the cuts to AI-driven efficiency. According to Layoffs.fyi, nearly 80,000 tech workers have been impacted by AI-cited layoffs in 2026 so far. (WSJ, CNN, CNBC, Layoffs.fyi)</li>
-</ul>
+<p>By 2025, revenue had climbed to roughly $500 million with approximately 107 people. That is about $4.7 million per employee. For context, the average publicly traded SaaS company generates around $300,000 per employee. Google does $1.8 million. Meta does $2.2 million. Midjourney does not simply beat these numbers. It operates in a different gravitational field entirely.</p>
 
-<h2>THE SHIFT</h2>
-<p>Let's be precise about what "AI-native" actually means here. It's not about using AI tools. Every company uses AI tools now. The difference is that Midjourney treated organizational structure itself as a design surface — and made every decision in service of keeping headcount decoupled from revenue.</p>
+<p>Most people look at these figures and see an AI success story. They are not wrong. Midjourney's image generation technology is genuinely world-class. But technology alone does not explain a 15x efficiency gap over companies that also have access to AI. The real explanation is simpler and harder to replicate: David Holz, Midjourney's founder, treated organizational structure as a design problem rather than a given. Every department a traditional company considers non-negotiable infrastructure, Holz treated as optional. And then he proved it was.</p>
 
-<h3>Distribution before product</h3>
-<p>Holz didn't build a website and then try to attract users. He embedded Midjourney inside Discord, a platform that already had 175 million active users when Midjourney launched in 2022. The <code>/imagine</code> command didn't require anyone to visit a landing page, create an account, or learn a new interface. Users were already there. The social dynamics — watching strangers generate images in real time, wanting to try it yourself — were native to the platform, not engineered by a growth team. Contrast this with the standard SaaS playbook: build product → build marketing site → run ads → hire SDRs → build sales team. Midjourney skipped steps two through five.</p>
+<p>This essay is about those decisions. Not the technology behind Midjourney's image models, which has been covered extensively elsewhere. It is about what happens when you ask a question most founders never ask: which parts of this company do not actually need to exist?</p>
 
-<h3>Pay-to-play, from day one</h3>
-<p>Midjourney offered a 25-image trial, then removed free access entirely in March 2023. Every user pays. Pricing runs from $10/month to $120/month. This is heresy in SaaS orthodoxy, where free tiers and freemium funnels are treated as non-negotiable. But when your product delivers value that takes 30 seconds to demonstrate — type words, get images — you don't need to give it away. Midjourney reached profitability six months after public launch. Stability AI, which open-sourced its models and offered free access, burned cash and struggled to convert users.</p>
+<h2>The Distribution Decision</h2>
 
-<h3>No managers</h3>
-<p>Midjourney's founding team was Holz plus 8 engineers, 1 legal, and 1 finance person. The org chart hasn't grown management layers as revenue scaled from $200M to $500M. This isn't unique to Midjourney — it's a pattern. AI companies operate best with generalists, structures without hierarchy, and a "player-coach model" where leaders execute roughly half the time and guide the rest. The coordination burden that traditional companies solve by adding managers? In an AI-native company, tools and agents absorb much of it. The bottleneck shifts from "can we build this?" to "do we trust each other's judgment?"</p>
+<p>Most software companies follow a predictable sequence. Build the product. Build a marketing website. Run ads. Hire sales development representatives. Build a sales team. Midjourney skipped steps two through five.</p>
 
-<h3>The counterexample is everywhere</h3>
-<p>Block's 40% layoff, Meta's 8,000 cuts, Intuit's 17% reduction — these aren't AI companies getting lean. These are legacy companies discovering they're overbuilt. They hired for a model where revenue and headcount grew in lockstep, and now they're discovering that AI breaks that equation. The tragedy is that they're cutting from a position of reaction rather than design. Midjourney never had the fat to cut because Holz never added it.</p>
+<p>Instead of building a standalone application and trying to attract users to it, Holz embedded Midjourney inside Discord, a platform that already had 175 million active users when Midjourney launched in 2022. The interface was a single command: <code>/imagine</code>. Type words, get images. No landing page to visit. No account to create. No new software to learn.</p>
 
-<blockquote><p>If you were starting your company today, from scratch, which roles would you actually hire for? The answer is almost certainly a smaller number than your current headcount.</p></blockquote>
+<p>The structural consequence of this decision is easy to miss. By choosing Discord as the distribution surface, Midjourney eliminated the need for an acquisition funnel, a conversion optimization team, a paid marketing budget, and all the coordination overhead that comes with those functions. The community was already there. The social dynamics that drive adoption, watching strangers generate images in real time and wanting to try it yourself, were native to the platform. They were not engineered by a growth team. They did not need to be.</p>
 
-<h2>RADAR</h2>
-<ul>
-<li><strong>[Anthropic] 2026 Agentic Coding Trends Report</strong> — "The primary human role in building software is orchestrating AI agents." <a href="https://resources.anthropic.com/hubfs/2026%20Agentic%20Coding%20Trends%20Report.pdf" target="_blank">Read the report →</a></li>
-<li><strong>[WSJ] Block Lays Off 40% of Workforce in AI Remake</strong> — 4,000 jobs eliminated. Stock rose 24%. <a href="https://www.wsj.com/business/jack-dorseys-block-to-lay-off-4-000-employees-in-ai-remake-28f0d869" target="_blank">Read on WSJ →</a></li>
-<li><strong>[Forbes] AI-Native Firms Lead In Revenue Per Employee</strong> — Paul Baier's analysis. AI-native startups at $2M–$4M RPE vs. $300K for average SaaS. <a href="https://www.forbes.com/sites/paulbaier/2026/03/31/ai-native-firms-lead-in-revenue-per-employee/" target="_blank">Read on Forbes →</a></li>
-<li><strong>[CNBC] Meta Starts 8,000 Layoffs</strong> — 10% workforce reduction tied to AI productivity gains. <a href="https://www.cnbc.com/2026/05/18/metas-layoffs-starting-this-week-underscore-zuckerbergs-ai-reality-.html" target="_blank">Read on CNBC →</a></li>
-<li><strong>[Stanford SALT Lab] How Do AI Agents Actually Work?</strong> — New research on AI agent behavior vs. human workers. <a href="https://futureofwork.saltlab.stanford.edu/" target="_blank">Read the research →</a></li>
-</ul>
+<p>This is not a story about clever growth hacking. It is a story about organizational design disguised as a distribution decision. Every function you do not need to hire for is a function whose coordination costs you never pay.</p>
 
-<h2>ONE QUESTION</h2>
-<p>If you rebuilt your company tomorrow with Midjourney's constraint — no role that exists purely for coordination — how many people would you actually need?</p>
+<h2>The Pricing Decision</h2>
 
-<div class="signature">
-<em>Post AI Weekly is published every Wednesday. We document the birth of the post-AI company. Not the hype. The architecture.</em>
+<p>Midjourney offered a 25-image free trial and then removed free access entirely in March 2023. Every user pays. Pricing runs from $10 to $120 per month. This is, in the context of SaaS orthodoxy, heresy. Free tiers and freemium funnels are treated as laws of nature. You give the product away to capture market share, then monetize later.</p>
+
+<p>Holz ignored this logic. His reasoning appears to have been straightforward: if your product delivers value that takes 30 seconds to demonstrate, you do not need to give it away. The product itself is the acquisition. Midjourney reached profitability six months after public launch.</p>
+
+<p>Compare this with Stability AI, which raised over $100 million in venture capital, open-sourced its models, offered free access, and burned through cash while struggling to convert users. The contrast is instructive. Free access creates users. Paying customers validate that you have built something worth paying for. These are not the same thing, and confusing them is expensive.</p>
+
+<p>Again, the organizational implication is the real story. A company that charges from day one does not need a monetization team, a pricing optimization function, or a "convert free to paid" workflow. These things sound small individually. Together, they represent entire departments that Midjourney never built.</p>
+
+<h2>The Management Decision</h2>
+
+<p>Midjourney's founding team was Holz plus eight engineers, one legal person, and one finance person. As revenue scaled from $200 million to $500 million, the organization did not add management layers. The same flat structure persisted.</p>
+
+<p>This pattern appears across AI-native companies, not just Midjourney. Research from ByteIota on what they call "tiny teams" found that AI companies operate best with generalists, flat hierarchies, and a model where leaders execute roughly half the time and guide the rest. The coordination burden that traditional companies solve by adding managers gets absorbed by tools and AI agents. The bottleneck shifts from "can we build this" to "do we trust each other's judgment."</p>
+
+<p>This is not simply about being lean. It is about what kind of work coordination actually is. In a traditional company, coordination is a full-time job. Someone needs to assign tasks, track progress, resolve dependencies, report status. As the company grows, coordination becomes a management function. As management grows, it generates its own coordination needs. This is Parkinson's law expressed as organizational structure.</p>
+
+<p>AI breaks this cycle. When AI agents handle task assignment, progress tracking, and status reporting, the coordination tax drops. The people who remain spend their time on judgment, not synchronization. Midjourney's org chart is not missing managers. It simply never accumulated the coordination debt that makes managers necessary.</p>
+
+<h2>The Funding Decision</h2>
+
+<p>Midjourney has raised zero dollars in venture capital since founding. When Meta partnered with the company in August 2025 to license its "aesthetic technology," the reported $50 million was non-dilutive. It was intellectual property revenue, not equity.</p>
+
+<p>Venture capital is organizational debt in financial form. It creates expectations: growth targets, hiring plans, board meetings, reporting cadences. Every dollar raised adds coordination overhead that must be managed. Midjourney avoided this entirely. The company did not need external capital because it was profitable from month six, and it was profitable from month six because it never built the cost structure that makes startups unprofitable.</p>
+
+<p>The circular logic here is the point. Midjourney did not achieve efficiency by raising money and then optimizing. It achieved efficiency by never building the things that make companies inefficient, which meant it never needed the money that forces companies to build those things.</p>
+
+<h2>The Pattern</h2>
+
+<p>Midjourney is the extreme case, but it is not the only case. Cursor reached $100 million in annual recurring revenue with roughly 20 employees. That is $5 million per person. Lovable generates $400 million with 146 employees and no traditional sales organization. ElevenLabs crossed $500 million with about 50% of revenue coming from enterprise customers, proving the model scales beyond product-led growth into Fortune 500 procurement cycles.</p>
+
+<p>Our data at the Post AI Index shows that the top 10 AI-native startups average $3.48 million in revenue per employee with an average team size of 24 people. The top 10 traditional SaaS companies average $610,000 per employee with an average team size of 21,000. This is a 5.7x gap. It is not explained by sector, by age, or by access to technology. It is explained by architecture.</p>
+
+<div class="highlight">
+<strong>The central hypothesis:</strong> AI-native companies are not more efficient because they use AI tools. They are more efficient because they were designed from day zero around the assumption that intelligence is abundant and cheap. Traditional companies were designed around the opposite assumption. Adding AI tools to a traditional org chart is like adding electric motors to a steam-powered factory. The architecture limits the gains.
+</div>
+
+<h2>What This Means If You Are Building</h2>
+
+<p>For founders starting today, the implication is uncomfortable but clear. Every role you hire that exists because "that is how companies work" is a role Midjourney proved you can live without. The question is not which AI tools to adopt. It is which parts of the traditional company architecture you simply will not build.</p>
+
+<p>This is harder than it sounds. Investors will ask about your sales team. Candidates will ask about career progression and management tracks. Your own instincts will tell you that growth requires headcount. Resisting these pressures is not a one-time decision. It is a continuous one, made every time you consider adding a role that exists to coordinate other roles.</p>
+
+<p>For executives transforming existing companies, the pattern is equally clear but harder to execute. Block cut 4,000 jobs in February 2026, 40% of its workforce, and the stock surged 24%. Meta eliminated 8,000 positions, Intuit cut 3,000 while raising guidance. None of these companies were in crisis. All were profitable. All were growing. The market rewarded every single one.</p>
+
+<p>These are not layoffs in the traditional sense. They are architecture corrections. The companies are discovering they were built for an equation where revenue and headcount grew together, and that equation no longer holds. The tragedy, if there is one, is that they built the fat before cutting it. Midjourney never built it at all.</p>
+
+<h2>The Question</h2>
+
+<p>If you redesigned your company tomorrow with one constraint, no role that exists purely because "that is how companies work," how many people would you actually need? The answer is probably uncomfortable. But it is less uncomfortable than discovering the answer three years from now, when your competitor with one-tenth your headcount matches your revenue.</p>
+
+<div class="section-divider">···</div>
+
+<div class="references">
+<h3>References</h3>
+<p>Sacra. "Midjourney Revenue, Valuation & Funding." 2026.</p>
+<p>Baier, Paul. "AI-Native Firms Lead In Revenue Per Employee." Forbes, March 2026.</p>
+<p>Redpoint Ventures. "The AI-Native Startup Efficiency Gap." 2026.</p>
+<p>Lean AI Native Leaderboard. Henry Shi. 2026.</p>
+<p>ByteIota. "Tiny Teams: How AI Companies Operate Without Management Layers." 2025.</p>
+<p>Contrary Research. "Midjourney: Company Profile." 2026.</p>
+<p>ProductGrowth. "Midjourney's Discord-First Growth Strategy." 2025.</p>
+<p>GetLatka. "Midjourney Revenue 2026." Self-reported data.</p>
+<p>Wall Street Journal. "Jack Dorsey's Block to Lay Off 4,000 Employees in AI Remake." February 2026.</p>
+<p>CNBC. "Meta Starts 8,000 Layoffs, Underscoring Zuckerberg's AI Reality." May 2026.</p>
 </div>
 
 <div class="cta-box">
-<h3>Get Post AI Weekly</h3><p>Every Wednesday. Data, analysis, and provocations. 5 minutes.</p>
-<a href="/#subscribe" class="btn">Subscribe free →</a>
+<h3>Post AI Weekly</h3>
+<p>One deep analysis every Wednesday on the companies, patterns, and decisions that define the post-AI era. No hype. No listicles. Just the architecture.</p>
+<a href="/#subscribe" class="btn">Subscribe free</a>
 </div>
 </article>
-
-<footer><div class="copy">Post AI Company © 2026 · São Paulo</div><div class="links"><a href="/">Home</a><a href="/playbook">Playbook</a><a href="/#subscribe">Subscribe</a></div></footer>
+<footer><div class="copy">Post AI Company © 2026 · São Paulo, Brazil</div><div class="links"><a href="/">Home</a><a href="/editions/002-block-layoffs">Edition #002 →</a></div></footer>
 </body>
 </html>
