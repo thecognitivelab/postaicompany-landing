@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Founder's Playbook: Building an AI-Native Startup — Post AI Company</title>
+  <meta name="description" content="Anthropic's 2026 playbook remaps the startup lifecycle for the AI era. We break down the four stages — Idea, MVP, Launch, Scale — and what changes when AI is infrastructure, not just a tool.">
+  <meta name="keywords" content="founder playbook, AI-native startup, anthropic, claude code, startup lifecycle, lean startup, AI founder, post AI company">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://postaicompany.com/playbook">
+  <meta property="og:title" content="The Founder's Playbook: Building an AI-Native Startup">
+  <meta property="og:description" content="Anthropic's 2026 playbook remaps the startup lifecycle for the AI era. Idea, MVP, Launch, Scale — rebooted.">
+  <meta property="og:url" content="https://postaicompany.com/playbook">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://postaicompany.com/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="The Founder's Playbook: Building an AI-Native Startup">
+  <meta name="twitter:description" content="Anthropic's 2026 playbook remaps the startup lifecycle for the AI era.">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #ffffff; --text: #0d0d0d; --text-secondary: #555; --text-tertiary: #999;
+      --accent: #0066ff; --accent-soft: #e8f1ff; --border: rgba(0,0,0,0.07);
+      --border-strong: rgba(0,0,0,0.12); --surface: #f8f8f8; --radius: 10px;
+      --shadow-card: 0px 0px 0px 1px rgba(0,0,0,0.06), 0px 2px 6px rgba(0,0,0,0.04);
+    }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Geist', system-ui, -apple-system, sans-serif; color: var(--text); background: var(--bg); -webkit-font-smoothing: antialiased; }
+    nav {
+      position: fixed; top:0; left:0; right:0; z-index: 100;
+      background: rgba(255,255,255,0.85); backdrop-filter: blur(16px);
+      box-shadow: 0px 0px 0px 1px var(--border);
+    }
+    nav .inner { max-width: 1200px; margin:0 auto; padding: 14px 24px; display: flex; align-items: center; justify-content: space-between; }
+    .logo-group { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--text); }
+    .logo-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 16px var(--accent); animation: pulse 2s ease-in-out infinite; }
+    @keyframes pulse { 0%,100% { box-shadow: 0 0 12px var(--accent); } 50% { box-shadow: 0 0 24px var(--accent); } }
+    .logo-text { font-size: 18px; font-weight: 600; letter-spacing: -0.6px; }
+    .nav-links { display: flex; gap: 24px; }
+    .nav-links a { font-size:14px; font-weight:500; color:var(--text-secondary); text-decoration:none; }
+    .nav-links a:hover { color:var(--text); }
+
+    article { max-width: 780px; margin:0 auto; padding: 160px 24px 80px; }
+    .back-link { font-family: 'Geist Mono', monospace; font-size: 13px; color: var(--text-tertiary); text-decoration: none; display: inline-block; margin-bottom: 40px; }
+    .back-link:hover { color: var(--text); }
+    .article-label { font-family: 'Geist Mono', monospace; font-size: 12px; font-weight: 500; text-transform: uppercase; color: var(--accent); letter-spacing: 0.5px; margin-bottom: 20px; }
+    article h1 { font-size: clamp(36px, 6vw, 56px); font-weight: 700; letter-spacing: -2px; line-height: 1.06; margin-bottom: 16px; }
+    article .subtitle { font-size: 20px; color: var(--text-secondary); line-height: 1.55; margin-bottom: 40px; }
+    .meta { font-family: 'Geist Mono', monospace; font-size: 13px; color: var(--text-tertiary); margin-bottom: 48px; }
+    .meta span { margin-right: 24px; }
+    article h2 { font-size: 28px; font-weight: 600; letter-spacing: -0.84px; margin-top: 64px; margin-bottom: 16px; }
+    article h3 { font-size: 20px; font-weight: 600; letter-spacing: -0.4px; margin-top: 40px; margin-bottom: 12px; }
+    article p { font-size: 17px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 20px; }
+    article blockquote {
+      border-left: 3px solid var(--accent); padding: 16px 24px; margin: 32px 0;
+      background: var(--surface); border-radius: 0 var(--radius) var(--radius) 0;
+    }
+    article blockquote p { font-size: 18px; font-style: italic; color: var(--text); margin-bottom: 0; }
+    .stage-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px; margin: 32px 0; }
+    .stage-card {
+      background: var(--bg); border-radius: var(--radius); padding: 32px;
+      box-shadow: var(--shadow-card); border-top: 3px solid var(--accent);
+    }
+    .stage-card .num { font-family: 'Geist Mono', monospace; font-size: 13px; color: var(--accent); font-weight: 500; margin-bottom: 8px; }
+    .stage-card h4 { font-size: 20px; font-weight: 600; letter-spacing: -0.4px; margin-bottom: 6px; }
+    .stage-card .goal { font-size: 13px; color: var(--accent); font-weight: 500; margin-bottom: 12px; }
+    .stage-card p { font-size: 14px; }
+    .highlight-box {
+      background: var(--accent-soft); border-radius: var(--radius); padding: 32px; margin: 40px 0;
+    }
+    .highlight-box h3 { margin-top: 0; color: var(--accent); }
+    .highlight-box ul { margin: 0; padding-left: 20px; }
+    .highlight-box li { font-size: 15px; color: var(--text-secondary); line-height: 1.6; margin-bottom: 8px; }
+    .cta-box {
+      background: var(--text); color: #fff; border-radius: var(--radius); padding: 48px; text-align: center; margin: 64px 0 0;
+    }
+    .cta-box h3 { color: #fff; margin-top: 0; font-size: 24px; }
+    .cta-box p { color: rgba(255,255,255,0.7); margin-bottom: 28px; }
+    .btn {
+      display: inline-block; padding: 14px 32px; background: var(--accent); color: #fff;
+      border-radius: 8px; font-size: 16px; font-weight: 600; text-decoration: none;
+      transition: all 0.2s;
+    }
+    .btn:hover { opacity: 0.9; transform: translateY(-1px); }
+    .btn-outline {
+      display: inline-block; padding: 14px 32px; border: 1px solid rgba(255,255,255,0.3); color: #fff;
+      border-radius: 8px; font-size: 16px; font-weight: 500; text-decoration: none; margin-left: 12px;
+      transition: all 0.2s;
+    }
+    .btn-outline:hover { background: rgba(255,255,255,0.1); }
+
+    footer {
+      max-width: 1100px; margin:0 auto; padding: 48px 24px;
+      display: flex; justify-content: space-between; align-items: center;
+      border-top: 1px solid var(--border);
+    }
+    footer .copy { font-size: 13px; color: var(--text-tertiary); }
+    footer .links { display: flex; gap: 20px; }
+    footer .links a { font-size: 13px; color: var(--text-tertiary); text-decoration: none; }
+    footer .links a:hover { color: var(--text); }
+
+    @media (max-width: 600px) {
+      article { padding: 120px 20px 60px; }
+      article h1 { font-size: 32px; letter-spacing: -1px; }
+      .stage-grid { grid-template-columns: 1fr; }
+      .cta-box { padding: 32px 24px; }
+      .btn-outline { display: block; margin: 12px 0 0; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="inner">
+    <a href="/" class="logo-group"><div class="logo-dot"></div><span class="logo-text">Post AI Company</span></a>
+    <div class="nav-links">
+      <a href="/#thesis">Thesis</a>
+      <a href="/#data">Data</a>
+      <a href="/#formats">Formats</a>
+    </div>
+  </div>
+</nav>
+
+<article>
+  <a href="/" class="back-link">← Back to Post AI Company</a>
+  <div class="article-label">Analysis</div>
+  <h1>The Founder's Playbook: Building an AI-Native Startup</h1>
+  <p class="subtitle">Anthropic's 2026 guide remaps the entire startup lifecycle for founders who treat AI as infrastructure, not a feature. Here's what changes — and what doesn't.</p>
+  <div class="meta">
+    <span>June 2026</span><span>Anthropic</span><span>35 pages</span>
+  </div>
+
+  <h2>Why this matters</h2>
+  <p>Anthropic just published the most authoritative guide yet on what it actually means to build a startup when AI is the default infrastructure. Not a whitepaper about "the future of work." A field manual.</p>
+  <p>The core argument: the traditional startup growth arc — validate → raise → hire → build → raise again → grow → hire more → repeat — is obsolete. AI erases the assumption that each new phase requires a bigger team, a different skill set, and a fresh funding round.</p>
+  <p>For Post AI Company, this playbook validates our central thesis: the companies that win aren't the ones with the best AI models. They're the ones that reorganize around what AI makes possible.</p>
+
+  <blockquote>
+    <p>"AI has erased the expectation that each new phase in the startup lifecycle requires a bigger team, a different skill set, and a fresh funding round."</p>
+  </blockquote>
+
+  <h2>The four stages, rebooted</h2>
+  <p>The playbook remaps the startup journey into four stages. Each one looks radically different when AI is core infrastructure from day zero:</p>
+
+  <div class="stage-grid">
+    <div class="stage-card">
+      <div class="num">Stage 1</div>
+      <h4>Idea</h4>
+      <div class="goal">Goal: Problem-solution fit</div>
+      <p>The discipline of not building until evidence justifies it. AI makes it dangerously easy to skip validation — 42% of startups already failed because they built something nobody wanted. That number only climbs when building is effortless. Use AI for research, competitive analysis, and adversarial thinking. Don't use it to build yet.</p>
+    </div>
+    <div class="stage-card">
+      <div class="num">Stage 2</div>
+      <h4>MVP</h4>
+      <div class="goal">Goal: Working product in real users' hands</div>
+      <p>AI coding agents compress what used to take a team of engineers into work a founder can ship themselves. But speed creates risk: premature scaling and AI-generated complexity. The discipline is building only what users need to validate — not what AI enthusiastically volunteers to build.</p>
+    </div>
+    <div class="stage-card">
+      <div class="num">Stage 3</div>
+      <h4>Launch</h4>
+      <div class="goal">Goal: Real users, real data, real revenue</div>
+      <p>The stage where you build the operational systems that replace founder attention. Claude Cowork runs the recurring workflows; Claude Code remediates technical debt before it compounds. The founder shifts from doing everything to orchestrating the systems that do it.</p>
+    </div>
+    <div class="stage-card">
+      <div class="num">Stage 4</div>
+      <h4>Scale</h4>
+      <div class="goal">Goal: Systematic growth, enterprise-ready</div>
+      <p>The founder becomes a public-facing executive. AI builds the GTM engine, the compliance infrastructure, the support systems. The moat is accumulated depth: proprietary data, workflow lock-in, domain expertise encoded into the product. "Your test suite becomes a map of your moat."</p>
+    </div>
+  </div>
+
+  <h2>The numbers that prove the thesis</h2>
+  <p>The playbook is built on the same data we track at Post AI Company:</p>
+  <ul style="margin: 20px 0 20px 20px; font-size: 16px; color: var(--text-secondary); line-height: 1.8;">
+    <li><strong>42% of startups fail</strong> because they built something nobody wanted — and AI makes it easier to build without validating</li>
+    <li><strong>AI-native startups generate $2M–$4M per employee</strong> vs $300K for average public SaaS</li>
+    <li><strong>The "one-employee unicorn"</strong> is now a deliberate plan, not a scrappy underdog story</li>
+    <li><strong>Midjourney: 11 people, $200M.</strong> Cursor: 20 people, $100M ARR. The playbook uses these as proof, not outliers</li>
+  </ul>
+
+  <div class="highlight-box">
+    <h3>Key insight: The founder's job hasn't changed. The path has.</h3>
+    <p style="margin-bottom: 16px;">The playbook makes a crucial distinction: find a real problem, build something that solves it, scale it into a company that matters — this is still the job. What's changed is:</p>
+    <ul>
+      <li><strong>Validation cycles</strong> that took months now take afternoons</li>
+      <li><strong>A working prototype</strong> no longer requires a technical co-founder — it requires a clear problem and focused sessions with a coding agent</li>
+      <li><strong>Launch readiness</strong> compresses from a pre-launch scramble into a continuous workstream</li>
+      <li><strong>Operational weight</strong> that forced early hires into firefighting roles can increasingly be handed off to AI</li>
+      <li><strong>The founder</strong> shifts from individual contributor to orchestrator of agents</li>
+    </ul>
+  </div>
+
+  <h2>What's genuinely new here</h2>
+  <p>The "lean startup" isn't new. What's new is the <em>degree</em> — AI doesn't just make startups leaner, it makes them structurally different:</p>
+  <p><strong>1. The founding pool expands.</strong> Non-technical founders with domain expertise can now build production software. The most important qualification shifts from "can you code" to "do you understand a problem deeply enough that your solution is worth building?"</p>
+  <p><strong>2. Confirmation bias gets a research engine.</strong> AI will find evidence for any thesis you feed it. The antidote: use the same tool as a devil's advocate. The playbook recommends structured adversarial thinking at every stage.</p>
+  <p><strong>3. The moat is accumulated depth, not scale.</strong> Proprietary data, workflow lock-in, domain expertise encoded into the product. "A well-resourced competitor starting today couldn't replicate it in under two years."</p>
+  <p><strong>4. The exit condition at Scale is no longer a milestone — it's a threshold.</strong> The company is sustainable even as the founder stops running day-to-day operations. The metrics: systematic growth, enterprise-grade infrastructure, and a solid answer to "if a well-funded incumbent copied your product today, would your users stay?"</p>
+
+  <blockquote>
+    <p>"The bottlenecks are no longer what you can build, but what you choose to build."</p>
+  </blockquote>
+
+  <h2>How this connects to Post AI Company</h2>
+  <p>This playbook is required reading for our audience. It's the most concrete articulation yet of what we've been tracking: the post-AI company doesn't exist yet, but the blueprint is being drawn. Anthropic's playbook is that blueprint, written by the company building the infrastructure that makes it possible.</p>
+  <p>We'll be covering each stage in depth over the coming weeks — starting with the Idea stage, where the most consequential mistakes are made. Subscribe to follow along.</p>
+
+  <div class="cta-box">
+    <h3>Read the full playbook</h3>
+    <p>35 pages. Free. The most important document for startup founders in 2026.</p>
+    <a href="https://claude.ai" class="btn" target="_blank" rel="noopener">Read on claude.ai →</a>
+    <a href="/#subscribe" class="btn-outline">Subscribe to our newsletter</a>
+  </div>
+</article>
+
+<footer>
+  <div class="copy">Post AI Company © 2026 · São Paulo, Brazil</div>
+  <div class="links">
+    <a href="/">Home</a>
+    <a href="/#subscribe">Newsletter</a>
+  </div>
+</footer>
+
+</body>
+</html>
