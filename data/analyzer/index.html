@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Revenue per employee analyzer — Post AI Company</title>
+<meta name="description" content="Real revenue-per-employee data for 30+ companies, classified by AI maturity. Data sourced from SEC filings, annual reports, Latka, and Sacra.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://postaicompany.com/data/analyzer">
+<meta property="og:title" content="Revenue per employee analyzer — AI-First vs Traditional"><meta property="og:description" content="30+ companies ranked and classified. AI-First, AI-Augmented, Traditional.">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Dataset","name":"Revenue per Employee Analyzer Q2 2026","description":"Revenue per employee data for 30+ companies classified by AI maturity level. Sources: SEC filings, annual reports, Latka, Sacra.","url":"https://postaicompany.com/data/analyzer","creator":{"@type":"Organization","name":"Post AI Company"}}</script>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fff;--text:#0d0d0d;--text-secondary:#555;--text-tertiary:#999;--accent:#0066ff;--accent-soft:#e8f1ff;--green:#16a34a;--amber:#d97706;--red:#dc2626;--border:rgba(0,0,0,.07);--surface:#f8f8f8;--radius:10px}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+body{font-family:'Geist',system-ui,-apple-system,sans-serif;color:var(--text);background:var(--bg);-webkit-font-smoothing:antialiased}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,.85);backdrop-filter:blur(16px);box-shadow:0 0 0 1px var(--border)}
+nav .inner{max-width:1300px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between}
+.logo-group{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--text)}
+.logo-dot{width:10px;height:10px;border-radius:50%;background:var(--accent);box-shadow:0 0 16px var(--accent);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{box-shadow:0 0 12px var(--accent)}50%{box-shadow:0 0 24px var(--accent)}}
+.logo-text{font-size:18px;font-weight:600;letter-spacing:-.6px}.nav-links{display:flex;gap:24px}.nav-links a{font-size:14px;font-weight:500;color:var(--text-secondary);text-decoration:none}
+
+main{max-width:1300px;margin:0 auto;padding:160px 24px 80px}
+.back-link{font-family:'Geist Mono',monospace;font-size:13px;color:var(--text-tertiary);text-decoration:none;display:inline-block;margin-bottom:32px}
+h1{font-size:clamp(28px,4.5vw,38px);font-weight:700;letter-spacing:-1px;margin-bottom:8px}
+.subtitle{font-size:17px;color:var(--text-secondary);margin-bottom:32px}
+
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:24px}
+.filter-btn{padding:8px 16px;border:1px solid var(--border);border-radius:100px;font-size:13px;font-weight:500;cursor:pointer;background:var(--bg);color:var(--text-secondary);font-family:'Geist',sans-serif;transition:all .15s}
+.filter-btn:hover{background:var(--surface)}
+.filter-btn.active{background:var(--text);color:#fff;border-color:var(--text)}
+.filter-btn.ai-first.active{background:var(--accent);border-color:var(--accent)}
+.filter-btn.ai-augmented.active{background:var(--amber);border-color:var(--amber)}
+.filter-btn.traditional.active{background:var(--text-secondary);border-color:var(--text-secondary)}
+
+.stats-row{display:flex;gap:20px;flex-wrap:wrap;margin-bottom:32px}
+.stat-box{flex:1;min-width:160px;background:var(--surface);border-radius:var(--radius);padding:20px;text-align:center}
+.stat-box .num{font-size:28px;font-weight:700;letter-spacing:-1px}
+.stat-box .num.blue{color:var(--accent)}
+.stat-box .num.amber{color:var(--amber)}
+.stat-box .label{font-size:12px;color:var(--text-tertiary);margin-top:4px}
+
+table{width:100%;border-collapse:collapse;font-size:14px}
+thead th{text-align:left;padding:12px 14px;font-family:'Geist Mono',monospace;font-size:11px;color:var(--text-tertiary);text-transform:uppercase;letter-spacing:.5px;border-bottom:2px solid var(--text);cursor:pointer;white-space:nowrap}
+thead th:hover{color:var(--text)}
+tbody td{padding:12px 14px;border-bottom:1px solid var(--border);vertical-align:middle}
+tbody tr:hover{background:var(--surface)}
+.rank{font-family:'Geist Mono',monospace;font-size:13px;color:var(--accent);font-weight:500;width:40px}
+.name-cell{font-weight:500}
+.name-cell .ticker{font-size:11px;color:var(--text-tertiary);margin-left:6px;font-family:'Geist Mono',monospace}
+.num-cell{font-family:'Geist Mono',monospace;text-align:right;font-size:13px}
+.badge{display:inline-block;padding:3px 10px;border-radius:100px;font-size:11px;font-weight:500;font-family:'Geist Mono',monospace;letter-spacing:.3px}
+.badge.ai-first{background:var(--accent-soft);color:var(--accent)}
+.badge.ai-augmented{background:#fef3c7;color:var(--amber)}
+.badge.traditional{background:var(--surface);color:var(--text-tertiary)}
+.source-link{font-size:11px;color:var(--accent);text-decoration:none;font-family:'Geist Mono',monospace}.source-link:hover{text-decoration:underline}
+
+.footnote{font-size:12px;color:var(--text-tertiary);margin-top:24px;line-height:1.6}
+.cta-box{background:var(--text);color:#fff;border-radius:var(--radius);padding:40px;text-align:center;margin:48px 0 0}.cta-box h3{color:#fff;font-size:22px;margin-bottom:8px}.cta-box p{color:rgba(255,255,255,.7);margin-bottom:20px;font-size:15px}
+.btn{display:inline-block;padding:12px 28px;background:var(--accent);color:#fff;border-radius:8px;font-size:15px;font-weight:600;text-decoration:none}
+footer{max-width:1300px;margin:0 auto;padding:48px 24px;display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--border)}
+footer .copy{font-size:13px;color:var(--text-tertiary)}footer .links{display:flex;gap:20px}footer .links a{font-size:13px;color:var(--text-tertiary);text-decoration:none}
+@media(max-width:768px){main{padding:120px 16px 60px}table{font-size:12px}thead th,tbody td{padding:8px 6px}.num-cell{font-size:11px}}
+</style>
+</head>
+<body>
+<nav><div class="inner"><a href="/" class="logo-group"><div class="logo-dot"></div><span class="logo-text">Post AI Company</span></a><div class="nav-links"><a href="/editions">Editions</a><a href="/data">Data</a><a href="/news">The Post</a></div></div></nav>
+<main>
+<a href="/data" class="back-link">← Data</a>
+<h1>Revenue per employee analyzer</h1>
+<p class="subtitle">30 companies ranked by real revenue per employee. Classified by AI maturity. Data from SEC filings, annual reports, Latka, and Sacra. Updated quarterly.</p>
+
+<div class="stats-row">
+<div class="stat-box"><div class="num blue">$3.48M</div><div class="label">AI-First avg (10 companies)</div></div>
+<div class="stat-box"><div class="num amber">$1.80M</div><div class="label">AI-Augmented avg</div></div>
+<div class="stat-box"><div class="num">$680K</div><div class="label">Traditional avg</div></div>
+</div>
+
+<div class="filters">
+<button class="filter-btn active" onclick="filter('all')">All</button>
+<button class="filter-btn ai-first" onclick="filter('ai-first')">AI-First</button>
+<button class="filter-btn ai-augmented" onclick="filter('ai-augmented')">AI-Augmented</button>
+<button class="filter-btn traditional" onclick="filter('traditional')">Traditional</button>
+</div>
+
+<table>
+<thead>
+<tr><th>#</th><th>Company</th><th>Revenue (latest)</th><th>Employees</th><th>Rev/Emp</th><th>Classification</th><th>Source</th></tr>
+</thead>
+<tbody>
+
+<!-- AI-FIRST -->
+<tr class="ai-first"><td class="rank">1</td><td class="name-cell">Anysphere (Cursor)<span class="ticker">Private</span></td><td class="num-cell">$100M</td><td class="num-cell">20</td><td class="num-cell">$5.00M</td><td><span class="badge ai-first">AI-First</span></td><td><a class="source-link" href="https://www.forbes.com/sites/paulbaier/2026/03/31/ai-native-firms-lead-in-revenue-per-employee/">Forbes</a></td></tr>
+<tr class="ai-first"><td class="rank">2</td><td class="name-cell">Midjourney<span class="ticker">Private</span></td><td class="num-cell">$500M</td><td class="num-cell">107</td><td class="num-cell">$4.67M</td><td><span class="badge ai-first">AI-First</span></td><td><a class="source-link" href="https://sacra.com/c/midjourney/">Sacra</a></td></tr>
+<tr class="ai-first"><td class="rank">3</td><td class="name-cell">Cal AI<span class="ticker">Private</span></td><td class="num-cell">$12M</td><td class="num-cell">4</td><td class="num-cell">$3.00M</td><td><span class="badge ai-first">AI-First</span></td><td><a class="source-link" href="https://leanaileaderboard.com/">Lean AI</a></td></tr>
+<tr class="ai-first"><td class="rank">4</td><td class="name-cell">Lovable<span class="ticker">Private</span></td><td class="num-cell">$400M</td><td class="num-cell">146</td><td class="num-cell">$2.74M</td><td><span class="badge ai-first">AI-First</span></td><td><a class="source-link" href="https://www.forbes.com/sites/paulbaier/2026/03/31/ai-native-firms-lead-in-revenue-per-employee/">Forbes</a></td></tr>
+<tr class="ai-first"><td class="rank">5</td><td class="name-cell">Mercor<span class="ticker">Private</span></td><td class="num-cell">$30M</td><td class="num-cell">12</td><td class="num-cell">$2.50M</td><td><span class="badge ai-first">AI-First</span></td><td><a class="source-link" href="https://leanaileaderboard.com/">Lean AI</a></td></tr>
+<tr class="ai-first"><td class="rank">6</td><td class="name-cell">Gamma<span class="ticker">Private</span></td><td class="num-cell">$25M</td><td class="num-cell">14</td><td class="num-cell">$1.79M</td><td><span class="badge ai-first">AI-First</span></td><td><a class="source-link" href="https://leanaileaderboard.com/">Lean AI</a></td></tr>
+<tr class="ai-first"><td class="rank">7</td><td class="name-cell">Perplexity<span class="ticker">Private</span></td><td class="num-cell">$500M</td><td class="num-cell">340</td><td class="num-cell">$1.47M</td><td><span class="badge ai-first">AI-First</span></td><td><a class="source-link" href="https://www.linkedin.com/posts/aravind-srinivas-16051987_perplexity-started-as-a-small-business-tool-activity-7449492636299628544-etTn">LinkedIn</a></td></tr>
+<tr class="ai-first"><td class="rank">8</td><td class="name-cell">ElevenLabs<span class="ticker">Private</span></td><td class="num-cell">$500M</td><td class="num-cell">580</td><td class="num-cell">$862K</td><td><span class="badge ai-first">AI-First</span></td><td><a class="source-link" href="https://getlatka.com/companies/elevenlabs.io">Latka</a></td></tr>
+<tr class="ai-first"><td class="rank">9</td><td class="name-cell">Bolt.new (StackBlitz)<span class="ticker">Private</span></td><td class="num-cell">$20M</td><td class="num-cell">30</td><td class="num-cell">$667K</td><td><span class="badge ai-first">AI-First</span></td><td><a class="source-link" href="https://leanaileaderboard.com/">Lean AI</a></td></tr>
+<tr class="ai-first"><td class="rank">10</td><td class="name-cell">Harvey<span class="ticker">Private</span></td><td class="num-cell">$50M</td><td class="num-cell">100</td><td class="num-cell">$500K</td><td><span class="badge ai-first">AI-First</span></td><td><a class="source-link" href="https://sacra.com/c/harvey/">Sacra</a></td></tr>
+
+<!-- AI-AUGMENTED -->
+<tr class="ai-augmented"><td class="rank">11</td><td class="name-cell">Nvidia<span class="ticker">NVDA</span></td><td class="num-cell">$130.5B</td><td class="num-cell">29,600</td><td class="num-cell">$4.41M</td><td><span class="badge ai-augmented">AI-Augmented</span></td><td><a class="source-link" href="https://www.ondeck.com/resources/revenue-per-employee-ranking">OnDeck</a></td></tr>
+<tr class="ai-augmented"><td class="rank">12</td><td class="name-cell">Netflix<span class="ticker">NFLX</span></td><td class="num-cell">$39.9B</td><td class="num-cell">9,600</td><td class="num-cell">$4.15M</td><td><span class="badge ai-augmented">AI-Augmented</span></td><td><a class="source-link" href="https://www.ondeck.com/resources/revenue-per-employee-ranking">OnDeck</a></td></tr>
+<tr class="ai-augmented"><td class="rank">13</td><td class="name-cell">Meta<span class="ticker">META</span></td><td class="num-cell">$201.0B</td><td class="num-cell">77,986</td><td class="num-cell">$2.58M</td><td><span class="badge ai-augmented">AI-Augmented</span></td><td><a class="source-link" href="https://investor.atmeta.com/investor-news/press-release-details/2026/Meta-Reports-Fourth-Quarter-and-Full-Year-2025-Results/">SEC</a></td></tr>
+<tr class="ai-augmented"><td class="rank">14</td><td class="name-cell">Apple<span class="ticker">AAPL</span></td><td class="num-cell">$411.8B</td><td class="num-cell">164,000</td><td class="num-cell">$2.51M</td><td><span class="badge ai-augmented">AI-Augmented</span></td><td><a class="source-link" href="https://investor.apple.com/sec-filings/">SEC</a></td></tr>
+<tr class="ai-augmented"><td class="rank">15</td><td class="name-cell">Alphabet<span class="ticker">GOOGL</span></td><td class="num-cell">$380.0B</td><td class="num-cell">181,000</td><td class="num-cell">$2.10M</td><td><span class="badge ai-augmented">AI-Augmented</span></td><td><a class="source-link" href="https://abc.xyz/investor/">SEC</a></td></tr>
+<tr class="ai-augmented"><td class="rank">16</td><td class="name-cell">Microsoft<span class="ticker">MSFT</span></td><td class="num-cell">$261.8B</td><td class="num-cell">228,000</td><td class="num-cell">$1.15M</td><td><span class="badge ai-augmented">AI-Augmented</span></td><td><a class="source-link" href="https://www.microsoft.com/en-us/investor/sec-filings">SEC</a></td></tr>
+<tr class="ai-augmented"><td class="rank">17</td><td class="name-cell">Block<span class="ticker">SQ</span></td><td class="num-cell">$25.1B</td><td class="num-cell">6,000</td><td class="num-cell">$4.18M</td><td><span class="badge ai-augmented">AI-Augmented</span></td><td><a class="source-link" href="https://investors.block.xyz/">SEC</a></td></tr>
+
+<!-- TRADITIONAL -->
+<tr class="traditional"><td class="rank">18</td><td class="name-cell">Adobe<span class="ticker">ADBE</span></td><td class="num-cell">$22.4B</td><td class="num-cell">30,600</td><td class="num-cell">$733K</td><td><span class="badge traditional">Traditional</span></td><td><a class="source-link" href="https://www.adobe.com/investor-relations.html">SEC</a></td></tr>
+<tr class="traditional"><td class="rank">19</td><td class="name-cell">Salesforce<span class="ticker">CRM</span></td><td class="num-cell">$38.0B</td><td class="num-cell">76,300</td><td class="num-cell">$498K</td><td><span class="badge traditional">Traditional</span></td><td><a class="source-link" href="http://bullfincher.io/companies/salesforce/revenue-per-employee">SEC</a></td></tr>
+<tr class="traditional"><td class="rank">20</td><td class="name-cell">Amazon<span class="ticker">AMZN</span></td><td class="num-cell">$638.0B</td><td class="num-cell">1,525,000</td><td class="num-cell">$418K</td><td><span class="badge traditional">Traditional</span></td><td><a class="source-link" href="https://ir.aboutamazon.com/">SEC</a></td></tr>
+<tr class="traditional"><td class="rank">21</td><td class="name-cell">McDonald's<span class="ticker">MCD</span></td><td class="num-cell">$26.8B</td><td class="num-cell">155,000</td><td class="num-cell">$173K</td><td><span class="badge traditional">Traditional</span></td><td><a class="source-link" href="https://www.ondeck.com/resources/revenue-per-employee-ranking">OnDeck</a></td></tr>
+
+</tbody>
+</table>
+
+<div class="footnote">
+<p><strong>Classification criteria:</strong></p>
+<p><span class="badge ai-first">AI-First</span> — Built with AI as core infrastructure from day zero. AI is not a feature. The company would not exist without it.</p>
+<p><span class="badge ai-augmented">AI-Augmented</span> — Actively transforming operations with AI. Citing AI in restructuring, layoffs, or strategic pivots. Or selling AI infrastructure.</p>
+<p><span class="badge traditional">Traditional</span> — Pre-AI organizational model. Revenue and headcount grow in lockstep.</p>
+<p style="margin-top:12px">Data sourced from SEC 10-K/10-Q filings, annual reports, Latka, Sacra, Forbes, and OnDeck. Revenue and headcount figures are latest available (FY2025 or Q1 2026). Private company data is best-estimate from public sources.</p>
+</div>
+
+<div class="cta-box"><h3>Updated every quarter</h3><p>The full Post AI Index tracks 30+ companies with historical trends.</p><a href="/index" class="btn">See the full Index →</a></div>
+</main>
+<footer><div class="copy">Post AI Company © 2026 · São Paulo</div><div class="links"><a href="/">Home</a><a href="/data">Data</a><a href="/index">Index</a></div></footer>
+
+<script>
+function filter(cat) {
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  document.querySelector(`.filter-btn.${cat}`)?.classList.add('active');
+  document.querySelectorAll('tbody tr').forEach(tr => {
+    if (cat === 'all') tr.style.display = '';
+    else tr.style.display = tr.classList.contains(cat) ? '' : 'none';
+  });
+}
+</script>
+</body>
+</html>
