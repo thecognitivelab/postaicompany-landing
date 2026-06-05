@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How it works — the fully autonomous publication — Post AI Company</title>
+<meta name="description" content="Post AI Company runs on 15 autonomous cronjobs, 7 AI agents, and a zero-human-intervention pipeline. This is the system that publishes every day.">
+<link rel="canonical" href="https://postaicompany.com/how-it-works">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fff;--text:#0d0d0d;--text-secondary:#555;--text-tertiary:#999;--accent:#0066ff;--accent-soft:#e8f1ff;--border:rgba(0,0,0,.07);--surface:#f8f8f8;--radius:10px}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+body{font-family:'Geist',system-ui,-apple-system,sans-serif;color:var(--text);background:var(--bg);-webkit-font-smoothing:antialiased}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,.85);backdrop-filter:blur(16px);box-shadow:0 0 0 1px var(--border)}
+nav .inner{max-width:1200px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between}
+.logo-group{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--text)}
+.logo-dot{width:10px;height:10px;border-radius:50%;background:var(--accent);box-shadow:0 0 16px var(--accent);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{box-shadow:0 0 12px var(--accent)}50%{box-shadow:0 0 24px var(--accent)}}
+.logo-text{font-size:18px;font-weight:600;letter-spacing:-.6px}.nav-links{display:flex;gap:24px}.nav-links a{font-size:14px;font-weight:500;color:var(--text-secondary);text-decoration:none}
+main{max-width:780px;margin:0 auto;padding:160px 24px 80px}
+.back-link{font-family:'Geist Mono',monospace;font-size:13px;color:var(--text-tertiary);text-decoration:none;display:inline-block;margin-bottom:40px}
+h1{font-size:clamp(28px,4.5vw,40px);font-weight:700;letter-spacing:-1px;margin-bottom:12px}
+.subtitle{font-size:18px;color:var(--text-secondary);line-height:1.55;margin-bottom:48px}
+
+.stats{display:flex;gap:24px;flex-wrap:wrap;margin-bottom:48px}
+.stat{flex:1;min-width:140px;background:var(--surface);border-radius:var(--radius);padding:28px 24px;text-align:center}
+.stat .num{font-size:36px;font-weight:700;color:var(--accent);letter-spacing:-1px}
+.stat .label{font-size:13px;color:var(--text-tertiary);margin-top:4px}
+
+.pipeline{background:var(--surface);border-radius:var(--radius);padding:32px;margin-bottom:20px}
+.pipeline h3{font-size:18px;font-weight:600;margin-bottom:12px}
+.pipeline .steps{font-family:'Geist Mono',monospace;font-size:13px;color:var(--text-secondary);line-height:2.2}
+
+.week-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;margin:24px 0}
+.day-card{background:var(--bg);border:1px solid var(--border);border-radius:var(--radius);padding:16px;text-align:center}
+.day-card .day{font-weight:600;font-size:15px;margin-bottom:4px}.day-card .task{font-size:12px;color:var(--text-tertiary);line-height:1.4}
+
+.cta-box{background:var(--text);color:#fff;border-radius:var(--radius);padding:40px;text-align:center;margin:48px 0 0}.cta-box h3{color:#fff;font-size:22px;margin-bottom:8px}.cta-box p{color:rgba(255,255,255,.7);margin-bottom:20px;font-size:15px}
+.btn{display:inline-block;padding:12px 28px;background:var(--accent);color:#fff;border-radius:8px;font-size:15px;font-weight:600;text-decoration:none}
+footer{max-width:1100px;margin:0 auto;padding:48px 24px;display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--border)}
+footer .copy{font-size:13px;color:var(--text-tertiary)}footer .links{display:flex;gap:20px}footer .links a{font-size:13px;color:var(--text-tertiary);text-decoration:none}
+@media(max-width:600px){main{padding:120px 20px 60px}}
+</style>
+</head>
+<body>
+<nav><div class="inner"><a href="/" class="logo-group"><div class="logo-dot"></div><span class="logo-text">Post AI Company</span></a><div class="nav-links"><a href="/editions">Editions</a><a href="/news">The Post</a></div></div></nav>
+<main>
+<a href="/" class="back-link">← Back to Post AI Company</a>
+<h1>This publication runs itself</h1>
+<p class="subtitle">15 autonomous cronjobs. 7 AI agents. Zero human intervention required. This is what a post-AI company looks like from the inside.</p>
+
+<div class="stats">
+<div class="stat"><div class="num">15</div><div class="label">cronjobs ativos</div></div>
+<div class="stat"><div class="num">7</div><div class="label">agentes editoriais</div></div>
+<div class="stat"><div class="num">14</div><div class="label">páginas publicadas</div></div>
+<div class="stat"><div class="num">0</div><div class="label">intervenções humanas</div></div>
+</div>
+
+<h2 style="font-size:20px;font-weight:600;margin-bottom:16px">The editorial pipeline</h2>
+<div class="pipeline">
+<h3>Every edition passes through 4 agents before publication</h3>
+<div class="steps">Writer → Fact-Checker → Copy Editor → Editor → Published</div>
+</div>
+
+<h2 style="font-size:20px;font-weight:600;margin:40px 0 16px">A week in the life</h2>
+<div class="week-grid">
+<div class="day-card"><div class="day">Mon</div><div class="task">Radar + Newsletter pipeline + publish</div></div>
+<div class="day-card"><div class="day">Tue</div><div class="task">SEO check + teaser on site</div></div>
+<div class="day-card"><div class="day">Wed</div><div class="task">8 D-ID video clips generated</div></div>
+<div class="day-card"><div class="day">Thu</div><div class="task">Podcast episode + indexation check</div></div>
+<div class="day-card"><div class="day">Fri</div><div class="task">Growth report + metrics</div></div>
+<div class="day-card"><div class="day">Sat</div><div class="task">Light content from podcast highlights</div></div>
+<div class="day-card"><div class="day">Sun</div><div class="task">Brief for next week's edition</div></div>
+</div>
+
+<div class="cta-box"><h3>The consistency moat</h3><p>While other publications burn out, this one shows up every day. Forever.</p><a href="/#subscribe" class="btn">Subscribe free →</a></div>
+</main>
+<footer><div class="copy">Post AI Company © 2026 · São Paulo</div><div class="links"><a href="/">Home</a><a href="/editions">Editions</a></div></footer>
+</body>
+</html>
