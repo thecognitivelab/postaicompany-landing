@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Post — AI news from around the web</title>
+<meta name="description" content="What the best AI newsletters are reporting this week. Curated like a newspaper front page — headlines, excerpts, and where to read more.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://postaicompany.com/news">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&family=Playfair+Display:ital,wght@0,700;0,900;1,700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fafaf8;--text:#111;--text-secondary:#444;--text-tertiary:#888;--accent:#c41e3a;--border:rgba(0,0,0,.1);--surface:#fff;--radius:0}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Geist',system-ui,-apple-system,sans-serif;color:var(--text);background:var(--bg);-webkit-font-smoothing:antialiased}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,250,248,.92);backdrop-filter:blur(16px);border-bottom:3px solid var(--text)}
+nav .inner{max-width:1200px;margin:0 auto;padding:12px 24px;display:flex;align-items:center;justify-content:space-between}
+.logo-group{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--text)}
+.logo-dot{width:8px;height:8px;background:var(--accent)}
+.logo-text{font-family:'Playfair Display',serif;font-size:22px;font-weight:900;letter-spacing:-.5px}
+.nav-links{display:flex;gap:20px;align-items:center}.nav-links a{font-size:13px;font-weight:500;color:var(--text-secondary);text-decoration:none;font-family:'Geist Mono',monospace;text-transform:uppercase;letter-spacing:.5px}.nav-links a:hover{color:var(--text)}
+
+main{max-width:1100px;margin:0 auto;padding:140px 24px 80px}
+.back-link{font-family:'Geist Mono',monospace;font-size:12px;color:var(--text-tertiary);text-decoration:none;display:inline-block;margin-bottom:20px}.back-link:hover{color:var(--text)}
+
+.masthead{text-align:center;border-bottom:2px solid var(--text);padding-bottom:16px;margin-bottom:32px}
+.masthead h1{font-family:'Playfair Display',serif;font-size:clamp(36px,6vw,56px);font-weight:900;letter-spacing:-1px;line-height:1}
+.masthead .dateline{font-family:'Geist Mono',monospace;font-size:12px;color:var(--text-tertiary);margin-top:8px;text-transform:uppercase;letter-spacing:1px}
+
+.newspaper{display:grid;grid-template-columns:1fr 1px 320px;gap:28px}
+.col-main{display:flex;flex-direction:column;gap:0}
+.col-side{display:flex;flex-direction:column;gap:0}
+.col-divider{background:var(--border)}
+
+.lead-story{border-bottom:1px solid var(--border);padding-bottom:24px;margin-bottom:24px}
+.lead-story h2{font-family:'Playfair Display',serif;font-size:clamp(26px,3.5vw,36px);font-weight:900;line-height:1.08;margin-bottom:10px;letter-spacing:-.3px}
+.lead-story .excerpt{font-size:16px;color:var(--text-secondary);line-height:1.55;margin-bottom:10px}
+.lead-story .source{font-family:'Geist Mono',monospace;font-size:11px;color:var(--accent);text-transform:uppercase;letter-spacing:.5px}
+
+.story{border-bottom:1px solid var(--border);padding:18px 0}
+.story h3{font-size:17px;font-weight:600;line-height:1.25;margin-bottom:4px;letter-spacing:-.2px}
+.story p{font-size:14px;color:var(--text-secondary);line-height:1.5;margin-bottom:6px}
+.story .source{font-family:'Geist Mono',monospace;font-size:10px;color:var(--accent);text-transform:uppercase;letter-spacing:.5px}
+
+.section-label{font-family:'Geist Mono',monospace;font-size:10px;color:var(--text-tertiary);text-transform:uppercase;letter-spacing:1px;border-top:1px solid var(--text);padding-top:8px;margin:16px 0 12px}
+
+.side-story{padding:14px 0;border-bottom:1px solid var(--border)}
+.side-story h4{font-size:15px;font-weight:600;line-height:1.25;margin-bottom:4px}
+.side-story .excerpt{font-size:13px;color:var(--text-secondary);line-height:1.4;margin-bottom:4px}
+.side-story .source{font-family:'Geist Mono',monospace;font-size:10px;color:var(--accent);text-transform:uppercase;letter-spacing:.5px}
+
+.quote-box{border:1px solid var(--border);padding:20px;margin:16px 0;background:var(--surface);text-align:center}
+.quote-box .quote{font-family:'Playfair Display',serif;font-size:20px;font-style:italic;line-height:1.25;margin-bottom:8px}
+.quote-box .attribution{font-size:12px;color:var(--text-tertiary);font-family:'Geist Mono',monospace}
+
+.cta-box{background:var(--text);color:var(--bg);padding:40px;text-align:center;margin-top:48px}.cta-box h3{font-family:'Playfair Display',serif;font-size:28px;margin-bottom:8px}.cta-box p{color:rgba(250,250,248,.7);margin-bottom:20px;font-size:15px}
+.btn{display:inline-block;padding:12px 28px;background:var(--accent);color:#fff;font-size:15px;font-weight:600;text-decoration:none}
+
+footer{max-width:1100px;margin:0 auto;padding:48px 24px;display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--border)}
+footer .copy{font-size:13px;color:var(--text-tertiary)}footer .links{display:flex;gap:20px}footer .links a{font-size:13px;color:var(--text-tertiary);text-decoration:none}
+@media(max-width:768px){.newspaper{grid-template-columns:1fr}.col-divider,.col-side{display:none}}
+</style>
+</head>
+<body>
+<nav><div class="inner"><a href="/" class="logo-group"><div class="logo-dot"></div><span class="logo-text">The Post</span></a><div class="nav-links"><a href="/">Main Site</a><a href="/editions">Editions</a><a href="/radar">Radar</a></div></div></nav>
+
+<main>
+<a href="/" class="back-link">← Post AI Company</a>
+
+<div class="masthead">
+<h1>The Post</h1>
+<div class="dateline">What the best AI newsletters are reporting — June 5, 2026 — Curated daily</div>
+</div>
+
+<div class="newspaper">
+
+<!-- COLUNA PRINCIPAL -->
+<div class="col-main">
+
+<div class="lead-story">
+<h2>Inside Anthropic, engineers no longer write code directly</h2>
+<p class="excerpt">Jack Clark's Import AI reveals that inside Anthropic, "many engineers no longer write code directly" — they instantiate Claude in tools and manage its output. Humans are becoming a verification layer atop a "vast virtual organization of AI agents." Clark also quantifies the invisible AI economy: $250 billion in nominal AI GDP, growing ~2,600% per year in quality-adjusted terms — invisible in conventional statistics because per-unit costs collapse as fast as output rises.</p>
+<span class="source">Import AI #459 · Jack Clark</span>
+</div>
+
+<div class="story">
+<h3>Build tools, to build more</h3>
+<p>Codex launches Plugins and Sites. Cursor reveals 40% of internal PRs now come from cloud agents — up from 35% in February. New open models: Gemma 4 12B, Ideogram 4.0, Miso One 8B TTS at 110ms latency. Microsoft Scout ships as an always-on agent built on OpenClaw. ViBench shows Opus 4.8 beating GPT-5.5 on price/performance for vibe coding.</p>
+<span class="source">Ben's Bites · June 4</span>
+</div>
+
+<div class="story">
+<h3>Open and closed models are on different exponentials</h3>
+<p>Nathan Lambert leaves Ai2 to launch something new. His framework: where marginal intelligence gains drive value, closed wins. Where cost, customizability, and ecosystem compound, open has structural advantages. Harvey (fine-tuned Kimi 2.6) beats Opus 4.7 on legal benchmarks at 11× lower cost — proving both sides can win simultaneously.</p>
+<span class="source">Interconnects · June 1-2</span>
+</div>
+
+<div class="story">
+<h3>Evals are becoming product</h3>
+<p>Andon Labs' VendingBench isn't just a benchmark — it's a business model. As frontier models converge on capability, the eval layer becomes the new battleground. GitHub's Kyle Daigle on coping with the agentic coding explosion: when code is abundant, the scarce resource shifts to orchestration, trust, and deployment confidence.</p>
+<span class="source">Latent Space · June 2-4</span>
+</div>
+
+<div class="story">
+<h3>Qwen3.7-Max challenges Google for third place</h3>
+<p>Andrew Ng frames the story: it's not "China catching up" — it's "open weights catching up." Qwen3.7-Max is accessible, fine-tunable, and now competitive at the frontier. The fine-tuning/alignment breakage finding is the sleeper: as domain-specific models proliferate, safety becomes a per-instance problem, not a frontier-lab problem.</p>
+<span class="source">The Batch · June 5</span>
+</div>
+
+</div>
+
+<!-- DIVISOR -->
+<div class="col-divider"></div>
+
+<!-- COLUNA LATERAL -->
+<div class="col-side">
+
+<div class="section-label">Quick Takes</div>
+
+<div class="side-story">
+<h4>AI is building AI now</h4>
+<p class="excerpt">The Neuron's headline captures the moment. Inside Anthropic, AI agents write most of the code. Plus: TSMC supply warnings, ChatGPT memory, Meta's $200/month AI agent, Robinhood giving AI agents wallets.</p>
+<span class="source">The Neuron · June 5</span>
+</div>
+
+<div class="side-story">
+<h4>Anthropic confronts the RSI clock</h4>
+<p class="excerpt">Recursive self-improvement framed as the defining AI story. Clark's timeline: 1-2 years. If RSI is years, not decades, org design decisions compound dramatically.</p>
+<span class="source">The Rundown AI · Early June</span>
+</div>
+
+<div class="side-story">
+<h4>Block cut 4,000 jobs. Stock surged 24%</h4>
+<p class="excerpt">Dorsey cited "intelligence tools." Meta followed with 8,000. Intuit cut 3,000 while raising guidance. None were in crisis. The market is pricing structural efficiency now.</p>
+<span class="source">WSJ · CNBC · February-May 2026</span>
+</div>
+
+<div class="quote-box">
+<div class="quote">"The primary human role in building software is orchestrating AI agents."</div>
+<div class="attribution">Anthropic 2026 Agentic Coding Trends Report</div>
+</div>
+
+<div class="section-label">One Number</div>
+<div style="text-align:center;padding:20px 0">
+<div style="font-family:'Playfair Display',serif;font-size:64px;font-weight:900;color:var(--accent);line-height:1">$3.48M</div>
+<div style="font-size:13px;color:var(--text-secondary);margin-top:4px">Revenue per employee, top 10 AI-native startups</div>
+<div style="font-size:11px;color:var(--text-tertiary);margin-top:2px">vs $610K for top 10 traditional SaaS</div>
+</div>
+
+</div>
+
+</div>
+
+<div class="cta-box"><h3>Like a newspaper, but for AI</h3><p>Updated daily. What the smartest people in AI are writing about.</p><a href="/#subscribe" class="btn">Get the newsletter →</a></div>
+</main>
+
+<footer><div class="copy">The Post — by Post AI Company © 2026</div><div class="links"><a href="/">Main Site</a><a href="/radar">Radar</a><a href="/editions">Editions</a></div></footer>
+</body>
+</html>
