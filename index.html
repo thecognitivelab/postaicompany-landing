@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Post AI Company — What comes after AI</title>
+  <meta name="description" content="A publication documenting the birth of the post-AI company. Research, cases, newsletter, and podcast on how AI is reshaping work, teams, and organizations.">
+  <meta name="keywords" content="post AI, future of work, AI company, AI transformation, AI organization, AI teams, AI newsletter, AI podcast, future of management">
+  <meta name="author" content="Post AI Company">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="canonical" href="https://postaicompany.com/">
+
+  <meta property="og:title" content="Post AI Company — What comes after AI">
+  <meta property="og:description" content="A publication documenting the birth of the post-AI company. Research, cases, newsletter, and podcast.">
+  <meta property="og:url" content="https://postaicompany.com/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Post AI Company">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:image" content="https://postaicompany.com/og-image.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Post AI Company — What comes after AI">
+  <meta name="twitter:description" content="A publication documenting the birth of the post-AI company.">
+  <meta name="twitter:image" content="https://postaicompany.com/og-image.png">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Post AI Company",
+    "url": "https://postaicompany.com",
+    "description": "Publication and research hub documenting the post-AI transformation of companies.",
+    "founder": {
+      "@type": "Person",
+      "name": "Fernanda Faria"
+    }
+  }
+  </script>
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #ffffff;
+      --text: #0d0d0d;
+      --text-secondary: #555;
+      --text-tertiary: #999;
+      --accent: #0066ff;
+      --accent-soft: #e8f1ff;
+      --accent-glow: rgba(0,102,255,0.10);
+      --border: rgba(0,0,0,0.07);
+      --border-strong: rgba(0,0,0,0.12);
+      --surface: #f8f8f8;
+      --surface-hover: #f2f2f2;
+      --shadow-card: 0px 0px 0px 1px rgba(0,0,0,0.06), 0px 2px 6px rgba(0,0,0,0.04);
+      --shadow-card-hover: 0px 0px 0px 1px rgba(0,0,0,0.08), 0px 8px 24px rgba(0,0,0,0.06);
+      --radius: 10px;
+    }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Geist', system-ui, -apple-system, sans-serif;
+      color: var(--text); background: var(--bg);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── Nav ── */
+    nav {
+      position: fixed; top:0; left:0; right:0; z-index: 100;
+      background: rgba(255,255,255,0.85);
+      backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+      box-shadow: 0px 0px 0px 1px var(--border);
+    }
+    nav .inner {
+      max-width: 1200px; margin:0 auto; padding: 14px 24px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .logo-group { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--text); }
+    .logo-dot {
+      width: 10px; height: 10px; border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 16px var(--accent), 0 0 4px var(--accent);
+      animation: pulse 2s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      0%,100% { box-shadow: 0 0 12px var(--accent), 0 0 4px var(--accent); }
+      50% { box-shadow: 0 0 24px var(--accent), 0 0 8px var(--accent); }
+    }
+    .logo-text { font-size: 18px; font-weight: 600; letter-spacing: -0.6px; }
+    .nav-links { display: flex; align-items: center; gap: 24px; }
+    .nav-links a { font-size:14px; font-weight:500; color:var(--text-secondary); text-decoration:none; transition: color 0.15s; }
+    .nav-links a:hover { color:var(--text); }
+
+    /* ── Hero ── */
+    .hero {
+      max-width: 900px; margin:0 auto; padding: 200px 24px 120px;
+      text-align: center;
+    }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--accent-soft); color: var(--accent);
+      padding: 6px 16px; border-radius: 100px;
+      font-size: 13px; font-weight: 500; margin-bottom: 32px;
+      font-family: 'Geist Mono', monospace; letter-spacing: 0.5px;
+    }
+    .hero-badge .dot { width:6px; height:6px; border-radius:50%; background:var(--accent); animation:pulse 2s infinite; }
+    .hero h1 {
+      font-size: clamp(44px, 8vw, 80px); font-weight: 700;
+      line-height: 1.03; letter-spacing: -3.2px; text-wrap: balance;
+    }
+    .hero h1 .accent { color: var(--accent); }
+    .hero p {
+      font-size: 20px; color: var(--text-secondary); line-height: 1.65;
+      margin-top: 28px; max-width: 600px; margin-left:auto; margin-right:auto;
+    }
+
+    /* ── Divider ── */
+    .divider { max-width: 1200px; margin:0 auto; padding:0 24px; height: 1px; background: var(--border); }
+
+    /* ── Sections ── */
+    section { max-width: 1100px; margin:0 auto; padding: 100px 24px; }
+    .section-label {
+      font-family: 'Geist Mono', monospace; font-size: 12px; font-weight: 500;
+      text-transform: uppercase; color: var(--accent); letter-spacing: 0.5px;
+      margin-bottom: 20px;
+    }
+    section h2 {
+      font-size: clamp(32px, 5vw, 48px); font-weight: 700;
+      letter-spacing: -1.92px; line-height: 1.12; margin-bottom: 20px; text-wrap: balance;
+    }
+    section > .desc {
+      font-size: 18px; color: var(--text-secondary); line-height: 1.65;
+      max-width: 640px;
+    }
+
+    /* ── Big Quote ── */
+    .big-quote {
+      font-size: clamp(24px, 4vw, 34px);
+      font-weight: 500; line-height: 1.4; letter-spacing: -0.8px;
+      color: var(--text-secondary);
+      max-width: 800px; margin-top: 48px;
+    }
+    .big-quote em { font-style: normal; color: var(--text); }
+
+    /* ── What Changes ── */
+    .changes-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 52px; }
+    .change-card {
+      background: var(--bg); border-radius: var(--radius); padding: 32px;
+      box-shadow: var(--shadow-card); transition: all 0.2s;
+    }
+    .change-card:hover { box-shadow: var(--shadow-card-hover); transform: translateY(-1px); }
+    .change-card .num {
+      font-family: 'Geist Mono', monospace; font-size: 13px; color: var(--accent);
+      margin-bottom: 16px; font-weight: 500;
+    }
+    .change-card h3 { font-size: 18px; font-weight: 600; letter-spacing: -0.36px; margin-bottom: 8px; }
+    .change-card p { font-size: 14px; color: var(--text-secondary); line-height: 1.6; }
+
+    /* ── Formats ── */
+    .formats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; margin-top: 52px; }
+    .format-card {
+      background: var(--surface); border-radius: var(--radius); padding: 36px 28px;
+      text-decoration: none; color: var(--text); display: block;
+      transition: all 0.2s;
+    }
+    .format-card:hover { background: var(--surface-hover); transform: translateY(-1px); }
+    .format-card .icon { font-size: 32px; margin-bottom: 20px; display: block; }
+    .format-card h3 { font-size: 20px; font-weight: 600; letter-spacing: -0.4px; margin-bottom: 8px; }
+    .format-card p { font-size: 14px; color: var(--text-secondary); line-height: 1.5; }
+    .format-card .freq {
+      font-family: 'Geist Mono', monospace; font-size: 11px; color: var(--accent);
+      text-transform: uppercase; letter-spacing: 0.5px; margin-top: 16px;
+    }
+
+    /* ── Cases ── */
+    .cases-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-top: 52px; }
+    .case-card {
+      background: var(--bg); border-radius: var(--radius); padding: 32px;
+      box-shadow: var(--shadow-card); border-left: 3px solid var(--accent);
+    }
+    .case-card h3 { font-size: 18px; font-weight: 600; letter-spacing: -0.36px; margin-bottom: 4px; }
+    .case-card .company { font-size: 14px; color: var(--accent); font-weight: 500; margin-bottom: 12px; }
+    .case-card p { font-size: 14px; color: var(--text-secondary); line-height: 1.6; }
+
+    /* ── Subscribe strip ── */
+    .subscribe-strip {
+      background: var(--text); color: #fff; border-radius: var(--radius);
+      padding: 56px 48px; margin-top: 52px;
+      display: flex; align-items: center; gap: 48px;
+    }
+    .subscribe-strip .strip-text { flex: 1; }
+    .subscribe-strip h3 { font-size: 24px; font-weight: 600; letter-spacing: -0.48px; margin-bottom: 8px; color: #fff; }
+    .subscribe-strip p { font-size: 15px; color: rgba(255,255,255,0.7); line-height: 1.5; }
+    .subscribe-form { display: flex; gap: 10px; flex-shrink: 0; }
+    .subscribe-form input {
+      padding: 14px 18px; border: none; width: 280px;
+      border-radius: 8px; font-size: 15px; font-family: 'Geist', sans-serif;
+      outline: none; background: rgba(255,255,255,0.12); color: #fff;
+      transition: background 0.2s;
+    }
+    .subscribe-form input::placeholder { color: rgba(255,255,255,0.5); }
+    .subscribe-form input:focus { background: rgba(255,255,255,0.2); }
+    .subscribe-form button {
+      padding: 14px 28px; background: var(--accent); color: #fff;
+      border: none; border-radius: 8px; font-size: 15px;
+      font-weight: 600; font-family: 'Geist', sans-serif; cursor: pointer;
+      transition: all 0.2s; white-space: nowrap;
+    }
+    .subscribe-form button:hover { opacity: 0.9; transform: translateY(-1px); }
+
+    /* ── Founder ── */
+    .founder-block {
+      display: flex; align-items: flex-start; gap: 32px;
+      margin-top: 52px; max-width: 700px;
+    }
+    .founder-avatar {
+      width: 72px; height: 72px; border-radius: 50%;
+      background: var(--accent-soft); flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 28px; font-weight: 600; color: var(--accent);
+    }
+    .founder-info h3 { font-size: 22px; font-weight: 600; letter-spacing: -0.44px; margin-bottom: 4px; }
+    .founder-info .role { font-size: 15px; color: var(--text-secondary); margin-bottom: 12px; }
+    .founder-info p { font-size: 15px; color: var(--text-secondary); line-height: 1.6; }
+
+    /* ── Footer ── */
+    footer {
+      max-width: 1100px; margin:0 auto; padding: 48px 24px;
+      display: flex; justify-content: space-between; align-items: center;
+      border-top: 1px solid var(--border);
+    }
+    footer .copy { font-size: 13px; color: var(--text-tertiary); }
+    footer .links { display: flex; gap: 20px; }
+    footer .links a { font-size: 13px; color: var(--text-tertiary); text-decoration: none; }
+    footer .links a:hover { color: var(--text); }
+
+    /* ── Toast ── */
+    .toast {
+      position: fixed; bottom: 40px; left: 50%; transform: translateX(-50%);
+      background: var(--text); color: #fff; padding: 16px 32px;
+      border-radius: 12px; font-size: 15px; font-weight: 500;
+      opacity: 0; pointer-events: none; transition: opacity 0.3s; z-index: 200;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+    }
+    .toast.show { opacity: 1; }
+
+    @media (max-width: 700px) {
+      .hero { padding: 140px 20px 80px; }
+      .hero h1 { font-size: 36px; letter-spacing: -1.44px; }
+      section { padding: 64px 20px; }
+      section h2 { font-size: 28px; letter-spacing: -0.84px; }
+      .subscribe-strip { flex-direction: column; text-align: center; padding: 36px 24px; }
+      .subscribe-form { flex-direction: column; width: 100%; }
+      .subscribe-form input { width: 100%; }
+      .founder-block { flex-direction: column; align-items: center; text-align: center; }
+      footer { flex-direction: column; gap: 16px; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="inner">
+    <a href="#" class="logo-group">
+      <div class="logo-dot"></div>
+      <span class="logo-text">Post AI Company</span>
+    </a>
+    <div class="nav-links">
+      <a href="#thesis">Thesis</a>
+      <a href="#formats">Formats</a>
+      <a href="#cases">Cases</a>
+      <a href="#subscribe">Subscribe</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ═══════ HERO ═══════ -->
+<header class="hero">
+  <div class="hero-badge"><span class="dot"></span> Publication · São Paulo · Est. 2026</div>
+  <h1>
+    The post-AI company<br><span class="accent">doesn't exist yet.</span>
+  </h1>
+  <p>We're documenting its birth. What changes when AI is not the product but the infrastructure? How do teams, workflows, org charts, and careers reorganize when intelligence is abundant and cheap? This is the question. We're here to answer it — with data, not speculation.</p>
+</header>
+
+<div class="divider"></div>
+
+<!-- ═══════ THESIS ═══════ -->
+<section id="thesis">
+  <div class="section-label">Thesis</div>
+  <h2>AI is the new electricity.<br>But nobody's redesigning the factory.</h2>
+  <p class="desc">Companies are adopting AI tools without rethinking the organization around them. That's like putting electric motors in a steam-powered factory and calling it innovation. The post-AI company isn't about adding AI — it's about reorganizing around what AI makes possible.</p>
+  <div class="big-quote">
+    "The question isn't <em>'what can AI do?'</em> — it's <em>'what should a company look like when intelligence costs zero?'</em> Everything flows from that."
+  </div>
+</section>
+
+<!-- ═══════ WHAT CHANGES ═══════ -->
+<section>
+  <div class="section-label">What Changes</div>
+  <h2>Everything — starting with these six</h2>
+  <div class="changes-grid">
+    <div class="change-card">
+      <div class="num">01</div>
+      <h3>Work hours dissolve</h3>
+      <p>When AI handles async work 24/7, the 9-to-5 becomes optional. The question becomes: what's the minimum synchronous time a team actually needs?</p>
+    </div>
+    <div class="change-card">
+      <div class="num">02</div>
+      <h3>Teams shrink, leverage explodes</h3>
+      <p>A 3-person company with AI agents can do what took 30 people in 2024. Headcount stops being a proxy for capability. Output per person becomes the only metric that matters.</p>
+    </div>
+    <div class="change-card">
+      <div class="num">03</div>
+      <h3>Management is rewritten</h3>
+      <p>When AI handles task assignment, progress tracking, and performance data, the middle manager's job shifts from coordination to judgment. What's the new span of control?</p>
+    </div>
+    <div class="change-card">
+      <div class="num">04</div>
+      <h3>Careers become portfolios</h3>
+      <p>The 40-year single-track career dies. Post-AI workers manage a portfolio of projects, revenue streams, and learning loops. Loyalty shifts from company to capability.</p>
+    </div>
+    <div class="change-card">
+      <div class="num">05</div>
+      <h3>Decision velocity is the moat</h3>
+      <p>When everyone has access to the same AI, competitive advantage moves from information access to decision speed. The fastest decision-maker wins.</p>
+    </div>
+    <div class="change-card">
+      <div class="num">06</div>
+      <h3>Culture becomes architecture</h3>
+      <p>In a world of AI-mediated work, culture isn't soft — it's infrastructure. How a company decides, communicates, and resolves conflict becomes its actual operating system.</p>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ═══════ FORMATS ═══════ -->
+<section id="formats">
+  <div class="section-label">Formats</div>
+  <h2>We cover the transition<br>from every angle</h2>
+  <div class="formats-grid">
+    <a href="#" class="format-card">
+      <span class="icon">📰</span>
+      <h3>Newsletter</h3>
+      <p>Weekly curation and original analysis on the post-AI transition. Companies, tools, data, and what actually matters.</p>
+      <div class="freq">Every Wednesday · 5 min read</div>
+    </a>
+    <a href="#" class="format-card">
+      <span class="icon">🎙️</span>
+      <h3>Podcast</h3>
+      <p>Conversations with founders and leaders who are already operating in post-AI mode. What they're learning, in their own words.</p>
+      <div class="freq">Biweekly · 30-45 min</div>
+    </a>
+    <a href="#" class="format-card">
+      <span class="icon">📊</span>
+      <h3>Research & Data</h3>
+      <p>Original data on how AI is changing org structures, team sizes, and decision patterns. Not surveys — real signals from real companies.</p>
+      <div class="freq">Quarterly deep dives</div>
+    </a>
+    <a href="#" class="format-card">
+      <span class="icon">🔬</span>
+      <h3>Case Studies</h3>
+      <p>Deep profiles of companies that are living the post-AI model today. What they changed, what broke, what worked.</p>
+      <div class="freq">Monthly</div>
+    </a>
+  </div>
+</section>
+
+<!-- ═══════ CASES ═══════ -->
+<section id="cases">
+  <div class="section-label">Early Signals</div>
+  <h2>Companies already<br>living this</h2>
+  <p class="desc">They're not post-AI yet. But they're closer than most. We're studying them.</p>
+  <div class="cases-grid">
+    <div class="case-card">
+      <h3>10 people, $15M ARR</h3>
+      <div class="company">Cursor / Anysphere</div>
+      <p>Revenue per employee that would be impossible without AI-augmented development. The prototype for the post-AI org: tiny team, massive output, AI-native from day one.</p>
+    </div>
+    <div class="case-card">
+      <h3>No managers, AI-mediated coordination</h3>
+      <div class="company">Midjourney</div>
+      <p>~80 employees, no management layers. AI handles coordination and project tracking. Humans handle creative direction. An early experiment in post-AI org design.</p>
+    </div>
+    <div class="case-card">
+      <h3>AI as operating system, not feature</h3>
+      <div class="company">Lovable</div>
+      <p>Built with AI as the core infrastructure from day zero, not bolted on later. Their internal workflows are as AI-native as their product — a glimpse of the default future.</p>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ═══════ SUBSCRIBE ═══════ -->
+<section id="subscribe">
+  <div class="subscribe-strip">
+    <div class="strip-text">
+      <h3>Get the newsletter</h3>
+      <p>The post-AI company doesn't exist yet — but we're documenting its birth every week. Data, cases, and provocations. No hype.</p>
+    </div>
+    <form class="subscribe-form" id="subscribe-form">
+      <input type="email" id="email-input" placeholder="your@email.com" required>
+      <button type="submit">Subscribe</button>
+    </form>
+  </div>
+</section>
+
+<!-- ═══════ FOUNDER ═══════ -->
+<section>
+  <div class="section-label">Founder</div>
+  <h2>Fernanda Faria</h2>
+  <p class="desc">CPTO at Zé Delivery by day, building the intellectual infrastructure for the post-AI era by night.</p>
+  <div class="founder-block">
+    <div class="founder-avatar">FF</div>
+    <div class="founder-info">
+      <h3>Fernanda Faria</h3>
+      <div class="role">Founder, Post AI Company</div>
+      <p>15+ years leading product and engineering. Currently CPTO at Zé Delivery (AB InBev), the largest beverage delivery platform in Latin America. Post AI Company is the research and publication hub for the question she can't stop asking: what comes after AI?</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ FOOTER ═══════ -->
+<footer>
+  <div class="copy">Post AI Company © 2026 · São Paulo, Brazil</div>
+  <div class="links">
+    <a href="https://syntheticperson.ai">SyntheticPerson</a>
+    <a href="#subscribe">Newsletter</a>
+    <a href="#formats">Podcast</a>
+  </div>
+</footer>
+
+<div class="toast" id="toast">Subscribed. Check your email — first edition this Wednesday.</div>
+
+<script>
+  const form = document.getElementById('subscribe-form');
+  const toast = document.getElementById('toast');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const input = document.getElementById('email-input');
+    const email = input.value.trim();
+    if (!email || !email.includes('@')) { input.focus(); return; }
+
+    try {
+      const resp = await fetch('/api/subscribe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email })
+      });
+      const data = await resp.json();
+
+      if (data.ok) {
+        toast.classList.add('show');
+        setTimeout(() => toast.classList.remove('show'), 4000);
+        input.value = '';
+      } else {
+        alert('Error: ' + (data.error || 'try again'));
+      }
+    } catch (err) {
+      alert('Connection error. Please try again.');
+    }
+  });
+</script>
+
+</body>
+</html>
