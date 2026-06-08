@@ -1,0 +1,28 @@
+# Secrets / env
+.env
+.env.local
+.env.*.local
+*.d-id-auth
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Vercel
+.vercel/
+
+# Generated media (hosted via CDN/release, not versioned)
+podcast/ep1/
+podcast/*.mp3
+clips/*.mp4
+clips/clip-template/output/
+*.mp4
+*.mp3
