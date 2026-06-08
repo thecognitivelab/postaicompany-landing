@@ -13,7 +13,9 @@ from urllib.error import HTTPError
 FROM_EMAIL = os.environ.get("FROM_EMAIL", "Post AI Company <hello@postaicompany.com>")
 CONTACT_TO_EMAIL = os.environ.get("CONTACT_TO_EMAIL", "fefaria@syntheticperson.ai")
 
-EMAIL_RE = r"^[^@\s]+@[^@\s]+\.[^@\s]+$"
+# Domain labels exclude '.' so the pattern is unambiguous (linear time) — avoids
+# the polynomial backtracking CodeQL flags on the simpler `[^@\s]+\.[^@\s]+` form.
+EMAIL_RE = r"^[^@\s]+@[^@\s.]+(\.[^@\s.]+)+$"
 
 
 def _resend_key() -> str | None:
