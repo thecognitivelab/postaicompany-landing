@@ -3,9 +3,16 @@
 
 import os, re, time, json, subprocess, sys
 
-API_KEY = "sk_ce7ba65e85f0695573684846f15643c623083273f9f6c1ff"
-SCRIPT_PATH = os.path.expanduser("~/code/postaicompany-landing/content/2026-06-11-podcast-ep1-lenny-style.md")
-OUTPUT_DIR = os.path.expanduser("~/code/postaicompany-landing/podcast/ep1/")
+API_KEY = os.environ.get("ELEVENLABS_API_KEY")
+if not API_KEY:
+    sys.exit("ELEVENLABS_API_KEY not set — export it before running (see .env.example).")
+
+REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+SCRIPT_PATH = os.environ.get(
+    "PODCAST_SCRIPT_PATH",
+    os.path.join(REPO_ROOT, "content", "2026-06-11-podcast-ep1-lenny-style.md"),
+)
+OUTPUT_DIR = os.path.join(REPO_ROOT, "podcast", "ep1")
 FINAL_OUTPUT = os.path.join(OUTPUT_DIR, "ep1-final.mp3")
 
 # Voice assignments

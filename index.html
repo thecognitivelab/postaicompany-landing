@@ -27,6 +27,7 @@
     :root {--bg:#fff;--text:#0d0d0d;--text-secondary:#555;--text-tertiary:#999;--accent:#0066ff;--accent-soft:#e8f1ff;--accent-glow:rgba(0,102,255,.1);--border:rgba(0,0,0,.07);--border-strong:rgba(0,0,0,.12);--surface:#f8f8f8;--surface-hover:#f2f2f2;--shadow-card:0px 0px 0px 1px rgba(0,0,0,.06),0px 2px 6px rgba(0,0,0,.04);--shadow-card-hover:0px 0px 0px 1px rgba(0,0,0,.08),0px 8px 24px rgba(0,0,0,.06);--radius:10px;}
     *{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
     body{font-family:'Geist',system-ui,-apple-system,sans-serif;color:var(--text);background:var(--bg);-webkit-font-smoothing:antialiased}
+    :focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:4px}
     nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,.85);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);box-shadow:0 0 0 1px var(--border)}
     nav .inner{max-width:1200px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between}
     .logo-group{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--text)}
@@ -163,7 +164,7 @@
 
 <nav>
   <div class="inner">
-    <a href="#" class="logo-group"><div class="logo-dot"></div><span class="logo-text">Post AI Company</span></a>
+    <a href="/" class="logo-group"><div class="logo-dot" aria-hidden="true"></div><span class="logo-text">Post AI Company</span></a>
     <div class="nav-links">
       <a href="/editions">Editions</a>
       <a href="/data">Data</a>
@@ -194,13 +195,13 @@
   <h2>Just published</h2>
   <div class="paths-grid">
     <a href="/editions/001-midjourney" class="path-card founders">
-      <span class="path-icon">📰</span>
+      <span class="path-icon" aria-hidden="true">📰</span>
       <h3>edition #001 — what Midjourney knows</h3>
       <p>What David Holz decided not to build is the blueprint for the post-AI company. No sales. No marketing. No VC. No managers.</p>
       <span class="path-for">Newsletter · May 1</span>
     </a>
     <a href="/podcast" class="path-card founders">
-      <span class="path-icon">🎙️</span>
+      <span class="path-icon" aria-hidden="true">🎙️</span>
       <h3>podcast ep.1 — outlier or blueprint?</h3>
       <p>Marco (the skeptic) and Lena (the strategist) debate Midjourney for 24 minutes. They do not agree.</p>
       <span class="path-for">Podcast · May 22</span>
@@ -221,13 +222,13 @@
   <h2>Two paths.<br>One publication.</h2>
   <div class="paths-grid">
     <div class="path-card founders">
-      <span class="path-icon">🚀</span>
+      <span class="path-icon" aria-hidden="true">🚀</span>
       <h3>I'm building from scratch</h3>
       <p>You have an idea you can't stop thinking about. You want to build it as an AI-native company from day zero — tiny team, massive leverage, no legacy. We cover the playbook: Idea → MVP → Launch → Scale.</p>
       <span class="path-for">For founders</span>
     </div>
     <div class="path-card transformers">
-      <span class="path-icon">🔄</span>
+      <span class="path-icon" aria-hidden="true">🔄</span>
       <h3>I'm transforming my company</h3>
       <p>You already have a company, a team, and revenue. You need to reorganize around AI without breaking what works. We cover the blueprint: org design, tool stack, decision velocity, case studies.</p>
       <span class="path-for">For executives & leaders</span>
@@ -244,37 +245,37 @@
   <p class="desc">A full stack of content — from quick weekly signals to deep quarterly research. Built for both paths.</p>
   <div class="eco-grid">
     <a href="#subscribe" class="eco-card">
-      <span class="eco-icon">📰</span>
+      <span class="eco-icon" aria-hidden="true">📰</span>
       <h4>Post AI Weekly</h4>
       <p>The newsletter. Data, analysis, and provocations on the post-AI transition.</p>
       <span class="eco-freq">Every Wednesday · 5 min</span>
     </a>
-    <a href="#" class="eco-card">
-      <span class="eco-icon">🎙️</span>
+    <a href="/podcast" class="eco-card">
+      <span class="eco-icon" aria-hidden="true">🎙️</span>
       <h4>Post AI Sessions</h4>
       <p>AI-generated podcast. Marco (the skeptic) and Lena (the strategist) debate the week's biggest question.</p>
       <span class="eco-freq">Biweekly · 25 min</span>
     </a>
-    <a href="#" class="eco-card">
-      <span class="eco-icon">📡</span>
+    <a href="/radar" class="eco-card">
+      <span class="eco-icon" aria-hidden="true">📡</span>
       <h4>Radar</h4>
       <p>What the best AI newsletters published this week — and our take. Ben's Bites, Import AI, Rundown, and more.</p>
       <span class="eco-freq">Every Monday</span>
     </a>
-    <a href="#" class="eco-card">
-      <span class="eco-icon">🧩</span>
+    <a href="/frameworks/ai-first-org-chart" class="eco-card">
+      <span class="eco-icon" aria-hidden="true">🧩</span>
       <h4>Frameworks</h4>
       <p>Proprietary tools: AI-First Org Chart, Decision Velocity Framework, Headcount Decoupling Playbook.</p>
       <span class="eco-freq">Evergreen</span>
     </a>
-    <a href="#" class="eco-card">
-      <span class="eco-icon">🔬</span>
+    <a href="/case-studies/midjourney" class="eco-card">
+      <span class="eco-icon" aria-hidden="true">🔬</span>
       <h4>Case Studies</h4>
       <p>Deep profiles of companies living the post-AI model. What they changed, what broke, what worked.</p>
       <span class="eco-freq">Monthly</span>
     </a>
-    <a href="#" class="eco-card">
-      <span class="eco-icon">📊</span>
+    <a href="/index" class="eco-card">
+      <span class="eco-icon" aria-hidden="true">📊</span>
       <h4>Post AI Index</h4>
       <p>Original data on revenue per employee, team size trends, and AI tool stacks. Not surveys — real signals.</p>
       <span class="eco-freq">Quarterly</span>
@@ -365,7 +366,7 @@
       <p>Every Wednesday. Data, analysis, and provocations on the post-AI company. 5 minutes. Zero fluff.</p>
     </div>
     <form class="subscribe-form" id="subscribe-form">
-      <input type="email" id="email-input" placeholder="your@email.com" required>
+      <input type="email" id="email-input" aria-label="Email address" placeholder="your@email.com" required>
       <button type="submit">Subscribe</button>
     </form>
   </div>
@@ -391,7 +392,7 @@
   <div class="links">
     <a href="/playbook">Playbook</a>
     <a href="#subscribe">Newsletter</a>
-    <a href="#ecosystem">Podcast</a>
+    <a href="/podcast">Podcast</a>
     <a href="#data">Data</a>
   </div>
 </footer>

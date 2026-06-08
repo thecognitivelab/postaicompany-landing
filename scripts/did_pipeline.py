@@ -2,8 +2,9 @@
 """Batch generate Post AI clips from Episode 1 script."""
 import urllib.request, json, sys, os, time
 
-DID_CONFIG = "/Users/rawfamily/.d-id-auth"
-CLIP_DIR = os.path.expanduser("~/code/postaicompany-landing/clips")
+DID_CONFIG = os.environ.get("D_ID_AUTH_FILE", os.path.expanduser("~/.d-id-auth"))
+REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+CLIP_DIR = os.path.join(REPO_ROOT, "clips")
 
 # Clip definitions from Episode 1 (SOCIAL-STRATEGY.md)
 CLIPS = [
