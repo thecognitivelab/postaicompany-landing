@@ -19,10 +19,11 @@
   <meta name="twitter:title" content="Post AI Company — For founders and transformers in the post-AI era">
   <meta name="twitter:description" content="The publication for people building and transforming companies in the post-AI era.">
   <meta name="twitter:image" content="https://postaicompany.com/og-image.png">
+  <meta name="twitter:creator" content="@fernandafaria">
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Post AI Company","url":"https://postaicompany.com","description":"Publication and research hub for the post-AI era. For founders building AI-native companies and executives transforming existing ones.","founder":{"@type":"Person","name":"Fernanda Faria"}}</script>
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap&subset=latin" rel="stylesheet">
   <style>
     :root {--bg:#fff;--text:#0d0d0d;--text-secondary:#555;--text-tertiary:#999;--accent:#0066ff;--accent-soft:#e8f1ff;--accent-glow:rgba(0,102,255,.1);--border:rgba(0,0,0,.07);--border-strong:rgba(0,0,0,.12);--surface:#f8f8f8;--surface-hover:#f2f2f2;--shadow-card:0px 0px 0px 1px rgba(0,0,0,.06),0px 2px 6px rgba(0,0,0,.04);--shadow-card-hover:0px 0px 0px 1px rgba(0,0,0,.08),0px 8px 24px rgba(0,0,0,.06);--radius:10px;}
     *{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
@@ -33,6 +34,7 @@
     .logo-group{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--text)}
     .logo-dot{width:10px;height:10px;border-radius:50%;background:var(--accent);box-shadow:0 0 16px var(--accent),0 0 4px var(--accent);animation:pulse 2s ease-in-out infinite}
     @keyframes pulse{0%,100%{box-shadow:0 0 12px var(--accent),0 0 4px var(--accent)}50%{box-shadow:0 0 24px var(--accent),0 0 8px var(--accent)}}
+    @media(prefers-reduced-motion:reduce){.logo-dot,.hero-badge .dot{animation:none}}
     .logo-text{font-size:18px;font-weight:600;letter-spacing:-.6px}
     .nav-links{display:flex;gap:24px}
     .nav-links a{font-size:14px;font-weight:500;color:var(--text-secondary);text-decoration:none;transition:color .15s}
@@ -146,8 +148,10 @@
     footer .links a{font-size:13px;color:var(--text-tertiary);text-decoration:none}
     footer .links a:hover{color:var(--text)}
     .toast{position:fixed;bottom:40px;left:50%;transform:translateX(-50%);background:var(--text);color:#fff;padding:16px 32px;border-radius:12px;font-size:15px;font-weight:500;opacity:0;pointer-events:none;transition:opacity .3s;z-index:200;box-shadow:0 8px 32px rgba(0,0,0,.2)}
-    .toast.show{opacity:1}
+    .toast.show{opacity:1}.toast.error{background:#cc2200}
 
+    .radar-card{display:block;background:var(--surface);border-radius:var(--radius);padding:24px 28px;text-decoration:none;color:var(--text);margin-top:16px;transition:all .2s}
+    .radar-card:hover{background:var(--surface-hover)}
     @media(max-width:700px){
       .hero{padding:140px 20px 80px}.hero h1{font-size:34px;letter-spacing:-1px}
       section{padding:64px 20px}section h2{font-size:28px;letter-spacing:-.84px}
@@ -167,11 +171,10 @@
     <a href="/" class="logo-group"><div class="logo-dot" aria-hidden="true"></div><span class="logo-text">Post AI Company</span></a>
     <div class="nav-links">
       <a href="/editions">Editions</a>
+      <a href="/podcast">Podcast</a>
       <a href="/data">Data</a>
-      <a href="/community">Community</a>
-      <a href="/news">The Post</a>
-      <a href="#ecosystem">Ecosystem</a>
-      <a href="#cases">Cases</a>
+      <a href="/radar">Radar</a>
+      <a href="/contact">Contact</a>
       <a href="#subscribe">Subscribe</a>
     </div>
   </div>
@@ -207,8 +210,8 @@
       <span class="path-for">Podcast · May 22</span>
     </a>
   </div>
-  <a href="/radar" style="display:block;background:var(--surface);border-radius:var(--radius);padding:24px 28px;text-decoration:none;color:var(--text);margin-top:16px;transition:all .2s" onmouseover="this.style.background='var(--surface-hover)'" onmouseout="this.style.background='var(--surface)'">
-    <span style="font-family:'Geist Mono',monospace;font-size:11px;color:var(--accent);text-transform:uppercase;letter-spacing:.5px">📡 Radar — Week 23</span>
+  <a href="/radar" class="radar-card">
+    <span style="font-family:'Geist Mono',monospace;font-size:11px;color:var(--accent);text-transform:uppercase;letter-spacing:.5px" aria-hidden="true">📡</span><span style="font-family:'Geist Mono',monospace;font-size:11px;color:var(--accent);text-transform:uppercase;letter-spacing:.5px"> Radar — Week 23</span>
     <span style="font-size:17px;font-weight:500;display:block;margin-top:4px">What 7 AI newsletters published this week — curated with opinion.</span>
     <span style="font-size:13px;color:var(--text-tertiary);margin-top:6px;display:block">June 5, 2026</span>
   </a>
@@ -390,29 +393,40 @@
 <footer>
   <div class="copy">Post AI Company © 2026 · São Paulo, Brazil</div>
   <div class="links">
-    <a href="/playbook">Playbook</a>
-    <a href="#subscribe">Newsletter</a>
+    <a href="/editions">Editions</a>
     <a href="/podcast">Podcast</a>
-    <a href="#data">Data</a>
+    <a href="/radar">Radar</a>
+    <a href="/data">Data</a>
+    <a href="/contact">Contact</a>
+    <a href="/#subscribe">Subscribe</a>
+    <a href="/privacy">Privacy</a>
   </div>
 </footer>
 
-<div class="toast" id="toast">Subscribed. Check your email — first edition this Wednesday.</div>
+<div class="toast" id="toast"></div>
 
 <script>
   const form = document.getElementById('subscribe-form');
   const toast = document.getElementById('toast');
+  const EMAIL_RE = /^[^@\s]+@[^@\s.]+(\.[^@\s.]+)+$/;
+
+  function showToast(msg, isError) {
+    toast.textContent = msg;
+    toast.className = 'toast' + (isError ? ' error' : '') + ' show';
+    setTimeout(() => { toast.className = 'toast'; }, 4000);
+  }
+
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
     const input = document.getElementById('email-input');
     const email = input.value.trim();
-    if (!email || !email.includes('@')) { input.focus(); return; }
+    if (!email || !EMAIL_RE.test(email)) { input.focus(); return; }
     try {
       const resp = await fetch('/api/subscribe', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ email }) });
       const data = await resp.json();
-      if (data.ok) { toast.classList.add('show'); setTimeout(() => toast.classList.remove('show'), 4000); input.value = ''; }
-      else { alert('Error: ' + (data.error || 'try again')); }
-    } catch (err) { alert('Connection error. Please try again.'); }
+      if (data.ok) { showToast('Subscribed. Check your email — first edition this Wednesday.', false); input.value = ''; }
+      else { showToast('Error: ' + (data.error || 'try again'), true); }
+    } catch (err) { showToast('Connection error. Please try again.', true); }
   });
 </script>
 </body>
