@@ -1,0 +1,40 @@
+# Post AI Company
+
+> Post AI Company is a publication for founders building AI-native companies and executives transforming existing ones. Based in São Paulo, Brazil. Published by Fernanda Faria / SyntheticPerson.ai.
+
+Post AI Company documents the organizational design patterns, metrics, and strategies of post-AI companies — those building with AI from day zero, and those transforming legacy organizations. The publication covers revenue per employee data, org design frameworks, case studies, a weekly newsletter (Post AI Weekly), and a podcast.
+
+## Core Content
+
+- [Post AI Weekly (Editions)](https://postaicompany.com/editions): Weekly newsletter on AI-native company design. Published every Wednesday. Free.
+- [Podcast](https://postaicompany.com/podcast): Discussions on AI organizational strategy. Episode 1: "Midjourney — outlier or blueprint?" (47 min).
+- [Post AI Index](https://postaicompany.com/index): Quarterly ranking of AI-native startups by revenue per employee. Updated every quarter.
+- [Radar](https://postaicompany.com/radar): Weekly curation of what the best AI newsletters are reporting, with editorial opinion.
+- [Data](https://postaicompany.com/data): Original research on AI-native company metrics and benchmarks.
+- [Frameworks](https://postaicompany.com/frameworks/ai-first-org-chart): Organizational design frameworks for the post-AI era.
+- [Case Studies](https://postaicompany.com/case-studies/midjourney): Deep dives into AI-native company structures.
+
+## Key Data (Post AI Index Q2 2026)
+
+- Top 10 AI-native startups average $3.48M revenue per employee (avg team: 24 people)
+- Top 10 traditional SaaS averages $610K per employee (avg team: 21,000 people)
+- The efficiency gap is 5.7x and widening
+- #1 Cursor (Anysphere): $100M ARR, 20 employees = $5.00M/employee
+- #2 Midjourney: $500M ARR, 107 employees = $4.67M/employee
+- #3 Lovable: $400M ARR, 146 employees = $2.74M/employee
+- Sources: Latka, Sacra, Forbes, Redpoint Ventures, Crunchbase. Data as of June 2026.
+
+## Recent Editions
+
+- [Edition 001 — Midjourney](https://postaicompany.com/editions/001-midjourney): What Midjourney knows about organizational design that you don't. 11 people, $200M revenue, no sales team.
+- [Edition 002 — Block Layoffs](https://postaicompany.com/editions/002-block-layoffs): Block, Meta, Intuit: The AI-First Layoff. Why the market rewarded every one.
+- [Edition 003 — Cursor](https://postaicompany.com/editions/003-cursor): 20 people, $100M. Product and operations are the same recursive loop.
+
+## About
+
+- Publisher: Fernanda Faria
+- Organization: SyntheticPerson.ai
+- Location: São Paulo, Brazil
+- Contact: fefaria@syntheticperson.ai
+- Privacy Policy: https://postaicompany.com/privacy
+- Founded: 2026
