@@ -1,0 +1,46 @@
+name: Radar Pipeline
+
+on:
+  schedule:
+    # Sunday 21:00 UTC = 18:00 BRT
+    - cron: '0 21 * * 0'
+  workflow_dispatch:
+    inputs:
+      force:
+        description: 'Force regenerate even if radar already exists today'
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+jobs:
+  radar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install anthropic
+
+      - name: Run radar pipeline
+        run: python -m pipeline.radar
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          FORCE_RUN: ${{ inputs.force }}
+
+      - name: Commit and push radar
+        run: |
+          git config user.name "Post AI Bot"
+          git config user.email "bot@postaicompany.com"
+          git add content/ config/
+          git diff --staged --quiet || git commit -m "auto: radar published [skip ci]"
+          git push

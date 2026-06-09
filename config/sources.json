@@ -1,0 +1,46 @@
+{
+  "newsletters": [
+    {
+      "name": "Ben's Bites",
+      "label": "bensbites",
+      "url": "https://www.bensbites.com",
+      "rss": "https://www.bensbites.com/feed"
+    },
+    {
+      "name": "Import AI",
+      "label": "importai",
+      "url": "https://jack-clark.net",
+      "rss": "https://jack-clark.net/feed/"
+    },
+    {
+      "name": "Latent Space",
+      "label": "latentspace",
+      "url": "https://www.latent.space",
+      "rss": "https://www.latent.space/feed"
+    },
+    {
+      "name": "The Batch",
+      "label": "thebatch",
+      "url": "https://www.deeplearning.ai/the-batch/",
+      "rss": "https://www.deeplearning.ai/the-batch/feed/"
+    },
+    {
+      "name": "The Rundown AI",
+      "label": "rundown",
+      "url": "https://www.therundown.ai",
+      "rss": "https://www.therundown.ai/feed"
+    },
+    {
+      "name": "The Neuron",
+      "label": "neuron",
+      "url": "https://theneurondaily.com",
+      "rss": "https://theneurondaily.com/feed/"
+    },
+    {
+      "name": "Interconnects",
+      "label": "interconnects",
+      "url": "https://www.interconnects.ai",
+      "rss": "https://www.interconnects.ai/feed"
+    }
+  ]
+}

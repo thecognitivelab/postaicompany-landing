@@ -1,0 +1,102 @@
+{
+  "newsletter": [
+    {
+      "edition": 1,
+      "date": "2026-06-11",
+      "topic": "Midjourney: 11 pessoas, $200M. Como?",
+      "slug": "midjourney-11-people-200m",
+      "audience": "founders",
+      "status": "published",
+      "content_file": "content/2026-06-11-midjourney-11-people-200m.md"
+    },
+    {
+      "edition": 2,
+      "date": "2026-06-18",
+      "topic": "Revenue per employee: the data sweep — what separates AI-native companies from everyone else",
+      "slug": "revenue-per-employee-data-sweep",
+      "audience": "founders",
+      "status": "planned"
+    },
+    {
+      "edition": 3,
+      "date": "2026-06-25",
+      "topic": "The AI stack of a lean startup — what tools the most efficient companies actually use",
+      "slug": "ai-stack-lean-startup",
+      "audience": "founders",
+      "status": "planned"
+    },
+    {
+      "edition": 4,
+      "date": "2026-07-02",
+      "topic": "Why you should hire AI agents before humans — and the one type of human role AI genuinely can't replace",
+      "slug": "hire-ai-agents-before-humans",
+      "audience": "founders",
+      "status": "planned"
+    },
+    {
+      "edition": 5,
+      "date": "2026-07-09",
+      "topic": "Decision velocity: the new moat — how post-AI companies make decisions 10x faster",
+      "slug": "decision-velocity-new-moat",
+      "audience": "founders",
+      "status": "planned"
+    },
+    {
+      "edition": 6,
+      "date": "2026-07-16",
+      "topic": "Case Study: Cursor/Anysphere — $100M ARR, 20 people, 40% AI-generated PRs",
+      "slug": "cursor-anysphere-case-study",
+      "audience": "transformers",
+      "status": "planned"
+    },
+    {
+      "edition": 7,
+      "date": "2026-07-23",
+      "topic": "Management is dead. What replaces it in a post-AI company?",
+      "slug": "management-is-dead",
+      "audience": "transformers",
+      "status": "planned"
+    },
+    {
+      "edition": 8,
+      "date": "2026-07-30",
+      "topic": "Post AI Index Q2 preview — the numbers from 30 AI-native companies",
+      "slug": "post-ai-index-q2-preview",
+      "audience": "founders",
+      "status": "planned"
+    }
+  ],
+  "podcast": [
+    {
+      "episode": 1,
+      "date": "2026-06-11",
+      "topic": "Midjourney: 11 people, $200M — outlier or blueprint?",
+      "slug": "ep1-midjourney-outlier-blueprint",
+      "status": "published",
+      "content_file": "content/2026-06-11-podcast-ep1.md",
+      "audio_file": "podcast/ep1.mp3"
+    },
+    {
+      "episode": 2,
+      "date": "2026-06-25",
+      "topic": "AI-native org design — flat structures, no managers, and what breaks first",
+      "slug": "ep2-ai-native-org-design",
+      "status": "planned"
+    },
+    {
+      "episode": 3,
+      "date": "2026-07-09",
+      "topic": "Headcount decoupling — how to grow revenue without growing headcount",
+      "slug": "ep3-headcount-decoupling",
+      "status": "planned"
+    },
+    {
+      "episode": 4,
+      "date": "2026-07-23",
+      "topic": "The VC perspective — what investors see in AI-native companies that others miss",
+      "slug": "ep4-vc-perspective",
+      "status": "planned"
+    }
+  ],
+  "radar": []
+}

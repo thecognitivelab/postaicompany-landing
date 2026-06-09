@@ -1,0 +1,52 @@
+name: Podcast Pipeline
+
+on:
+  schedule:
+    # Every other Thursday 12:00 UTC = 09:00 BRT (weeks 2, 4, 6...)
+    # Note: GitHub Actions doesn't support biweekly natively — the pipeline
+    # itself checks the editorial calendar and skips if no episode is due.
+    - cron: '0 12 * * 4'
+  workflow_dispatch:
+    inputs:
+      force:
+        description: 'Force run even if no episode is due today'
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+jobs:
+  podcast:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install system dependencies
+        run: sudo apt-get install -y ffmpeg
+
+      - name: Install Python dependencies
+        run: pip install anthropic
+
+      - name: Run podcast pipeline
+        run: python -m pipeline.podcast
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+          FORCE_RUN: ${{ inputs.force }}
+
+      - name: Commit script and audio
+        run: |
+          git config user.name "Post AI Bot"
+          git config user.email "bot@postaicompany.com"
+          git add content/ podcast/ config/
+          git diff --staged --quiet || git commit -m "auto: podcast episode published [skip ci]"
+          git push

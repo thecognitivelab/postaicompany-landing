@@ -1,0 +1,48 @@
+name: Clips Pipeline
+
+on:
+  schedule:
+    # Wednesday 12:00 UTC = 09:00 BRT
+    - cron: '0 12 * * 3'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  clips:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install anthropic
+
+      - name: Write D-ID auth file
+        run: |
+          mkdir -p ~/.config
+          echo "$D_ID_AUTH" > ~/.d-id-auth
+        env:
+          D_ID_AUTH: ${{ secrets.D_ID_AUTH }}
+
+      - name: Run clips pipeline
+        run: python -m pipeline.clips
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          D_ID_AUTH_FILE: ~/.d-id-auth
+
+      - name: Commit social staging
+        run: |
+          git config user.name "Post AI Bot"
+          git config user.email "bot@postaicompany.com"
+          git add clips/social-staging.json
+          git diff --staged --quiet || git commit -m "auto: clips generated + social staging updated [skip ci]"
+          git push
