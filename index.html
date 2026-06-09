@@ -29,6 +29,8 @@
     *{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
     body{font-family:'Geist',system-ui,-apple-system,sans-serif;color:var(--text);background:var(--bg);-webkit-font-smoothing:antialiased}
     :focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:4px}
+
+    /* Nav */
     nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,.85);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);box-shadow:0 0 0 1px var(--border)}
     nav .inner{max-width:1200px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between}
     .logo-group{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--text)}
@@ -39,6 +41,8 @@
     .nav-links{display:flex;gap:24px}
     .nav-links a{font-size:14px;font-weight:500;color:var(--text-secondary);text-decoration:none;transition:color .15s}
     .nav-links a:hover{color:var(--text)}
+
+    /* Hero */
     .hero{max-width:900px;margin:0 auto;padding:180px 24px 100px;text-align:center}
     .hero-badge{display:inline-flex;align-items:center;gap:8px;background:var(--accent-soft);color:var(--accent);padding:6px 16px;border-radius:100px;font-size:13px;font-weight:500;margin-bottom:32px;font-family:'Geist Mono',monospace;letter-spacing:.5px}
     .hero-badge .dot{width:6px;height:6px;border-radius:50%;background:var(--accent);animation:pulse 2s infinite}
@@ -47,40 +51,74 @@
     .hero h1 .dim{color:var(--text-tertiary);font-weight:400}
     .hero p{font-size:19px;color:var(--text-secondary);line-height:1.6;margin-top:24px;max-width:580px;margin-left:auto;margin-right:auto}
     .hero-cta{margin-top:36px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+
+    /* Buttons */
+    .btn-accent{padding:14px 32px;background:var(--accent);color:#fff;border-radius:8px;font-size:15px;font-weight:600;text-decoration:none;transition:all .2s}
+    .btn-accent:hover{opacity:.9;transform:translateY(-1px)}
     .btn{padding:14px 32px;background:var(--text);color:#fff;border-radius:8px;font-size:15px;font-weight:600;text-decoration:none;transition:all .2s}
     .btn:hover{opacity:.9;transform:translateY(-1px)}
     .btn-outline{padding:14px 32px;border:1px solid var(--border-strong);color:var(--text);border-radius:8px;font-size:15px;font-weight:500;text-decoration:none;transition:all .2s}
     .btn-outline:hover{background:var(--surface)}
-    .divider{max-width:1200px;margin:0 auto;padding:0 24px;height:1px;background:var(--border)}
+
+    /* Layout */
     section{max-width:1100px;margin:0 auto;padding:100px 24px}
+    .section-tinted{background:var(--surface);width:100%}
     .section-label{font-family:'Geist Mono',monospace;font-size:12px;font-weight:500;text-transform:uppercase;color:var(--accent);letter-spacing:.5px;margin-bottom:20px}
     section h2{font-size:clamp(32px,5vw,48px);font-weight:700;letter-spacing:-1.92px;line-height:1.12;margin-bottom:20px;text-wrap:balance}
     section>.desc{font-size:18px;color:var(--text-secondary);line-height:1.65;max-width:640px}
-    .big-quote{font-size:clamp(24px,4vw,34px);font-weight:500;line-height:1.4;letter-spacing:-.8px;color:var(--text-secondary);max-width:800px;margin-top:48px}
-    .big-quote em{font-style:normal;color:var(--text)}
+
+    /* Latest section cards */
+    .latest-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;margin-top:52px}
+    .latest-card{background:var(--bg);border-radius:var(--radius);padding:36px 32px;box-shadow:var(--shadow-card);transition:all .2s;text-decoration:none;color:var(--text);display:block}
+    .latest-card:hover{box-shadow:var(--shadow-card-hover);transform:translateY(-2px)}
+    .latest-card.primary{border-top:3px solid var(--accent)}
+    .latest-card.secondary-card{border-top:3px solid var(--text)}
+    .latest-card.tertiary{border-top:3px solid var(--border-strong)}
+    .latest-type{font-family:'Geist Mono',monospace;font-size:10px;font-weight:500;text-transform:uppercase;letter-spacing:.5px;color:var(--accent);margin-bottom:12px;display:block}
+    .latest-card.secondary-card .latest-type,.latest-card.tertiary .latest-type{color:var(--text-tertiary)}
+    .latest-card h3{font-size:17px;font-weight:600;letter-spacing:-.34px;line-height:1.35;margin-bottom:10px}
+    .latest-card p{font-size:14px;color:var(--text-secondary);line-height:1.6}
 
     /* Two paths */
     .paths-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:24px;margin-top:52px}
-    .path-card{background:var(--bg);border-radius:var(--radius);padding:48px 40px;box-shadow:var(--shadow-card);transition:all .2s;position:relative;overflow:hidden}
+    .path-card{background:var(--bg);border-radius:var(--radius);padding:48px 40px;box-shadow:var(--shadow-card);transition:all .2s;position:relative}
     .path-card:hover{box-shadow:var(--shadow-card-hover);transform:translateY(-2px)}
-    .path-card .path-icon{font-size:36px;margin-bottom:24px;display:block}
-    .path-card h3{font-size:26px;font-weight:600;letter-spacing:-.52px;margin-bottom:10px}
-    .path-card p{font-size:15px;color:var(--text-secondary);line-height:1.6;margin-bottom:24px}
-    .path-card .path-for{font-family:'Geist Mono',monospace;font-size:11px;color:var(--accent);text-transform:uppercase;letter-spacing:.5px}
+    .path-icon-letter{width:52px;height:52px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:700;margin-bottom:24px;letter-spacing:-1px;flex-shrink:0}
     .path-card.founders{border-top:3px solid var(--accent)}
+    .path-card.founders .path-icon-letter{background:var(--accent-soft);color:var(--accent)}
     .path-card.transformers{border-top:3px solid var(--text)}
+    .path-card.transformers .path-icon-letter{background:var(--surface-hover);color:var(--text)}
+    .path-card h3{font-size:24px;font-weight:600;letter-spacing:-.48px;margin-bottom:10px}
+    .path-card p{font-size:15px;color:var(--text-secondary);line-height:1.6;margin-bottom:24px}
+    .path-for{font-family:'Geist Mono',monospace;font-size:11px;color:var(--accent);text-transform:uppercase;letter-spacing:.5px}
+    .path-card.transformers .path-for{color:var(--text-secondary)}
+    .paths-cta{margin-top:28px;font-size:15px;color:var(--text-secondary)}
+    .paths-cta a{color:var(--accent);text-decoration:none;font-weight:500}
+    .paths-cta a:hover{text-decoration:underline}
 
     /* Ecosystem */
-    .eco-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:52px}
+    .eco-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-top:52px}
     .eco-card{background:var(--surface);border-radius:var(--radius);padding:28px 24px;text-decoration:none;color:var(--text);display:block;transition:all .2s}
     .eco-card:hover{background:var(--surface-hover);transform:translateY(-1px)}
     .eco-card .eco-icon{font-size:28px;margin-bottom:14px;display:block}
     .eco-card h4{font-size:16px;font-weight:600;letter-spacing:-.32px;margin-bottom:6px}
     .eco-card p{font-size:13px;color:var(--text-secondary);line-height:1.5}
-    .eco-card .eco-freq{font-family:'Geist Mono',monospace;font-size:10px;color:var(--accent);text-transform:uppercase;letter-spacing:.5px;margin-top:12px}
+    .eco-card .eco-freq{font-family:'Geist Mono',monospace;font-size:10px;color:var(--accent);text-transform:uppercase;letter-spacing:.5px;margin-top:12px;display:block}
+
+    /* Featured newsletter card */
+    .eco-card.featured{background:var(--bg);border:1px solid var(--border-strong);border-top:3px solid var(--accent);grid-column:1/-1;display:grid;grid-template-columns:1fr auto;align-items:center;gap:32px;padding:36px 40px}
+    .eco-card.featured:hover{background:var(--bg);box-shadow:var(--shadow-card-hover);transform:translateY(-1px)}
+    .eco-card.featured .eco-icon{font-size:32px;margin-bottom:12px}
+    .eco-card.featured h4{font-size:20px;font-weight:700;letter-spacing:-.4px;margin-bottom:8px}
+    .eco-card.featured p{font-size:15px;max-width:520px;line-height:1.55;color:var(--text-secondary)}
+    .eco-card.featured .eco-freq{margin-top:10px;font-size:11px}
+    .featured-cta{display:inline-block;padding:12px 24px;background:var(--accent);color:#fff;border-radius:8px;font-size:14px;font-weight:600;white-space:nowrap;text-decoration:none;transition:all .2s;flex-shrink:0}
+    .featured-cta:hover{opacity:.9;transform:translateY(-1px)}
+    .eco-show-all{display:none;text-align:center;margin-top:20px;font-size:14px;color:var(--accent);text-decoration:none;font-weight:500}
+    .eco-show-all:hover{text-decoration:underline}
 
     /* Podcast highlight */
-    .podcast-highlight{background:var(--text);color:#fff;border-radius:var(--radius);padding:48px;margin-top:52px;display:flex;align-items:center;gap:40px}
+    .podcast-highlight{background:var(--text);color:#fff;border-radius:var(--radius);padding:48px;margin-top:52px;display:grid;grid-template-columns:1fr auto;align-items:center;gap:48px}
     .podcast-highlight .pod-text{flex:1}
     .podcast-highlight h3{color:#fff;font-size:24px;font-weight:600;letter-spacing:-.48px;margin-bottom:8px}
     .podcast-highlight p{font-size:15px;color:rgba(255,255,255,.7);line-height:1.5;margin-bottom:16px}
@@ -88,8 +126,19 @@
     .podcast-highlight .host{display:flex;align-items:center;gap:8px}
     .host-dot{width:8px;height:8px;border-radius:50%}
     .host-dot.marco{background:var(--accent)}
-    .host-dot.lena{background:#fff}
-    .podcast-highlight .pod-badge{font-family:'Geist Mono',monospace;font-size:12px;color:var(--accent);text-transform:uppercase;letter-spacing:.5px;background:rgba(0,102,255,.15);padding:4px 12px;border-radius:100px;display:inline-block}
+    .host-dot.lena{background:rgba(255,255,255,.6)}
+    .pod-badge{font-family:'Geist Mono',monospace;font-size:12px;color:var(--accent);text-transform:uppercase;letter-spacing:.5px;background:rgba(0,102,255,.2);padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:16px}
+    .pod-ep-block{text-align:center;background:rgba(255,255,255,.08);border-radius:12px;padding:28px 32px;flex-shrink:0}
+    .pod-ep-num{font-family:'Geist Mono',monospace;font-size:11px;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:.5px;margin-bottom:10px}
+    .pod-ep-title{font-size:15px;font-weight:600;color:#fff;margin-bottom:20px;line-height:1.4;max-width:180px;margin-left:auto;margin-right:auto}
+    .pod-listen-btn{display:inline-block;padding:10px 20px;background:var(--accent);color:#fff;border-radius:8px;font-size:14px;font-weight:600;text-decoration:none;transition:all .2s}
+    .pod-listen-btn:hover{opacity:.9}
+
+    /* Reference strip */
+    .ref-strip{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);padding:32px 40px;margin-top:24px;text-align:center}
+    .ref-strip h3{font-size:15px;font-weight:600;margin-bottom:6px;color:#fff}
+    .ref-strip p{font-size:13px;color:rgba(255,255,255,.5);margin-bottom:16px}
+    .ref-logos{display:flex;justify-content:center;gap:20px;flex-wrap:wrap;font-family:'Geist Mono',monospace;font-size:12px;color:rgba(255,255,255,.35)}
 
     /* Data */
     .data-compare{display:flex;align-items:center;justify-content:center;gap:32px;margin-top:52px;flex-wrap:wrap}
@@ -112,16 +161,14 @@
 
     /* Cases */
     .cases-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px;margin-top:52px}
-    .case-card{background:var(--bg);border-radius:var(--radius);padding:28px;box-shadow:var(--shadow-card);border-left:3px solid var(--accent)}
-    .case-card h3{font-size:17px;font-weight:600;letter-spacing:-.34px;margin-bottom:4px}
-    .case-card .company{font-size:14px;color:var(--accent);font-weight:500;margin-bottom:12px}
+    .case-card{background:var(--bg);border-radius:var(--radius);padding:28px;box-shadow:var(--shadow-card);border-left:3px solid var(--border-strong)}
+    .case-card.featured{border-left:4px solid var(--accent);background:var(--accent-soft);box-shadow:var(--shadow-card-hover)}
+    .case-metric{font-size:26px;font-weight:700;letter-spacing:-1px;color:var(--text-tertiary);margin-bottom:4px;line-height:1}
+    .case-card.featured .case-metric{color:var(--accent)}
+    .case-card h3{font-size:14px;font-weight:500;color:var(--text-secondary);margin-bottom:4px}
+    .case-card .company{font-size:13px;color:var(--text-tertiary);font-weight:500;margin-bottom:12px;font-family:'Geist Mono',monospace;text-transform:uppercase;letter-spacing:.3px}
+    .case-card.featured .company{color:var(--accent)}
     .case-card p{font-size:14px;color:var(--text-secondary);line-height:1.6}
-
-    /* Reference strip */
-    .ref-strip{background:var(--surface);border-radius:var(--radius);padding:40px;margin-top:52px;text-align:center}
-    .ref-strip h3{font-size:20px;font-weight:600;margin-bottom:8px}
-    .ref-strip p{font-size:15px;color:var(--text-secondary);margin-bottom:20px}
-    .ref-logos{display:flex;justify-content:center;gap:24px;flex-wrap:wrap;font-family:'Geist Mono',monospace;font-size:13px;color:var(--text-tertiary)}
 
     /* Subscribe */
     .subscribe-strip{background:var(--text);color:#fff;border-radius:var(--radius);padding:56px 48px;margin-top:52px;display:flex;align-items:center;gap:48px}
@@ -144,19 +191,23 @@
 
     footer{max-width:1100px;margin:0 auto;padding:48px 24px;display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--border)}
     footer .copy{font-size:13px;color:var(--text-tertiary)}
-    footer .links{display:flex;gap:20px}
+    footer .links{display:flex;gap:20px;flex-wrap:wrap}
     footer .links a{font-size:13px;color:var(--text-tertiary);text-decoration:none}
     footer .links a:hover{color:var(--text)}
     .toast{position:fixed;bottom:40px;left:50%;transform:translateX(-50%);background:var(--text);color:#fff;padding:16px 32px;border-radius:12px;font-size:15px;font-weight:500;opacity:0;pointer-events:none;transition:opacity .3s;z-index:200;box-shadow:0 8px 32px rgba(0,0,0,.2)}
     .toast.show{opacity:1}.toast.error{background:#cc2200}
 
-    .radar-card{display:block;background:var(--surface);border-radius:var(--radius);padding:24px 28px;text-decoration:none;color:var(--text);margin-top:16px;transition:all .2s}
-    .radar-card:hover{background:var(--surface-hover)}
     @media(max-width:700px){
       .hero{padding:140px 20px 80px}.hero h1{font-size:34px;letter-spacing:-1px}
       section{padding:64px 20px}section h2{font-size:28px;letter-spacing:-.84px}
-      .paths-grid,.eco-grid,.cases-grid{grid-template-columns:1fr}
-      .podcast-highlight{flex-direction:column;text-align:center;padding:32px 24px}
+      .latest-grid,.paths-grid,.eco-grid,.cases-grid{grid-template-columns:1fr}
+      .eco-card.featured{grid-template-columns:1fr;gap:16px;padding:24px}
+      .featured-cta{display:block;text-align:center;margin-top:8px}
+      .eco-card.secondary{display:none}
+      .eco-show-all{display:block}
+      .podcast-highlight{grid-template-columns:1fr;gap:24px;padding:32px 24px;text-align:center}
+      .podcast-highlight .hosts{justify-content:center}
+      .pod-ep-block{padding:20px 24px}
       .subscribe-strip{flex-direction:column;text-align:center;padding:36px 24px}
       .subscribe-form{flex-direction:column;width:100%}.subscribe-form input{width:100%}
       .founder-block{flex-direction:column;align-items:center;text-align:center}
@@ -181,65 +232,60 @@
 </nav>
 
 <header class="hero">
-  <div class="hero-badge"><span class="dot"></span> Publication · São Paulo · Est. 2026</div>
+  <div class="hero-badge"><span class="dot" aria-hidden="true"></span> Publication · São Paulo · Est. 2026</div>
   <h1>For <span class="accent">founders</span><br>and <span class="dim">transformers</span><br>in the post-AI era.</h1>
   <p>The publication for people building AI-native companies from scratch — and for executives transforming existing ones. Newsletter, podcast, data, frameworks. No hype. Just what you need to build and decide.</p>
   <div class="hero-cta">
-    <a href="#paths" class="btn">See what we cover</a>
-    <a href="#subscribe" class="btn-outline">Subscribe free</a>
+    <a href="#subscribe" class="btn-accent">Subscribe free</a>
+    <a href="#paths" class="btn-outline">See what we cover</a>
   </div>
 </header>
-
-<div class="divider"></div>
 
 <!-- ═══════ LATEST ═══════ -->
 <section id="latest">
   <div class="section-label">Latest</div>
   <h2>Just published</h2>
-  <div class="paths-grid">
-    <a href="/editions/001-midjourney" class="path-card founders">
-      <span class="path-icon" aria-hidden="true">📰</span>
-      <h3>edition #001 — what Midjourney knows</h3>
-      <p>What David Holz decided not to build is the blueprint for the post-AI company. No sales. No marketing. No VC. No managers.</p>
-      <span class="path-for">Newsletter · May 1</span>
+  <div class="latest-grid">
+    <a href="/editions/001-midjourney" class="latest-card primary">
+      <span class="latest-type">Newsletter · May 1</span>
+      <h3>What Midjourney knows about organizational design that you don't</h3>
+      <p>No sales. No marketing. No VC. No managers. 11 people, $200M revenue. The blueprint.</p>
     </a>
-    <a href="/podcast" class="path-card founders">
-      <span class="path-icon" aria-hidden="true">🎙️</span>
-      <h3>podcast ep.1 — outlier or blueprint?</h3>
-      <p>Marco (the skeptic) and Lena (the strategist) debate Midjourney for 24 minutes. They do not agree.</p>
-      <span class="path-for">Podcast · May 22</span>
+    <a href="/podcast" class="latest-card secondary-card">
+      <span class="latest-type">Podcast · May 22</span>
+      <h3>Ep. 1 — Midjourney: outlier or blueprint?</h3>
+      <p>Marco (the skeptic) and Lena (the strategist) debate Midjourney for 47 minutes. They do not agree.</p>
+    </a>
+    <a href="/radar" class="latest-card tertiary">
+      <span class="latest-type">Radar · Week 23</span>
+      <h3>What 7 AI newsletters published this week — curated with opinion</h3>
+      <p>Ben's Bites, Import AI, Rundown, TLDR AI and more. June 5, 2026.</p>
     </a>
   </div>
-  <a href="/radar" class="radar-card">
-    <span style="font-family:'Geist Mono',monospace;font-size:11px;color:var(--accent);text-transform:uppercase;letter-spacing:.5px" aria-hidden="true">📡</span><span style="font-family:'Geist Mono',monospace;font-size:11px;color:var(--accent);text-transform:uppercase;letter-spacing:.5px"> Radar — Week 23</span>
-    <span style="font-size:17px;font-weight:500;display:block;margin-top:4px">What 7 AI newsletters published this week — curated with opinion.</span>
-    <span style="font-size:13px;color:var(--text-tertiary);margin-top:6px;display:block">June 5, 2026</span>
-  </a>
 </section>
 
-<div class="divider"></div>
-
 <!-- ═══════ TWO PATHS ═══════ -->
+<div class="section-tinted">
 <section id="paths">
   <div class="section-label">Who It's For</div>
   <h2>Two paths.<br>One publication.</h2>
   <div class="paths-grid">
     <div class="path-card founders">
-      <span class="path-icon" aria-hidden="true">🚀</span>
+      <div class="path-icon-letter" aria-hidden="true">F</div>
       <h3>I'm building from scratch</h3>
       <p>You have an idea you can't stop thinking about. You want to build it as an AI-native company from day zero — tiny team, massive leverage, no legacy. We cover the playbook: Idea → MVP → Launch → Scale.</p>
       <span class="path-for">For founders</span>
     </div>
     <div class="path-card transformers">
-      <span class="path-icon" aria-hidden="true">🔄</span>
+      <div class="path-icon-letter" aria-hidden="true">T</div>
       <h3>I'm transforming my company</h3>
       <p>You already have a company, a team, and revenue. You need to reorganize around AI without breaking what works. We cover the blueprint: org design, tool stack, decision velocity, case studies.</p>
-      <span class="path-for">For executives & leaders</span>
+      <span class="path-for">For executives &amp; leaders</span>
     </div>
   </div>
+  <p class="paths-cta">Whichever path you're on, the same question applies: <a href="#ecosystem">see everything we publish →</a></p>
 </section>
-
-<div class="divider"></div>
+</div>
 
 <!-- ═══════ ECOSYSTEM ═══════ -->
 <section id="ecosystem">
@@ -247,58 +293,69 @@
   <h2>Everything we publish</h2>
   <p class="desc">A full stack of content — from quick weekly signals to deep quarterly research. Built for both paths.</p>
   <div class="eco-grid">
-    <a href="#subscribe" class="eco-card">
-      <span class="eco-icon" aria-hidden="true">📰</span>
-      <h4>Post AI Weekly</h4>
-      <p>The newsletter. Data, analysis, and provocations on the post-AI transition.</p>
-      <span class="eco-freq">Every Wednesday · 5 min</span>
+    <!-- Featured: primary product -->
+    <a href="#subscribe" class="eco-card featured">
+      <div>
+        <span class="eco-icon" aria-hidden="true">📰</span>
+        <h4>Post AI Weekly</h4>
+        <p>The newsletter. Data, analysis, and provocations on the post-AI transition. Every Wednesday, 5 minutes. Free.</p>
+        <span class="eco-freq">Every Wednesday · 5 min · Free</span>
+      </div>
+      <span class="featured-cta">Subscribe free →</span>
     </a>
+    <!-- Secondary products -->
     <a href="/podcast" class="eco-card">
       <span class="eco-icon" aria-hidden="true">🎙️</span>
       <h4>Post AI Sessions</h4>
-      <p>AI-generated podcast. Marco (the skeptic) and Lena (the strategist) debate the week's biggest question.</p>
-      <span class="eco-freq">Biweekly · 25 min</span>
+      <p>AI-generated podcast. Two hosts debate one question about the post-AI company — and they don't always agree.</p>
+      <span class="eco-freq">Biweekly · ~45 min</span>
     </a>
     <a href="/radar" class="eco-card">
       <span class="eco-icon" aria-hidden="true">📡</span>
       <h4>Radar</h4>
-      <p>What the best AI newsletters published this week — and our take. Ben's Bites, Import AI, Rundown, and more.</p>
+      <p>The best AI newsletters curated weekly — with our take on each story.</p>
       <span class="eco-freq">Every Monday</span>
     </a>
-    <a href="/frameworks/ai-first-org-chart" class="eco-card">
+    <a href="/frameworks/ai-first-org-chart" class="eco-card secondary">
       <span class="eco-icon" aria-hidden="true">🧩</span>
       <h4>Frameworks</h4>
       <p>Proprietary tools: AI-First Org Chart, Decision Velocity Framework, Headcount Decoupling Playbook.</p>
       <span class="eco-freq">Evergreen</span>
     </a>
-    <a href="/case-studies/midjourney" class="eco-card">
+    <a href="/case-studies/midjourney" class="eco-card secondary">
       <span class="eco-icon" aria-hidden="true">🔬</span>
       <h4>Case Studies</h4>
       <p>Deep profiles of companies living the post-AI model. What they changed, what broke, what worked.</p>
       <span class="eco-freq">Monthly</span>
     </a>
-    <a href="/index" class="eco-card">
+    <a href="/index" class="eco-card secondary">
       <span class="eco-icon" aria-hidden="true">📊</span>
       <h4>Post AI Index</h4>
       <p>Original data on revenue per employee, team size trends, and AI tool stacks. Not surveys — real signals.</p>
       <span class="eco-freq">Quarterly</span>
     </a>
   </div>
+  <a href="/editions" class="eco-show-all">See all formats →</a>
 
   <!-- Podcast highlight -->
   <div class="podcast-highlight">
     <div class="pod-text">
       <span class="pod-badge">New — AI Podcast</span>
       <h3>Post AI Sessions</h3>
-      <p>A podcast where two AI hosts disagree about the future of companies. Marco is a skeptical ex-founder. Lena is a data-driven strategist. Every episode, they debate one question that matters — and they don't always agree.</p>
+      <p>Two AI hosts disagree about the future of companies. Marco is a skeptical ex-founder. Lena is a data-driven strategist. Every episode, one question — no easy answers.</p>
       <div class="hosts">
         <div class="host"><span class="host-dot marco"></span> Marco — The Skeptic</div>
         <div class="host"><span class="host-dot lena"></span> Lena — The Strategist</div>
       </div>
     </div>
+    <div class="pod-ep-block">
+      <div class="pod-ep-num">Episode 1</div>
+      <div class="pod-ep-title">Midjourney: outlier or blueprint?</div>
+      <a href="/podcast" class="pod-listen-btn">Listen now →</a>
+    </div>
   </div>
 
-  <!-- Reference strip -->
+  <!-- Reference strip (inside dark ecosystem context) -->
   <div class="ref-strip">
     <h3>We read everything so you don't have to</h3>
     <p>Every week, our Radar curates the best from the AI newsletter ecosystem — with our take on each story.</p>
@@ -315,9 +372,8 @@
   </div>
 </section>
 
-<div class="divider"></div>
-
 <!-- ═══════ DATA ═══════ -->
+<div class="section-tinted">
 <section id="data">
   <div class="section-label">The Data</div>
   <h2>Revenue per employee:<br>the metric that exposes everything</h2>
@@ -342,24 +398,51 @@
   </div>
   <p class="data-source">Source: Lean AI Native Leaderboard · Forbes · Redpoint Ventures · Mar 2026</p>
 </section>
-
-<div class="divider"></div>
+</div>
 
 <!-- ═══════ CASES ═══════ -->
 <section id="cases">
   <div class="section-label">Cases</div>
   <h2>Companies already<br>operating in post-AI mode</h2>
   <div class="cases-grid">
-    <div class="case-card"><h3>11 people, $200M revenue</h3><div class="company">Midjourney</div><p>~11 employees, $200M annual revenue. No management hierarchy. AI-mediated coordination. The extreme outlier.</p></div>
-    <div class="case-card"><h3>20 people, $100M ARR</h3><div class="company">Cursor / Anysphere</div><p>$5M per employee. AI-augmented from day zero. No legacy to unwind. The default org chart for the post-AI era.</p></div>
-    <div class="case-card"><h3>$500M ARR, +34% headcount</h3><div class="company">Perplexity</div><p>5× revenue growth on 1.34× headcount. The post-AI efficiency curve in action.</p></div>
-    <div class="case-card"><h3>$400M ARR, no sales team</h3><div class="company">Lovable</div><p>146 employees. 1,500 paying customers/day. No traditional sales. AI handles lead gen, onboarding, support.</p></div>
-    <div class="case-card"><h3>$500M ARR, 50% B2B</h3><div class="company">ElevenLabs</div><p>From $200M to $500M in under a year. Half enterprise revenue — AI-native efficiency at Fortune 500 scale.</p></div>
-    <div class="case-card"><h3>$20M ARR, ~30 people</h3><div class="company">Bolt.new / StackBlitz</div><p>$2M per employee. The product is AI-mediated development. The company builds itself.</p></div>
+    <div class="case-card featured">
+      <div class="case-metric">$12.5M/person</div>
+      <h3>11 people, $200M revenue</h3>
+      <div class="company">Midjourney</div>
+      <p>No management hierarchy. AI-mediated coordination. No VC. The extreme outlier — and the blueprint everyone is studying.</p>
+    </div>
+    <div class="case-card">
+      <div class="case-metric">$5M/person</div>
+      <h3>20 people, $100M ARR</h3>
+      <div class="company">Cursor / Anysphere</div>
+      <p>AI-augmented from day zero. No legacy to unwind. The default org chart for the post-AI era.</p>
+    </div>
+    <div class="case-card">
+      <div class="case-metric">5× revenue</div>
+      <h3>$500M ARR, +34% headcount</h3>
+      <div class="company">Perplexity</div>
+      <p>5× revenue growth on 1.34× headcount. The post-AI efficiency curve in action.</p>
+    </div>
+    <div class="case-card">
+      <div class="case-metric">0 sales team</div>
+      <h3>$400M ARR, no sales</h3>
+      <div class="company">Lovable</div>
+      <p>146 employees. 1,500 paying customers/day. AI handles lead gen, onboarding, support.</p>
+    </div>
+    <div class="case-card">
+      <div class="case-metric">$500M ARR</div>
+      <h3>$500M ARR, 50% B2B</h3>
+      <div class="company">ElevenLabs</div>
+      <p>From $200M to $500M in under a year. Half enterprise revenue — AI-native efficiency at Fortune 500 scale.</p>
+    </div>
+    <div class="case-card">
+      <div class="case-metric">$2M/person</div>
+      <h3>$20M ARR, ~30 people</h3>
+      <div class="company">Bolt.new / StackBlitz</div>
+      <p>The product is AI-mediated development. The company builds itself.</p>
+    </div>
   </div>
 </section>
-
-<div class="divider"></div>
 
 <!-- ═══════ SUBSCRIBE ═══════ -->
 <section id="subscribe">
@@ -376,6 +459,7 @@
 </section>
 
 <!-- ═══════ FOUNDER ═══════ -->
+<div class="section-tinted">
 <section>
   <div class="section-label">Founder</div>
   <h2>Fernanda Faria</h2>
@@ -389,6 +473,7 @@
     </div>
   </div>
 </section>
+</div>
 
 <footer>
   <div class="copy">Post AI Company © 2026 · São Paulo, Brazil</div>
