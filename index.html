@@ -3,416 +3,639 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Post AI Company — Organizational design for the post-AI era</title>
-  <meta name="description" content="The publication for people redesigning companies around AI. Revenue per employee data, org design frameworks, case studies, newsletter, and podcast.">
-  <meta name="keywords" content="post AI, AI-native startup, AI transformation, future of work, AI company, AI org design, AI newsletter, AI podcast, revenue per employee">
-  <meta name="author" content="Post AI Company">
-  <meta name="robots" content="index, follow, max-image-preview:large">
-  <link rel="canonical" href="https://postaicompany.com/">
-  <meta property="og:title" content="Post AI Company — For founders and transformers in the post-AI era">
-  <meta property="og:description" content="The publication for people building and transforming companies in the post-AI era. Newsletter, podcast, data, frameworks.">
+  <title>Post AI Company — The post-AI company doesn't exist yet.</title>
+  <meta name="description" content="We're documenting its birth. Revenue per employee data, org design frameworks, case studies, newsletter, and podcast.">
+  <meta property="og:title" content="Post AI Company: The post-AI company doesn't exist yet.">
+  <meta property="og:description" content="We're documenting its birth. For founders building from zero and executives transforming from within.">
   <meta property="og:url" content="https://postaicompany.com/">
   <meta property="og:type" content="website">
-  <meta property="og:site_name" content="Post AI Company">
   <meta property="og:image" content="https://postaicompany.com/og-image.png">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Post AI Company — For founders and transformers in the post-AI era">
-  <meta name="twitter:description" content="The publication for people building and transforming companies in the post-AI era.">
+  <meta name="twitter:title" content="Post AI Company: The post-AI company doesn't exist yet.">
   <meta name="twitter:image" content="https://postaicompany.com/og-image.png">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Post AI Company","url":"https://postaicompany.com","description":"Publication and research hub for the post-AI era. For founders building AI-native companies and executives transforming existing ones.","founder":{"@type":"Person","name":"Fernanda Faria"}}</script>
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <style>
-    :root {--bg:#fff;--text:#0d0d0d;--text-secondary:#555;--text-tertiary:#999;--accent:#0066ff;--accent-soft:#e8f1ff;--accent-glow:rgba(0,102,255,.1);--border:rgba(0,0,0,.07);--border-strong:rgba(0,0,0,.12);--surface:#f8f8f8;--surface-hover:#f2f2f2;--shadow-card:0px 0px 0px 1px rgba(0,0,0,.06),0px 2px 6px rgba(0,0,0,.04);--shadow-card-hover:0px 0px 0px 1px rgba(0,0,0,.08),0px 8px 24px rgba(0,0,0,.06);--radius:10px;}
-    *{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
-    body{font-family:'Geist',system-ui,-apple-system,sans-serif;color:var(--text);background:var(--bg);-webkit-font-smoothing:antialiased}
-    nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,.85);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);box-shadow:0 0 0 1px var(--border)}
-    nav .inner{max-width:1200px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between}
-    .logo-group{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--text)}
-    .logo-dot{width:10px;height:10px;border-radius:50%;background:var(--accent);box-shadow:0 0 16px var(--accent),0 0 4px var(--accent);animation:pulse 2s ease-in-out infinite}
-    @keyframes pulse{0%,100%{box-shadow:0 0 12px var(--accent),0 0 4px var(--accent)}50%{box-shadow:0 0 24px var(--accent),0 0 8px var(--accent)}}
-    .logo-text{font-size:18px;font-weight:600;letter-spacing:-.6px}
-    .nav-links{display:flex;gap:24px}
-    .nav-links a{font-size:14px;font-weight:500;color:var(--text-secondary);text-decoration:none;transition:color .15s}
-    .nav-links a:hover{color:var(--text)}
-    .hero{max-width:900px;margin:0 auto;padding:180px 24px 100px;text-align:center}
-    .hero-badge{display:inline-flex;align-items:center;gap:8px;background:var(--accent-soft);color:var(--accent);padding:6px 16px;border-radius:100px;font-size:13px;font-weight:500;margin-bottom:32px;font-family:'Geist Mono',monospace;letter-spacing:.5px}
-    .hero-badge .dot{width:6px;height:6px;border-radius:50%;background:var(--accent);animation:pulse 2s infinite}
-    .hero h1{font-size:clamp(40px,7vw,68px);font-weight:700;line-height:1.04;letter-spacing:-2.5px;text-wrap:balance;margin-bottom:12px}
-    .hero h1 .accent{color:var(--accent)}
-    .hero h1 .dim{color:var(--text-tertiary);font-weight:400}
-    .hero p{font-size:19px;color:var(--text-secondary);line-height:1.6;margin-top:24px;max-width:580px;margin-left:auto;margin-right:auto}
-    .hero-cta{margin-top:36px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
-    .btn{padding:14px 32px;background:var(--text);color:#fff;border-radius:8px;font-size:15px;font-weight:600;text-decoration:none;transition:all .2s}
-    .btn:hover{opacity:.9;transform:translateY(-1px)}
-    .btn-outline{padding:14px 32px;border:1px solid var(--border-strong);color:var(--text);border-radius:8px;font-size:15px;font-weight:500;text-decoration:none;transition:all .2s}
-    .btn-outline:hover{background:var(--surface)}
-    .divider{max-width:1200px;margin:0 auto;padding:0 24px;height:1px;background:var(--border)}
-    section{max-width:1100px;margin:0 auto;padding:100px 24px}
-    .section-label{font-family:'Geist Mono',monospace;font-size:12px;font-weight:500;text-transform:uppercase;color:var(--accent);letter-spacing:.5px;margin-bottom:20px}
-    section h2{font-size:clamp(32px,5vw,48px);font-weight:700;letter-spacing:-1.92px;line-height:1.12;margin-bottom:20px;text-wrap:balance}
-    section>.desc{font-size:18px;color:var(--text-secondary);line-height:1.65;max-width:640px}
-    .big-quote{font-size:clamp(24px,4vw,34px);font-weight:500;line-height:1.4;letter-spacing:-.8px;color:var(--text-secondary);max-width:800px;margin-top:48px}
-    .big-quote em{font-style:normal;color:var(--text)}
+    :root {
+      --bg: #fafafa;
+      --surface: #f3f3f3;
+      --border: #e0e0e0;
+      --border-strong: #c4c4c4;
+      --text: #1a1a1a;
+      --text-secondary: #555555;
+      --text-tertiary: #888888;
+      --accent: #c8a24c;
+      --accent-soft: rgba(200, 162, 76, 0.12);
+      --accent-transform: #3b6e8f;
+      --green: #2d8a56;
+      --amber: #b88a1a;
+      --violet: #6b4e9c;
+      --radius: 4px;
+      --transition: 200ms ease;
+      --content-width: 680px;
+      --wide-width: 1100px;
+    }
 
-    /* Two paths */
-    .paths-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:24px;margin-top:52px}
-    .path-card{background:var(--bg);border-radius:var(--radius);padding:48px 40px;box-shadow:var(--shadow-card);transition:all .2s;position:relative;overflow:hidden}
-    .path-card:hover{box-shadow:var(--shadow-card-hover);transform:translateY(-2px)}
-    .path-card .path-icon{font-size:36px;margin-bottom:24px;display:block}
-    .path-card h3{font-size:26px;font-weight:600;letter-spacing:-.52px;margin-bottom:10px}
-    .path-card p{font-size:15px;color:var(--text-secondary);line-height:1.6;margin-bottom:24px}
-    .path-card .path-for{font-family:'Geist Mono',monospace;font-size:11px;color:var(--accent);text-transform:uppercase;letter-spacing:.5px}
-    .path-card.founders{border-top:3px solid var(--accent)}
-    .path-card.transformers{border-top:3px solid var(--text)}
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; background: var(--bg); }
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      -webkit-font-smoothing: antialiased;
+      line-height: 1.6;
+    }
 
-    /* Ecosystem */
-    .eco-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:52px}
-    .eco-card{background:var(--surface);border-radius:var(--radius);padding:28px 24px;text-decoration:none;color:var(--text);display:block;transition:all .2s}
-    .eco-card:hover{background:var(--surface-hover);transform:translateY(-1px)}
-    .eco-card .eco-icon{font-size:28px;margin-bottom:14px;display:block}
-    .eco-card h4{font-size:16px;font-weight:600;letter-spacing:-.32px;margin-bottom:6px}
-    .eco-card p{font-size:13px;color:var(--text-secondary);line-height:1.5}
-    .eco-card .eco-freq{font-family:'Geist Mono',monospace;font-size:10px;color:var(--accent);text-transform:uppercase;letter-spacing:.5px;margin-top:12px}
+    /* ── TERMINAL HEADER ── */
+    .terminal-header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 6px 24px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      color: var(--text-tertiary);
+      display: flex; align-items: center; gap: 20px;
+      overflow-x: auto;
+    }
+    .terminal-header span + span { color: var(--text-secondary); }
 
-    /* Podcast highlight */
-    .podcast-highlight{background:var(--text);color:#fff;border-radius:var(--radius);padding:48px;margin-top:52px;display:flex;align-items:center;gap:40px}
-    .podcast-highlight .pod-text{flex:1}
-    .podcast-highlight h3{color:#fff;font-size:24px;font-weight:600;letter-spacing:-.48px;margin-bottom:8px}
-    .podcast-highlight p{font-size:15px;color:rgba(255,255,255,.7);line-height:1.5;margin-bottom:16px}
-    .podcast-highlight .hosts{display:flex;gap:24px;font-size:14px}
-    .podcast-highlight .host{display:flex;align-items:center;gap:8px}
-    .host-dot{width:8px;height:8px;border-radius:50%}
-    .host-dot.marco{background:var(--accent)}
-    .host-dot.lena{background:#fff}
-    .podcast-highlight .pod-badge{font-family:'Geist Mono',monospace;font-size:12px;color:var(--accent);text-transform:uppercase;letter-spacing:.5px;background:rgba(0,102,255,.15);padding:4px 12px;border-radius:100px;display:inline-block}
+    /* ── NAVIGATION ── */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(250, 250, 250, 0.92);
+      backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+    nav .inner {
+      max-width: var(--wide-width); margin: 0 auto;
+      padding: 14px 24px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .logo-group {
+      display: flex; align-items: center; gap: 8px;
+      text-decoration: none; color: var(--text);
+    }
+    .logo-dot {
+      width: 7px; height: 7px; border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 8px var(--accent-soft);
+      animation: pulse 3s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { box-shadow: 0 0 6px var(--accent-soft); }
+      50% { box-shadow: 0 0 14px var(--accent), 0 0 4px var(--accent); }
+    }
+    .logo-text {
+      font-size: 14px; font-weight: 600; letter-spacing: -0.3px;
+      font-family: 'JetBrains Mono', monospace;
+    }
+    .nav-links { display: flex; gap: 24px; align-items: center; }
+    .nav-links a {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px; font-weight: 500; color: var(--text-secondary);
+      text-decoration: none; text-transform: uppercase; letter-spacing: 0.5px;
+      transition: color var(--transition);
+    }
+    .nav-links a:hover { color: var(--text); }
+    .nav-cta {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px; font-weight: 600; color: var(--bg);
+      background: var(--text); text-decoration: none;
+      padding: 7px 16px; border-radius: var(--radius);
+      transition: opacity var(--transition);
+    }
+    .nav-cta:hover { opacity: 0.8; }
 
-    /* Data */
-    .data-compare{display:flex;align-items:center;justify-content:center;gap:32px;margin-top:52px;flex-wrap:wrap}
-    .data-col{text-align:center}
-    .data-label{font-family:'Geist Mono',monospace;font-size:12px;color:var(--text-tertiary);text-transform:uppercase;letter-spacing:.5px;margin-bottom:12px}
-    .data-big{font-size:clamp(48px,8vw,72px);font-weight:700;letter-spacing:-2px;line-height:1}
-    .data-big.accent{color:var(--accent)}
-    .data-sub{font-size:14px;color:var(--text-tertiary);margin-top:4px}
-    .data-meta{font-size:13px;color:var(--text-tertiary);margin-top:2px;opacity:.7}
-    .data-vs{font-size:16px;color:var(--text-tertiary);font-weight:500;padding-top:24px}
-    .data-bar-wrap{margin-top:56px;max-width:700px;margin-left:auto;margin-right:auto}
-    .data-bar-label{font-family:'Geist Mono',monospace;font-size:11px;color:var(--text-tertiary);text-transform:uppercase;letter-spacing:.5px;margin-bottom:24px}
-    .data-bar-set{display:flex;flex-direction:column;gap:10px}
-    .data-bar-row{display:flex;align-items:center;gap:12px}.data-bar-row.dim{opacity:.35}
-    .bar-name{width:180px;text-align:right;font-size:13px;font-weight:500;color:var(--text-secondary);flex-shrink:0}
-    .bar-track{flex:1;height:8px;background:var(--surface);border-radius:4px;overflow:hidden}
-    .bar-fill{display:block;height:100%;background:var(--accent);border-radius:4px}
-    .bar-val{width:80px;font-family:'Geist Mono',monospace;font-size:12px;color:var(--text-tertiary);flex-shrink:0}
-    .data-source{text-align:center;margin-top:24px;font-size:12px;color:var(--text-tertiary)}
+    /* ── SECTIONS ── */
+    .section {
+      max-width: var(--wide-width); margin: 0 auto;
+      padding: 100px 24px;
+    }
+    .section-tight { padding: 64px 24px; }
 
-    /* Cases */
-    .cases-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px;margin-top:52px}
-    .case-card{background:var(--bg);border-radius:var(--radius);padding:28px;box-shadow:var(--shadow-card);border-left:3px solid var(--accent)}
-    .case-card h3{font-size:17px;font-weight:600;letter-spacing:-.34px;margin-bottom:4px}
-    .case-card .company{font-size:14px;color:var(--accent);font-weight:500;margin-bottom:12px}
-    .case-card p{font-size:14px;color:var(--text-secondary);line-height:1.6}
+    /* ── HERO ── */
+    .hero {
+      max-width: var(--wide-width); margin: 0 auto;
+      padding: 120px 24px 80px;
+    }
+    .hero h1 {
+      font-size: 52px; font-weight: 700; letter-spacing: -1.6px;
+      line-height: 1.08; color: var(--text); max-width: 780px;
+      margin-bottom: 20px;
+    }
+    .hero .deck {
+      font-size: 18px; color: var(--text-secondary);
+      max-width: 580px; line-height: 1.6; margin-bottom: 32px;
+    }
+    .hero-cta {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 13px; font-weight: 600; color: var(--bg);
+      background: var(--text); text-decoration: none;
+      padding: 10px 22px; border-radius: var(--radius);
+      transition: opacity var(--transition);
+    }
+    .hero-cta:hover { opacity: 0.82; }
 
-    /* Reference strip */
-    .ref-strip{background:var(--surface);border-radius:var(--radius);padding:40px;margin-top:52px;text-align:center}
-    .ref-strip h3{font-size:20px;font-weight:600;margin-bottom:8px}
-    .ref-strip p{font-size:15px;color:var(--text-secondary);margin-bottom:20px}
-    .ref-logos{display:flex;justify-content:center;gap:24px;flex-wrap:wrap;font-family:'Geist Mono',monospace;font-size:13px;color:var(--text-tertiary)}
+    /* ── TERMINAL DASHBOARD ── */
+    .terminal-dash {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 24px 28px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 13px;
+      max-width: var(--wide-width);
+      margin: 0 auto 80px;
+    }
+    .terminal-dash .prompt { color: var(--text-tertiary); }
+    .terminal-dash .cmd { color: var(--accent); font-weight: 500; }
+    .terminal-dash .output { color: var(--text); }
+    .terminal-dash .highlight { color: var(--accent-transform); font-weight: 600; }
+    .terminal-dash .metric-row {
+      display: flex; justify-content: space-between;
+      border-bottom: 1px solid var(--border);
+      padding: 6px 0;
+    }
+    .terminal-dash .metric-row:last-child { border-bottom: none; }
+    .terminal-dash .label { color: var(--text-secondary); }
+    .terminal-dash .value { color: var(--text); font-weight: 600; }
+    .terminal-dash .rec { color: var(--accent); margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--border); }
 
-    /* Subscribe */
-    .subscribe-strip{background:var(--text);color:#fff;border-radius:var(--radius);padding:56px 48px;margin-top:52px;display:flex;align-items:center;gap:48px}
-    .subscribe-strip .strip-text{flex:1}
-    .subscribe-strip h3{font-size:24px;font-weight:600;letter-spacing:-.48px;margin-bottom:8px;color:#fff}
-    .subscribe-strip p{font-size:15px;color:rgba(255,255,255,.7);line-height:1.5}
-    .subscribe-form{display:flex;gap:10px;flex-shrink:0}
-    .subscribe-form input{padding:14px 18px;border:none;width:280px;border-radius:8px;font-size:15px;font-family:'Geist',sans-serif;outline:none;background:rgba(255,255,255,.12);color:#fff;transition:background .2s}
-    .subscribe-form input::placeholder{color:rgba(255,255,255,.5)}
-    .subscribe-form input:focus{background:rgba(255,255,255,.2)}
-    .subscribe-form button{padding:14px 28px;background:var(--accent);color:#fff;border:none;border-radius:8px;font-size:15px;font-weight:600;font-family:'Geist',sans-serif;cursor:pointer;white-space:nowrap;transition:all .2s}
-    .subscribe-form button:hover{opacity:.9;transform:translateY(-1px)}
+    /* ── SECTION HEADERS ── */
+    .section-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px; text-transform: uppercase; letter-spacing: 1.2px;
+      color: var(--text-tertiary); margin-bottom: 40px;
+    }
+    .section-label-main {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px; text-transform: uppercase; letter-spacing: 1.2px;
+      color: var(--text-tertiary); margin-bottom: 16px;
+    }
 
-    /* Founder */
-    .founder-block{display:flex;align-items:flex-start;gap:32px;margin-top:52px;max-width:700px}
-    .founder-avatar{width:72px;height:72px;border-radius:50%;background:var(--accent-soft);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:28px;font-weight:600;color:var(--accent)}
-    .founder-info h3{font-size:22px;font-weight:600;letter-spacing:-.44px;margin-bottom:4px}
-    .founder-info .role{font-size:15px;color:var(--text-secondary);margin-bottom:12px}
-    .founder-info p{font-size:15px;color:var(--text-secondary);line-height:1.6}
+    /* ── PILLARS (6-column) ── */
+    .pillars {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .pillar {
+      padding: 32px 28px;
+      border-right: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .pillar:nth-child(3n) { border-right: none; }
+    .pillar:nth-child(n+4) { border-bottom: none; }
+    .pillar-num {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px; color: var(--text-tertiary); margin-bottom: 10px;
+    }
+    .pillar h3 {
+      font-size: 18px; font-weight: 600; margin-bottom: 6px;
+      color: var(--text);
+    }
+    .pillar p {
+      font-size: 14px; color: var(--text-secondary); line-height: 1.5;
+    }
 
-    footer{max-width:1100px;margin:0 auto;padding:48px 24px;display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--border)}
-    footer .copy{font-size:13px;color:var(--text-tertiary)}
-    footer .links{display:flex;gap:20px}
-    footer .links a{font-size:13px;color:var(--text-tertiary);text-decoration:none}
-    footer .links a:hover{color:var(--text)}
-    .toast{position:fixed;bottom:40px;left:50%;transform:translateX(-50%);background:var(--text);color:#fff;padding:16px 32px;border-radius:12px;font-size:15px;font-weight:500;opacity:0;pointer-events:none;transition:opacity .3s;z-index:200;box-shadow:0 8px 32px rgba(0,0,0,.2)}
-    .toast.show{opacity:1}
+    /* ── CARDS ── */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 28px;
+      text-decoration: none;
+      transition: border-color var(--transition), box-shadow var(--transition);
+      display: flex; flex-direction: column;
+    }
+    .card:hover {
+      border-color: var(--border-strong);
+      box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+    }
+    .card-tag {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px; font-weight: 600; text-transform: uppercase;
+      letter-spacing: 0.8px; color: var(--text-tertiary); margin-bottom: 8px;
+    }
+    .card h3 {
+      font-size: 20px; font-weight: 600; color: var(--text); margin-bottom: 6px;
+    }
+    .card p {
+      font-size: 14px; color: var(--text-secondary); line-height: 1.5;
+      flex: 1; margin-bottom: 16px;
+    }
+    .card .arrow {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px; color: var(--text-tertiary);
+    }
 
-    @media(max-width:700px){
-      .hero{padding:140px 20px 80px}.hero h1{font-size:34px;letter-spacing:-1px}
-      section{padding:64px 20px}section h2{font-size:28px;letter-spacing:-.84px}
-      .paths-grid,.eco-grid,.cases-grid{grid-template-columns:1fr}
-      .podcast-highlight{flex-direction:column;text-align:center;padding:32px 24px}
-      .subscribe-strip{flex-direction:column;text-align:center;padding:36px 24px}
-      .subscribe-form{flex-direction:column;width:100%}.subscribe-form input{width:100%}
-      .founder-block{flex-direction:column;align-items:center;text-align:center}
-      footer{flex-direction:column;gap:16px;text-align:center}
+    /* ── METRIC TABLE ── */
+    .metric-table {
+      width: 100%; border-collapse: collapse;
+      font-size: 14px;
+    }
+    .metric-table th {
+      text-align: left; font-family: 'JetBrains Mono', monospace;
+      font-size: 10px; text-transform: uppercase; letter-spacing: 0.8px;
+      color: var(--text-tertiary); padding: 8px 0; font-weight: 500;
+      border-bottom: 1px solid var(--border);
+    }
+    .metric-table td {
+      padding: 10px 0; border-bottom: 1px solid var(--border);
+    }
+    .metric-table tr:last-child td { border-bottom: none; }
+    .metric-num {
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 600; color: var(--text);
+    }
+    .metric-label { color: var(--text-secondary); }
+
+    /* ── TESTIMONIALS ── */
+    .testimonials {
+      display: grid; grid-template-columns: repeat(2, 1fr);
+      gap: 0;
+      border-top: 1px solid var(--border);
+    }
+    .testimonial {
+      padding: 32px 28px;
+      border-bottom: 1px solid var(--border);
+    }
+    .testimonial:nth-child(odd) { border-right: 1px solid var(--border); }
+    .testimonial blockquote {
+      font-size: 15px; color: var(--text); line-height: 1.6;
+      margin-bottom: 12px;
+    }
+    .testimonial .attribution {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px; text-transform: uppercase; letter-spacing: 0.6px;
+      color: var(--text-tertiary);
+    }
+
+    /* ── ABOUT ── */
+    .about-grid {
+      display: grid; grid-template-columns: 120px 1fr; gap: 32px;
+      align-items: start;
+    }
+    .about-avatar {
+      width: 100px; height: 100px; border-radius: 50%;
+      background: var(--surface); border: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'JetBrains Mono', monospace; font-size: 32px;
+      color: var(--text-tertiary);
+    }
+    .about-info h3 { font-size: 22px; font-weight: 600; color: var(--text); margin-bottom: 4px; }
+    .about-info .role { font-size: 14px; color: var(--text-secondary); margin-bottom: 16px; }
+    .about-info p { font-size: 15px; color: var(--text); line-height: 1.7; max-width: 580px; }
+    .about-meta {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      gap: 16px; margin-top: 24px;
+    }
+    .about-meta-item {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px; color: var(--text-secondary);
+    }
+    .about-meta-item .meta-label {
+      color: var(--text-tertiary); text-transform: uppercase;
+      letter-spacing: 0.6px; font-size: 10px; display: block;
+    }
+
+    /* ── CTA SECTION ── */
+    .cta-section {
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .cta-section .section {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 48px; align-items: center;
+    }
+    .cta-section h2 {
+      font-size: 28px; font-weight: 600; letter-spacing: -0.4px;
+      margin-bottom: 12px;
+    }
+    .cta-section p { font-size: 15px; color: var(--text-secondary); line-height: 1.6; }
+
+    /* ── FOOTER ── */
+    footer {
+      max-width: var(--wide-width); margin: 0 auto;
+      padding: 32px 24px;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    footer .footer-mono {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px; color: var(--text-tertiary);
+    }
+    footer a {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px; color: var(--text-secondary);
+      text-decoration: none; margin-left: 20px;
+      transition: color var(--transition);
+    }
+    footer a:hover { color: var(--text); }
+
+    /* ── DIVIDER ── */
+    .divider {
+      border: none; border-top: 1px solid var(--border);
+      max-width: var(--wide-width); margin: 0 auto;
+    }
+    .divider-full {
+      border: none; border-top: 1px solid var(--border);
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 800px) {
+      .hero { padding: 80px 24px 48px; }
+      .hero h1 { font-size: 34px; }
+      .pillars { grid-template-columns: 1fr 1fr; }
+      .pillar:nth-child(2n) { border-right: none; }
+      .card-grid { grid-template-columns: 1fr; }
+      .cta-section .section { grid-template-columns: 1fr; }
+      .about-grid { grid-template-columns: 1fr; }
+      .about-meta { grid-template-columns: 1fr 1fr; }
+      .testimonials { grid-template-columns: 1fr; }
+      .testimonial:nth-child(odd) { border-right: none; }
+      nav .inner { flex-wrap: wrap; gap: 8px; }
+      .nav-links { gap: 14px; }
+    }
+    @media (max-width: 500px) {
+      .pillars { grid-template-columns: 1fr; }
+      .pillar { border-right: none; }
+      .pillar:nth-child(n+4) { border-bottom: 1px solid var(--border); }
     }
   </style>
 </head>
 <body>
 
+<!-- Terminal header -->
+<div class="terminal-header">
+  <span>~</span>
+  <span>/</span>
+  <span>postaicompany</span>
+  <span>/</span>
+  <span style="color:var(--text);">main</span>
+  <span style="color:var(--accent);"> *</span>
+  <span style="color:var(--text-tertiary);">SÃO PAULO · EST. 2026</span>
+  <span>·</span>
+  <span style="color:var(--accent-transform);">NEW EDITION EVERY WEDNESDAY</span>
+</div>
+
+<!-- Navigation -->
 <nav>
   <div class="inner">
-    <a href="#" class="logo-group"><div class="logo-dot"></div><span class="logo-text">Post AI Company</span></a>
+    <a href="/" class="logo-group">
+      <div class="logo-dot"></div>
+      <span class="logo-text">Post AI Company</span>
+    </a>
     <div class="nav-links">
       <a href="/editions">Editions</a>
-      <a href="/data">Data</a>
-      <a href="/community">Community</a>
-      <a href="/news">The Post</a>
-      <a href="#ecosystem">Ecosystem</a>
-      <a href="#cases">Cases</a>
-      <a href="#subscribe">Subscribe</a>
+      <a href="/radar">Radar</a>
+      <a href="/podcast">Podcast</a>
+      <a href="/frameworks">Frameworks</a>
+      <a href="/cases">Cases</a>
     </div>
+    <a href="#subscribe" class="nav-cta">Subscribe</a>
   </div>
 </nav>
 
-<header class="hero">
-  <div class="hero-badge"><span class="dot"></span> Publication · São Paulo · Est. 2026</div>
-  <h1>For <span class="accent">founders</span><br>and <span class="dim">transformers</span><br>in the post-AI era.</h1>
-  <p>The publication for people building AI-native companies from scratch — and for executives transforming existing ones. Newsletter, podcast, data, frameworks. No hype. Just what you need to build and decide.</p>
-  <div class="hero-cta">
-    <a href="#paths" class="btn">See what we cover</a>
-    <a href="#subscribe" class="btn-outline">Subscribe free</a>
-  </div>
-</header>
+<!-- Hero -->
+<main>
+  <section class="hero">
+    <h1>AI-native startups operate at 5.7× higher revenue per employee.</h1>
+    <p class="deck">
+      That's not a marginal gain. That's a structural difference in how companies are built.
+      Post AI Company documents the birth of the post-AI company — for founders building from zero and executives transforming from within.
+    </p>
+    <a href="#subscribe" class="hero-cta">Subscribe →</a>
+  </section>
 
-<div class="divider"></div>
-
-<!-- ═══════ LATEST ═══════ -->
-<section id="latest">
-  <div class="section-label">Latest</div>
-  <h2>Just published</h2>
-  <div class="paths-grid">
-    <a href="/editions/001-midjourney" class="path-card founders">
-      <span class="path-icon">📰</span>
-      <h3>edition #001 — what Midjourney knows</h3>
-      <p>What David Holz decided not to build is the blueprint for the post-AI company. No sales. No marketing. No VC. No managers.</p>
-      <span class="path-for">Newsletter · May 1</span>
-    </a>
-    <a href="/podcast" class="path-card founders">
-      <span class="path-icon">🎙️</span>
-      <h3>podcast ep.1 — outlier or blueprint?</h3>
-      <p>Marco (the skeptic) and Lena (the strategist) debate Midjourney for 24 minutes. They do not agree.</p>
-      <span class="path-for">Podcast · May 22</span>
-    </a>
-  </div>
-  <a href="/radar" style="display:block;background:var(--surface);border-radius:var(--radius);padding:24px 28px;text-decoration:none;color:var(--text);margin-top:16px;transition:all .2s" onmouseover="this.style.background='var(--surface-hover)'" onmouseout="this.style.background='var(--surface)'">
-    <span style="font-family:'Geist Mono',monospace;font-size:11px;color:var(--accent);text-transform:uppercase;letter-spacing:.5px">📡 Radar — Week 23</span>
-    <span style="font-size:17px;font-weight:500;display:block;margin-top:4px">What 7 AI newsletters published this week — curated with opinion.</span>
-    <span style="font-size:13px;color:var(--text-tertiary);margin-top:6px;display:block">June 5, 2026</span>
-  </a>
-</section>
-
-<div class="divider"></div>
-
-<!-- ═══════ TWO PATHS ═══════ -->
-<section id="paths">
-  <div class="section-label">Who It's For</div>
-  <h2>Two paths.<br>One publication.</h2>
-  <div class="paths-grid">
-    <div class="path-card founders">
-      <span class="path-icon">🚀</span>
-      <h3>I'm building from scratch</h3>
-      <p>You have an idea you can't stop thinking about. You want to build it as an AI-native company from day zero — tiny team, massive leverage, no legacy. We cover the playbook: Idea → MVP → Launch → Scale.</p>
-      <span class="path-for">For founders</span>
+  <!-- Terminal Dashboard -->
+  <div class="terminal-dash" style="margin-left:24px;margin-right:24px;">
+    <div style="margin-bottom:16px;">
+      <span class="prompt">~/$</span>
+      <span class="cmd"> revenue-per-employee --compare</span>
     </div>
-    <div class="path-card transformers">
-      <span class="path-icon">🔄</span>
-      <h3>I'm transforming my company</h3>
-      <p>You already have a company, a team, and revenue. You need to reorganize around AI without breaking what works. We cover the blueprint: org design, tool stack, decision velocity, case studies.</p>
-      <span class="path-for">For executives & leaders</span>
+    <table class="metric-table">
+      <thead>
+        <tr>
+          <th>Category</th>
+          <th>Revenue / Employee</th>
+          <th>Avg Team Size</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="metric-label">Top 10 AI-Native Startups</td>
+          <td class="metric-num" style="color:var(--accent-transform);">$3.48M</td>
+          <td class="metric-num">24</td>
+        </tr>
+        <tr>
+          <td class="metric-label">Top 10 Traditional SaaS</td>
+          <td class="metric-num" style="color:var(--text-tertiary);">$610K</td>
+          <td class="metric-num" style="color:var(--text-tertiary);">21,000</td>
+        </tr>
+      </tbody>
+    </table>
+    <div style="margin-top:16px; padding-top:16px; border-top:1px solid var(--border);">
+      <span class="prompt">~/$</span>
+      <span class="cmd"> leaderboard --top</span>
+    </div>
+    <table class="metric-table" style="margin-top:8px;">
+      <thead>
+        <tr><th>Company</th><th>Revenue / Employee</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="metric-label">Midjourney</td><td class="metric-num">$12,500K</td></tr>
+        <tr><td class="metric-label">Anysphere (Cursor)</td><td class="metric-num">$5,000K</td></tr>
+        <tr><td class="metric-label">Cal AI</td><td class="metric-num">$3,000K</td></tr>
+        <tr><td class="metric-label">Mercor</td><td class="metric-num">$2,500K</td></tr>
+        <tr><td class="metric-label">ElevenLabs</td><td class="metric-num">$2,000K</td></tr>
+        <tr><td class="metric-label">Bolt.new</td><td class="metric-num">$2,000K</td></tr>
+        <tr><td class="metric-label">Lovable</td><td class="metric-num">$1,667K</td></tr>
+        <tr><td class="metric-label" style="color:var(--text-tertiary);">Avg traditional SaaS</td><td class="metric-num" style="color:var(--text-tertiary);">$200K</td></tr>
+      </tbody>
+    </table>
+    <div class="rec">
+      <span class="prompt">$</span>
+      <span>→ Source: Lean AI Native Leaderboard · Forbes · Redpoint Ventures · Mar 2026</span>
     </div>
   </div>
-</section>
 
-<div class="divider"></div>
+  <!-- The Publication -->
+  <section class="section">
+    <div class="section-label">The Publication</div>
+    <h2 style="font-size:32px;font-weight:600;letter-spacing:-0.6px;margin-bottom:12px;max-width:700px;">
+      Revenue per employee is the north-star metric. If it doesn't move, the "AI transformation" is theater.
+    </h2>
+    <p style="font-size:15px;color:var(--text-secondary);max-width:560px;line-height:1.6;margin-bottom:48px;">
+      Every format is a live demonstration of the model we're documenting. Podcast hosts are AI agents. The newsletter pipeline runs on autonomous cronjobs. The research is AI-augmented.
+    </p>
 
-<!-- ═══════ ECOSYSTEM ═══════ -->
-<section id="ecosystem">
-  <div class="section-label">Ecosystem</div>
-  <h2>Everything we publish</h2>
-  <p class="desc">A full stack of content — from quick weekly signals to deep quarterly research. Built for both paths.</p>
-  <div class="eco-grid">
-    <a href="#subscribe" class="eco-card">
-      <span class="eco-icon">📰</span>
-      <h4>Post AI Weekly</h4>
-      <p>The newsletter. Data, analysis, and provocations on the post-AI transition.</p>
-      <span class="eco-freq">Every Wednesday · 5 min</span>
-    </a>
-    <a href="#" class="eco-card">
-      <span class="eco-icon">🎙️</span>
-      <h4>Post AI Sessions</h4>
-      <p>AI-generated podcast. Marco (the skeptic) and Lena (the strategist) debate the week's biggest question.</p>
-      <span class="eco-freq">Biweekly · 25 min</span>
-    </a>
-    <a href="#" class="eco-card">
-      <span class="eco-icon">📡</span>
-      <h4>Radar</h4>
-      <p>What the best AI newsletters published this week — and our take. Ben's Bites, Import AI, Rundown, and more.</p>
-      <span class="eco-freq">Every Monday</span>
-    </a>
-    <a href="#" class="eco-card">
-      <span class="eco-icon">🧩</span>
-      <h4>Frameworks</h4>
-      <p>Proprietary tools: AI-First Org Chart, Decision Velocity Framework, Headcount Decoupling Playbook.</p>
-      <span class="eco-freq">Evergreen</span>
-    </a>
-    <a href="#" class="eco-card">
-      <span class="eco-icon">🔬</span>
-      <h4>Case Studies</h4>
-      <p>Deep profiles of companies living the post-AI model. What they changed, what broke, what worked.</p>
-      <span class="eco-freq">Monthly</span>
-    </a>
-    <a href="#" class="eco-card">
-      <span class="eco-icon">📊</span>
-      <h4>Post AI Index</h4>
-      <p>Original data on revenue per employee, team size trends, and AI tool stacks. Not surveys — real signals.</p>
-      <span class="eco-freq">Quarterly</span>
-    </a>
-  </div>
-
-  <!-- Podcast highlight -->
-  <div class="podcast-highlight">
-    <div class="pod-text">
-      <span class="pod-badge">New — AI Podcast</span>
-      <h3>Post AI Sessions</h3>
-      <p>A podcast where two AI hosts disagree about the future of companies. Marco is a skeptical ex-founder. Lena is a data-driven strategist. Every episode, they debate one question that matters — and they don't always agree.</p>
-      <div class="hosts">
-        <div class="host"><span class="host-dot marco"></span> Marco — The Skeptic</div>
-        <div class="host"><span class="host-dot lena"></span> Lena — The Strategist</div>
+    <div class="pillars">
+      <div class="pillar">
+        <div class="pillar-num">01</div>
+        <h3>Weekly</h3>
+        <p>Data, analysis, provocations. Every Wednesday. 5 min read. The core signal.</p>
+      </div>
+      <div class="pillar">
+        <div class="pillar-num">02</div>
+        <h3>Sessions</h3>
+        <p>AI-generated podcast. Marco (skeptic) vs Lena (strategist) debate the post-AI shift. Biweekly, 25 min.</p>
+      </div>
+      <div class="pillar">
+        <div class="pillar-num">03</div>
+        <h3>Radar</h3>
+        <p>Curated AI newsletter ecosystem + our take. What 7 publications published this week. Every Monday.</p>
+      </div>
+      <div class="pillar">
+        <div class="pillar-num">04</div>
+        <h3>Frameworks</h3>
+        <p>AI-First Org Chart, Decision Velocity, Headcount Decoupling. IP that compounds. Evergreen.</p>
+      </div>
+      <div class="pillar">
+        <div class="pillar-num">05</div>
+        <h3>Case Studies</h3>
+        <p>Deep profiles of post-AI companies. Revenue/employee breakdowns, org structure, tool stacks. Monthly.</p>
+      </div>
+      <div class="pillar">
+        <div class="pillar-num">06</div>
+        <h3>Index</h3>
+        <p>Revenue/employee trends, team size shifts, AI tool stack adoption. Quarterly benchmark.</p>
       </div>
     </div>
-  </div>
+  </section>
 
-  <!-- Reference strip -->
-  <div class="ref-strip">
-    <h3>We read everything so you don't have to</h3>
-    <p>Every week, our Radar curates the best from the AI newsletter ecosystem — with our take on each story.</p>
-    <div class="ref-logos">
-      <span>Ben's Bites</span>
-      <span>Import AI</span>
-      <span>The Rundown</span>
-      <span>TLDR AI</span>
-      <span>Interconnects</span>
-      <span>Latent Space</span>
-      <span>The Neuron</span>
-      <span>The Batch</span>
+  <hr class="divider">
+
+  <!-- Latest Content -->
+  <section class="section">
+    <div class="section-label">Latest</div>
+    <div class="card-grid">
+      <a href="/editions/004-hire-ai-agents-before-humans" class="card">
+        <div class="card-tag">Edition #004 · Jun 11</div>
+        <h3>Why hire AI agents before you hire people</h3>
+        <p>67% of new ventures use AI agents for core functions. Sarah Chen hit $50K MRR with zero employees. Stanford-CMU study found catastrophic failure modes.</p>
+        <div class="arrow">Read →</div>
+      </a>
+      <a href="/podcast/ep2" class="card">
+        <div class="card-tag">Podcast Ep. #002 · Jun 9</div>
+        <h3>Hire the robot first</h3>
+        <p>Marco's AI CFO tried to invest his tax money. Lena's AI support agent gave away free service. Marco changes his mind about Midjourney.</p>
+        <div class="arrow">Listen →</div>
+      </a>
+      <a href="/radar" class="card">
+        <div class="card-tag">Radar · Week 23</div>
+        <h3>What 7 AI newsletters published this week</h3>
+        <p>Inside Anthropic: engineers no longer write code directly. Qwen challenges Google. Evals becoming product.</p>
+        <div class="arrow">Read →</div>
+      </a>
+      <a href="/cases" class="card">
+        <div class="card-tag">Cases · Ongoing</div>
+        <h3>Companies in post-AI mode</h3>
+        <p>Midjourney: 11 people, $200M revenue. Cursor: $5M per employee. Lovable: 0 sales team, $400M ARR.</p>
+        <div class="arrow">Explore →</div>
+      </a>
     </div>
-  </div>
-</section>
+  </section>
 
-<div class="divider"></div>
+  <hr class="divider">
 
-<!-- ═══════ DATA ═══════ -->
-<section id="data">
-  <div class="section-label">The Data</div>
-  <h2>Revenue per employee:<br>the metric that exposes everything</h2>
-  <p class="desc">AI-native companies operate at an order of magnitude higher efficiency — not because they work harder, but because they're built differently from day zero.</p>
-  <div class="data-compare">
-    <div class="data-col"><div class="data-label">Top 10 AI-Native Startups</div><div class="data-big accent">$3.48M</div><div class="data-sub">revenue per employee</div><div class="data-meta">Avg team: 24 people</div></div>
-    <div class="data-vs">vs</div>
-    <div class="data-col"><div class="data-label">Top 10 Traditional SaaS</div><div class="data-big">$610K</div><div class="data-sub">revenue per employee</div><div class="data-meta">Avg team: 21,000 people</div></div>
-  </div>
-  <div class="data-bar-wrap">
-    <div class="data-bar-label">Revenue per employee ($K)</div>
-    <div class="data-bar-set">
-      <div class="data-bar-row"><span class="bar-name">Midjourney</span><span class="bar-track"><span class="bar-fill" style="width:100%"></span></span><span class="bar-val">$12,500K</span></div>
-      <div class="data-bar-row"><span class="bar-name">Anysphere (Cursor)</span><span class="bar-track"><span class="bar-fill" style="width:40%"></span></span><span class="bar-val">$5,000K</span></div>
-      <div class="data-bar-row"><span class="bar-name">Cal AI</span><span class="bar-track"><span class="bar-fill" style="width:24%"></span></span><span class="bar-val">$3,000K</span></div>
-      <div class="data-bar-row"><span class="bar-name">Mercor</span><span class="bar-track"><span class="bar-fill" style="width:20%"></span></span><span class="bar-val">$2,500K</span></div>
-      <div class="data-bar-row"><span class="bar-name">ElevenLabs</span><span class="bar-track"><span class="bar-fill" style="width:16%"></span></span><span class="bar-val">$2,000K</span></div>
-      <div class="data-bar-row"><span class="bar-name">Bolt.new (StackBlitz)</span><span class="bar-track"><span class="bar-fill" style="width:16%"></span></span><span class="bar-val">$2,000K</span></div>
-      <div class="data-bar-row"><span class="bar-name">Lovable</span><span class="bar-track"><span class="bar-fill" style="width:13%"></span></span><span class="bar-val">$1,667K</span></div>
-      <div class="data-bar-row dim"><span class="bar-name">Average traditional SaaS</span><span class="bar-track"><span class="bar-fill" style="width:1.6%"></span></span><span class="bar-val">$200K</span></div>
+  <!-- Case Studies Quick View -->
+  <section class="section">
+    <div class="section-label">Case Studies</div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:6px;overflow:hidden;">
+      <div style="background:var(--bg);padding:24px;">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:0.6px;color:var(--text-tertiary);margin-bottom:6px;">Case 01</div>
+        <h3 style="font-size:17px;font-weight:600;color:var(--text);margin-bottom:4px;">Midjourney</h3>
+        <p style="font-size:13px;color:var(--text-secondary);line-height:1.5;margin-bottom:8px;">11 people · $200M revenue. No management hierarchy. AI-mediated coordination.</p>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:18px;font-weight:600;color:var(--accent-transform);">$18.2M/emp</div>
+      </div>
+      <div style="background:var(--bg);padding:24px;">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:0.6px;color:var(--text-tertiary);margin-bottom:6px;">Case 02</div>
+        <h3 style="font-size:17px;font-weight:600;color:var(--text);margin-bottom:4px;">Cursor</h3>
+        <p style="font-size:13px;color:var(--text-secondary);line-height:1.5;margin-bottom:8px;">20 people · $100M ARR. AI-augmented from day zero.</p>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:18px;font-weight:600;color:var(--accent-transform);">$5M/emp</div>
+      </div>
+      <div style="background:var(--bg);padding:24px;">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:0.6px;color:var(--text-tertiary);margin-bottom:6px;">Case 03</div>
+        <h3 style="font-size:17px;font-weight:600;color:var(--text);margin-bottom:4px;">Lovable</h3>
+        <p style="font-size:13px;color:var(--text-secondary);line-height:1.5;margin-bottom:8px;">146 employees · $400M ARR. 0 sales team. AI handles lead gen, onboarding, support.</p>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:18px;font-weight:600;color:var(--accent-transform);">$2.7M/emp</div>
+      </div>
     </div>
-  </div>
-  <p class="data-source">Source: Lean AI Native Leaderboard · Forbes · Redpoint Ventures · Mar 2026</p>
-</section>
+  </section>
 
-<div class="divider"></div>
+  <hr class="divider">
 
-<!-- ═══════ CASES ═══════ -->
-<section id="cases">
-  <div class="section-label">Cases</div>
-  <h2>Companies already<br>operating in post-AI mode</h2>
-  <div class="cases-grid">
-    <div class="case-card"><h3>11 people, $200M revenue</h3><div class="company">Midjourney</div><p>~11 employees, $200M annual revenue. No management hierarchy. AI-mediated coordination. The extreme outlier.</p></div>
-    <div class="case-card"><h3>20 people, $100M ARR</h3><div class="company">Cursor / Anysphere</div><p>$5M per employee. AI-augmented from day zero. No legacy to unwind. The default org chart for the post-AI era.</p></div>
-    <div class="case-card"><h3>$500M ARR, +34% headcount</h3><div class="company">Perplexity</div><p>5× revenue growth on 1.34× headcount. The post-AI efficiency curve in action.</p></div>
-    <div class="case-card"><h3>$400M ARR, no sales team</h3><div class="company">Lovable</div><p>146 employees. 1,500 paying customers/day. No traditional sales. AI handles lead gen, onboarding, support.</p></div>
-    <div class="case-card"><h3>$500M ARR, 50% B2B</h3><div class="company">ElevenLabs</div><p>From $200M to $500M in under a year. Half enterprise revenue — AI-native efficiency at Fortune 500 scale.</p></div>
-    <div class="case-card"><h3>$20M ARR, ~30 people</h3><div class="company">Bolt.new / StackBlitz</div><p>$2M per employee. The product is AI-mediated development. The company builds itself.</p></div>
-  </div>
-</section>
-
-<div class="divider"></div>
-
-<!-- ═══════ SUBSCRIBE ═══════ -->
-<section id="subscribe">
-  <div class="subscribe-strip">
-    <div class="strip-text">
-      <h3>Get Post AI Weekly</h3>
-      <p>Every Wednesday. Data, analysis, and provocations on the post-AI company. 5 minutes. Zero fluff.</p>
+  <!-- The Founder -->
+  <section class="section">
+    <div class="section-label">The Founder</div>
+    <div class="about-grid">
+      <div class="about-avatar">FF</div>
+      <div class="about-info">
+        <h3>Fernanda Faria</h3>
+        <div class="role">CPTO, Zé Delivery (AB InBev) · Founder, SyntheticPerson.ai</div>
+        <p>
+          I sit in your seat. As CPTO of Latin America's largest beverage delivery platform, I operate the AI-native transition in practice — with real constraints of budget, legacy, cultural resistance, and deadlines that don't wait. I'm not a consultant. I'm living this.
+        </p>
+        <div class="about-meta">
+          <div class="about-meta-item">
+            <span class="meta-label">seat</span>
+            CPTO
+          </div>
+          <div class="about-meta-item">
+            <span class="meta-label">builds</span>
+            SyntheticPerson.ai
+          </div>
+          <div class="about-meta-item">
+            <span class="meta-label">publishes</span>
+            Post AI Company
+          </div>
+          <div class="about-meta-item">
+            <span class="meta-label">works</span>
+            in the stack
+          </div>
+        </div>
+      </div>
     </div>
-    <form class="subscribe-form" id="subscribe-form">
-      <input type="email" id="email-input" placeholder="your@email.com" required>
-      <button type="submit">Subscribe</button>
-    </form>
-  </div>
-</section>
+  </section>
 
-<!-- ═══════ FOUNDER ═══════ -->
-<section>
-  <div class="section-label">Founder</div>
-  <h2>Fernanda Faria</h2>
-  <p class="desc">Founder at SyntheticPerson.ai. CPTO at Zé Delivery. Building the intellectual infrastructure for the post-AI era.</p>
-  <div class="founder-block">
-    <div class="founder-avatar">FF</div>
-    <div class="founder-info">
-      <h3>Fernanda Faria</h3>
-      <div class="role">Founder at SyntheticPerson.ai · CPTO at Zé Delivery (AB InBev)</div>
-      <p>15+ years leading product and engineering. Currently CPTO at Zé Delivery (AB InBev), the largest beverage delivery platform in Latin America. Post AI Company is the publication and research hub for the question she can't stop asking: what comes after AI?</p>
-    </div>
+  <div class="cta-section">
+    <section class="section">
+      <div>
+        <h2>The post-AI company doesn't exist yet. We're documenting its birth.</h2>
+        <p>Every Wednesday. 5 minutes. Revenue per employee data, org design frameworks, and the playbooks that actually ship.</p>
+      </div>
+      <div>
+        <div style="background:var(--bg);border:1px solid var(--border);border-radius:6px;padding:28px;">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:0.8px;color:var(--text-tertiary);margin-bottom:16px;">Subscribe · Post AI Weekly</div>
+          <form action="https://postaicompany.com/subscribe" method="POST" style="display:flex;flex-direction:column;gap:12px;">
+            <input type="email" name="email" placeholder="Email address" required style="font-family:'JetBrains Mono',monospace;font-size:13px;padding:10px 14px;border:1px solid var(--border);border-radius:4px;background:var(--bg);color:var(--text);outline:none;">
+            <button type="submit" style="font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:600;color:var(--bg);background:var(--text);border:none;padding:10px 14px;border-radius:4px;cursor:pointer;">Subscribe →</button>
+          </form>
+        </div>
+      </div>
+    </section>
   </div>
-</section>
+
+</main>
 
 <footer>
-  <div class="copy">Post AI Company © 2026 · São Paulo, Brazil</div>
-  <div class="links">
-    <a href="/playbook">Playbook</a>
-    <a href="#subscribe">Newsletter</a>
-    <a href="#ecosystem">Podcast</a>
-    <a href="#data">Data</a>
+  <div class="footer-mono">Post AI Company · São Paulo · est. 2026</div>
+  <div>
+    <a href="https://syntheticperson.ai">SyntheticPerson</a>
+    <a href="https://thecognitivelab.ai">The Cognitive Lab</a>
   </div>
 </footer>
 
-<div class="toast" id="toast">Subscribed. Check your email — first edition this Wednesday.</div>
-
-<script>
-  const form = document.getElementById('subscribe-form');
-  const toast = document.getElementById('toast');
-  form.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    const input = document.getElementById('email-input');
-    const email = input.value.trim();
-    if (!email || !email.includes('@')) { input.focus(); return; }
-    try {
-      const resp = await fetch('/api/subscribe', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ email }) });
-      const data = await resp.json();
-      if (data.ok) { toast.classList.add('show'); setTimeout(() => toast.classList.remove('show'), 4000); input.value = ''; }
-      else { alert('Error: ' + (data.error || 'try again')); }
-    } catch (err) { alert('Connection error. Please try again.'); }
-  });
-</script>
 </body>
 </html>
